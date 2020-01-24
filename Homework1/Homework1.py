@@ -1,19 +1,19 @@
 def hello():
     print('Hello, world!')
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def input_hi():
     name = input('What is your name?\n')
     print('Hi, %s.' % name)
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def enumerate_function():
     friends = ['john', 'pat', 'gary', 'michael']
     for i, name in enumerate(friends):
         print("iteration {iteration} is {name}".format(iteration=i, name=name))
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def tuple_assignment():
@@ -21,7 +21,7 @@ def tuple_assignment():
     while babies < 100:
         print('This generation has {0} babies'.format(babies))
         parents, babies = (babies, parents + babies)
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def functions():
@@ -31,7 +31,7 @@ def functions():
     greet('Jack')
     greet('Jill')
     greet('Bob')
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def regular_expressions():
@@ -41,7 +41,7 @@ def regular_expressions():
             print(test_string, 'is a valid US local phone number')
         else:
             print(test_string, 'rejected')
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def generator_expressions():
@@ -52,7 +52,7 @@ def generator_expressions():
     grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                        for fruit in my_purchase)
     print('I owe the grocer $%.2f' % grocery_bill)
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def exception_handling():
@@ -64,7 +64,7 @@ def exception_handling():
         print('sum =', total)
     except ValueError:
         print('Please supply integer arguments')
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def opening_files():
@@ -80,7 +80,7 @@ def opening_files():
                 print('    ' + line.rstrip())
 
         print()
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def for_else():
@@ -102,10 +102,10 @@ def for_else():
             break
     else:
         print('Unknown, AFK or sleeping!')
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
-def Triple_quoted_strings():
+def triple_quoted_strings():
     REFRAIN = '''
     %d bottles of beer on the wall,
     %d bottles of beer,
@@ -117,7 +117,7 @@ def Triple_quoted_strings():
         print(REFRAIN % (bottles_of_beer, bottles_of_beer,
                          bottles_of_beer - 1))
         bottles_of_beer -= 1
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def classes():
@@ -137,7 +137,7 @@ def classes():
     my_account = BankAccount(15)
     my_account.withdraw(50)
     print(my_account.balance, my_account.overdrawn())
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def testing_unittest():
@@ -157,7 +157,7 @@ def testing_unittest():
 
     if __name__ == '__main__':
         unittest.main()
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def itertools():
@@ -176,7 +176,7 @@ def itertools():
     # PRINTS:
     # This is the first paragraph.
     # This is the second.
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def unpacking_csv():
@@ -200,7 +200,7 @@ def unpacking_csv():
         for ticker, name, price, change, pct in stocks:
             status = status_labels[cmp(float(change), 0.0)]
             print('%s is %s (%.2f)' % (name, status, float(pct)))
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def recursion8quin():
@@ -229,7 +229,7 @@ def recursion8quin():
 
     for answer in solve(BOARD_SIZE):
         print(answer)
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def generators_yield():
@@ -253,7 +253,7 @@ def generators_yield():
         if p > 1000:
             break
         print(p)
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def parsing_XML_HTML():
@@ -278,7 +278,7 @@ def parsing_XML_HTML():
         amt, unit, item = ingredient
         if item.tag == "td" and item.text not in pantry:
             print("%s: %s %s" % (item.text, amt.text, unit.text))
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 def define_your_own_exceptions():
@@ -309,11 +309,12 @@ def define_your_own_exceptions():
 
     queens = add_queen([])
     print(queens)
-    print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
-# ------------------------------------------------------------------------------
+    print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) \
+                    for q in queens))
+# -----------------------------------------------------------------------------
 
 
-def Guess_Number_Game():
+def guess_number_game():
     import random
 
     guesses_made = 0
@@ -321,7 +322,7 @@ def Guess_Number_Game():
     name = input('Hello! What is your name?\n')
 
     number = random.randint(1, 20)
-    print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
+    print('Well, {0}, I am thinking of a № between 1 and 20.'.format(name))
 
     while guesses_made < 6:
 
@@ -342,7 +343,7 @@ def Guess_Number_Game():
         print('Good job, {0}! My number in {1}!'.format(name, guesses_made))
     else:
         print('Nope. The number I was thinking of was {0}'.format(number))
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 # hello()
@@ -355,7 +356,7 @@ def Guess_Number_Game():
 # exception_handling()     #???
 # opening_files()
 # for_else()
-# Triple_quoted_strings()
+# triple_quoted_strings()
 # classes()
 # testing_unittest()
 # itertools()             #???
@@ -364,4 +365,4 @@ def Guess_Number_Game():
 # generators_yield()
 # parsing_XML_HTML()
 # define_your_own_exceptions()
-# Guess_Number_Game()
+# guess_number_game()

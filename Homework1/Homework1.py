@@ -302,7 +302,6 @@ def Guess_Number_Game():
     else:
         print('Nope. The number I was thinking of was {0}'.format(number))
 #-----------------------------------------------------------------------------------------------------------------------
-#  please delete # for running any function
 #hello()
 #input_hi()()
 #enumerate_function()

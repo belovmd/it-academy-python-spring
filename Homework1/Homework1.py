@@ -142,6 +142,7 @@ def classes():
 
 def testing_unittest():
     import unittest
+
     def median(pool):
         copy = sorted(pool)
         size = len(copy)
@@ -181,6 +182,7 @@ def itertools():
 def unpacking_csv():
     import csv
     # need to define cmp function in Python 3
+
     def cmp(a, b):
         return (a > b) - (a < b)
     # write stocks data as comma-separated values
@@ -272,7 +274,7 @@ def parsing_XML_HTML():
     # tree = ElementSoup.parse(StringIO.StringIO(dinner_recipe))
 
     pantry = set(['olive oil', 'pesto'])
-    for ingredient in tree.iter('tr'):                    #getiterator('tr'):
+    for ingredient in tree.iter('tr'):                    # getiterator('tr'):
         amt, unit, item = ingredient
         if item.tag == "td" and item.text not in pantry:
             print("%s: %s %s" % (item.text, amt.text, unit.text))
@@ -341,6 +343,8 @@ def Guess_Number_Game():
     else:
         print('Nope. The number I was thinking of was {0}'.format(number))
 # ------------------------------------------------------------------------------
+
+
 # hello()
 # input_hi()()
 # enumerate_function()
@@ -361,4 +365,3 @@ def Guess_Number_Game():
 # parsing_XML_HTML()
 # define_your_own_exceptions()
 # Guess_Number_Game()
-

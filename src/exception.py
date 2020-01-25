@@ -42,4 +42,5 @@ def add_queen(queens):
 
 all_queens = add_queen([])
 print(all_queens)
-print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in all_queens))
+print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1)
+                for q in all_queens))

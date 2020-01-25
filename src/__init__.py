@@ -6,18 +6,20 @@ Make pull request
 Fix code style warnings.
 """
 
-import re
-import sys
-import glob
 import csv
+import doctest
+import glob
 import itertools
 import random
-import doctest
+import re
+import sys
 import unittest
+
 import xml.etree.ElementTree as eTree
 
 from itertools import groupby
 from time import localtime
+
 
 # 1 line: Output
 print('Hello, world!')
@@ -162,6 +164,7 @@ class TestMedian(unittest.TestCase):
 # 14 lines: Doctest-based testing
 def calculate_median(pool):
     """Statistical median to demonstrate doctest.
+
     >>> calculate_median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     6 #change to 7 in order to pass the test
     """
@@ -186,7 +189,6 @@ This is the second.
 '''.splitlines()
 # Use itertools.groupby and bool to return groups of
 # consecutive lines that either have content or don't.
-# No idea how to fix this warning...
 for has_chars, frags in groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
@@ -308,7 +310,7 @@ class BailOut(Exception):
 def validate(queens):
     left = right = col = queens[-1]
     for r in reversed(queens[:-1]):
-        left, right = left-1, right+1
+        left, right = left - 1, right + 1
         if r in (left, col, right):
             raise BailOut
 
@@ -329,7 +331,8 @@ def add_queen(queens):
 
 queens_count = add_queen([])
 print(queens_count)
-print("\n".join(". "*q + "Q " + ". "*(BOARD_SIZE-q-1) for q in queens_count))
+print("\n".join(". "*q + "Q " + ". "*(BOARD_SIZE - q - 1)
+                for q in queens_count))
 
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com

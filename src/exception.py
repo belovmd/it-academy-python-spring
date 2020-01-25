@@ -9,11 +9,13 @@ class BailOut(Exception):
             print(args)
         else:
             print(f"Failed to choose the position "
-                  f"for the {kwargs['last']} Queen: move right {kwargs['last'] - 1} Queen")
+                  f"for the {kwargs['last']} Queen: "
+                  f"move right {kwargs['last'] - 1} Queen")
 
     def not_validate(self):
         if self.args:
-            print(f'Not valid schema: Move right Queen number {len(self.args[0])}')
+            print(f'Not valid schema: '
+                  f'Move right Queen number {len(self.args[0])}')
 
 
 def validate(queens):
@@ -40,4 +42,4 @@ def add_queen(queens):
 
 all_queens = add_queen([])
 print(all_queens)
-print("\n".join(". "*q + "Q " + ". "*(BOARD_SIZE-q-1) for q in all_queens))
+print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in all_queens))

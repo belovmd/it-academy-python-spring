@@ -222,10 +222,10 @@ def recursion8quin():
 
         smaller_solutions = solve(n - 1)
 
-        return [solution + [(n, i + 1)]
-            for i in range(BOARD_SIZE)
-                for solution in smaller_solutions
-                    if not under_attack(i + 1, solution)]
+        return ([solution + [(n, i + 1)]
+                 for i in range(BOARD_SIZE)
+                 for solution in smaller_solutions
+                 if not under_attack(i + 1, solution)])
 
     for answer in solve(BOARD_SIZE):
         print(answer)
@@ -309,7 +309,7 @@ def define_your_own_exceptions():
 
     queens = add_queen([])
     print(queens)
-    print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) \
+    print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1)
                     for q in queens))
 # -----------------------------------------------------------------------------
 

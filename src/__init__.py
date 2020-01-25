@@ -331,7 +331,7 @@ def add_queen(queens):
 
 queens_count = add_queen([])
 print(queens_count)
-print("\n".join(". "*q + "Q " + ". "*(BOARD_SIZE - q - 1)
+print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1)
                 for q in queens_count))
 
 

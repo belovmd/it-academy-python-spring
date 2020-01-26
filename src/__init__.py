@@ -1,8 +1,10 @@
+import glob
 import re
 import sys
-import glob
-from time import localtime
 import unittest
+
+from time import localtime
+
 
 # 1 line: Output
 print('Hello, world!')
@@ -142,7 +144,7 @@ def median(pool):
     if size % 2 == 1:
         return copy[int((size - 1) / 2)]
     else:
-        return (copy[int(size/2 - 1)] + copy[int(size/2)]) / 2
+        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
 
 
 class TestMedian(unittest.TestCase):
@@ -157,15 +159,18 @@ if __name__ == '__main__':
 # 14 lines: Doctest-based testing
 def median(pool):
     """Statistical median to demonstrate doctest.
+
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+
     6 #change to 7 in order to pass the test
+
     """
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
         return copy[int((size - 1) / 2)]
     else:
-        return (copy[int(size/2 - 1)] + copy[int(size/2)]) / 2
+        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
 
 
 if __name__ == '__main__':

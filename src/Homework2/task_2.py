@@ -29,7 +29,7 @@ def sum_numbers_recursion_2(number):
     var_test = number // 10
     number_order = 0
     sum_num = 0
-    while var_test > 0:
+    while var_test:
         number_order += 1
         var_test //= 10
     for power in range(number_order + 1):

@@ -2,7 +2,7 @@ try:
     var = int(input('Enter the number: '))
     var_test = var // 10
     number_order = 0
-    while var_test > 0:
+    while var_test:
         number_order += 1
         var_test //= 10
     for power in range((number_order // 2) + 1):

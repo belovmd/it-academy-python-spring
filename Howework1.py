@@ -1,7 +1,5 @@
 import re
 import sys
-import glob
-from time import localtime
 
 # 1---------------------------------------------------------------------------------------------------------------------
 print('Hello, world!')
@@ -49,31 +47,3 @@ try:
 except ValueError:
     print('Please supply integer arguments')
 # 9---------------------------------------------------------------------------------------------------------------------
-# indent your Python code to put into an email
-# glob supports Unix style pathname extensions
-python_files = glob.glob('*.py')
-for file_name in sorted(python_files):
-    print('    ------' + file_name)
-
-    with open(file_name) as f:
-        for line in f:
-            print('    ' + line.rstrip())
-
-    print()
-# 10--------------------------------------------------------------------------------------------------------------------
-activities = {8: 'Sleeping',
-              9: 'Commuting',
-              17: 'Working',
-              18: 'Commuting',
-              20: 'Eating',
-              22: 'Resting'}
-
-time_now = localtime()
-hour = time_now.tm_hour
-
-for activity_time in sorted(activities.keys()):
-    if hour < activity_time:
-        print(activities[activity_time])
-        break
-else:
-    print('Unknown, AFK or sleeping!')

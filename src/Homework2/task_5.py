@@ -6,7 +6,7 @@ def add_binary(a, b):
     be done before, or after the addition.
     The binary number returned should be a string.
     """
-    return bin(a+b)[2:]
+    return bin(a + b)[2:]
 
 
 if __name__ == '__main__':

@@ -1,6 +1,3 @@
-import re
-import sys
-
 # 1---------------------------------------------------------------------------------------------------------------------
 print('Hello, world!')
 # 2---------------------------------------------------------------------------------------------------------------------
@@ -26,6 +23,8 @@ def greet(names):
 
 
 # 6---------------------------------------------------------------------------------------------------------------------
+import re
+
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
@@ -41,6 +40,8 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
 print('I owe the grocer $%.2f' % grocery_bill)
 # 8---------------------------------------------------------------------------------------------------------------------
 # This program adds up integers that have been passed as arguments in the command line
+import sys
+
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)

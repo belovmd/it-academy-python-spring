@@ -163,7 +163,6 @@ if __name__ == '__main__':
 
 def calculate_median(pool):
     '''Statistical median to demonstrate doctest.
-    
     >>> calculate_median[2, 9, 9, 7, 9, 2, 4, 5, 8])
     6 # change to 7 in order to pass the test
     '''
@@ -245,8 +244,8 @@ def solve(n):
     smaller_solutions = solve(n - 1)
     return [solution + [(n, i + 1)]
         for i in range(BOARD_SIZE)
-        for solution in smaller_solutions
-        if not under_attack(i + 1, solution)]
+            for solution in smaller_solutions
+                if not under_attack(i + 1, solution)]
 
 
 for answer in solve(BOARD_SIZE):

@@ -17,7 +17,7 @@ def dirReduc(arr):
     test_dir = []
     for index in range(len(arr)):
         if not test_dir or dict_dir[arr[index]] + \
-                dict_dir[test_dir[len(test_dir) - 1]] != 0:
+                dict_dir[test_dir[-1]] != 0:
             test_dir.append(arr[index])
         else:
             test_dir.pop()

@@ -19,4 +19,3 @@ def find_outlier(integers):
             return odd_num
         if even == 1 and odd > 1:
             return even_num
-

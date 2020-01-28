@@ -120,14 +120,15 @@ while bottles_of_beer > 1:
 
 
 class BankAccount(object):
-
-
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
+
     def deposit(self, amount):
         self.balance += amount
+
     def withdraw(self, amount):
         self.balance -= amount
+
     def overdrawn(self):
         return self.balance < 0
 
@@ -139,7 +140,7 @@ print(my_account.balance, my_account.overdrawn())
 # 13 lines: Unit testing with unittest
 
 
-def median(pool):
+def median1(pool):
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -149,10 +150,8 @@ def median(pool):
 
 
 class TestMedian(unittest.TestCase):
-
-
     def testMedian(self):
-        self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
+        self.assertEqual(median1([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
 
 
 if __name__ == '__main__':
@@ -162,9 +161,11 @@ if __name__ == '__main__':
 
 
 def median(pool):
-# Statistical median to demonstrate doctest.
-# >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-# 6 #change to 7 in order to pass the test
+"""
+ Statistical median to demonstrate doctest.
+ >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+ 6 #change to 7 in order to pass the test
+"""
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:

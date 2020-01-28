@@ -11,5 +11,5 @@ for letter in sentence:
     elif letter.isupper():
         upLetter += 1
 
-print("В строке: " + str(lowLetter) + " строчных и " +
-      str(upLetter) + " прописных букв")
+print("В строке: " + str(lowLetter) + " строчных и "
+      + str(upLetter) + " прописных букв")

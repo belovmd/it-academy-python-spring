@@ -1,37 +1,37 @@
-import re
 import csv
-import unittest
 import glob
-import sys
 import itertools
 import random
+import re
+import sys
+import unittest
 import xml.etree.ElementTree as etree
 from time import localtime
 
 
-#1 line: Output
+# 1 line: Output
 
 print('Hello, world!')
 
-#2 lines: Input, assignment
+# 2 lines: Input, assignment
 
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
 
-#3 lines: For loop, built-in enumerate function, new style formatting
+# 3 lines: For loop, built-in enumerate function, new style formatting
 
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
 
-#4 lines: Fibonacci, tuple assignment
+# 4 lines: Fibonacci, tuple assignment
 
 parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
 
-#5 lines: Functions
+# 5 lines: Functions
 
 
 def greet(name):
@@ -42,7 +42,7 @@ greet('Jack')
 greet('Jill')
 greet('Bob')
 
-#6 lines: Import, regular expressions
+# 6 lines: Import, regular expressions
 
 
 for test_string in ['555-1212', 'ILL-EGAL']:
@@ -51,7 +51,7 @@ for test_string in ['555-1212', 'ILL-EGAL']:
     else:
         print(test_string, 'rejected')
 
-#7 lines: Dictionaries, generator expressions
+# 7 lines: Dictionaries, generator expressions
 
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
@@ -61,7 +61,7 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
 
-#8 lines: Command line arguments, exception handling
+# 8 lines: Command line arguments, exception handling
 
 # This program adds up integers that have been passed as arguments in the command line
 try:
@@ -70,7 +70,7 @@ try:
 except ValueError:
     print('Please supply integer arguments')
 
-#9 lines: Opening files
+# 9 lines: Opening files
 
 # indent your Python code to put into an email
 # glob supports Unix style pathname extensions
@@ -84,14 +84,14 @@ for file_name in sorted(python_files):
 
     print()
 
-#10 lines: Time, conditionals, from..import, for..else
+# 10 lines: Time, conditionals, from..import, for..else
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
               17: 'Working',
               18: 'Commuting',
               20: 'Eating',
-              22: 'Resting' }
+              22: 'Resting'}
 
 time_now = localtime()
 hour = time_now.tm_hour
@@ -103,7 +103,7 @@ for activity_time in sorted(activities.keys()):
 else:
     print('Unknown, AFK or sleeping!')
 
-#11 lines: Triple-quoted strings, while loop
+# 11 lines: Triple-quoted strings, while loop
 
 REFRAIN = '''
 %d bottles of beer on the wall,
@@ -113,11 +113,10 @@ take one down, pass it around,
 '''
 bottles_of_beer = 9
 while bottles_of_beer > 1:
-    print(REFRAIN % (bottles_of_beer, bottles_of_beer,
-        bottles_of_beer - 1))
+    print(REFRAIN % (bottles_of_beer, bottles_of_beer, bottles_of_beer - 1))
     bottles_of_beer -= 1
 
-#12 lines: Classes
+# 12 lines: Classes
 class BankAccount(object):
 
 
@@ -125,7 +124,7 @@ class BankAccount(object):
         self.balance = initial_balance
     
 	
-	def deposit(self, amount):
+    def deposit(self, amount):
         self.balance += amount
 		
 		
@@ -141,7 +140,7 @@ my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
-#13 lines: Unit testing with unittest
+# 13 lines: Unit testing with unittest
 
 
 def median(pool):
@@ -163,7 +162,7 @@ class TestMedian(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-#14 lines: Doctest-based testing
+# 14 lines: Doctest-based testing
 
 
 def median(pool):
@@ -183,7 +182,7 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-#15 lines: itertools
+# 15 lines: itertools
 
 from itertools import groupby
 lines = '''
@@ -227,7 +226,7 @@ with open('stocks.csv', 'r') as stocksFile:
         status = status_labels[cmp(float(change), 0.0)]
         print('%s is %s (%.2f)' % (name, status, float(pct)))
 
-#18 lines: 8-Queens Problem (recursion)
+# 18 lines: 8-Queens Problem (recursion)
 
 BOARD_SIZE = 8
 
@@ -257,7 +256,7 @@ def solve(n):
 for answer in solve(BOARD_SIZE):
     print(answer)
 
-#20 lines: Prime numbers sieve w/fancy generators
+# 20 lines: Prime numbers sieve w/fancy generators
 
 
 def iter_primes():
@@ -281,7 +280,7 @@ for p in iter_primes():
         break
     print(p)
 
-#21 lines: XML/HTML parsing
+# 21 lines: XML/HTML parsing
 
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
@@ -305,7 +304,7 @@ for ingredient in tree.getiterator('tr'):
     if item.tag == "td" and item.text not in pantry:
         print("%s: %s %s" % (item.text, amt.text, unit.text))
 
-#28 lines: 8-Queens Problem (define your own exceptions)
+# 28 lines: 8-Queens Problem (define your own exceptions)
 
 BOARD_SIZE = 8
 
@@ -338,9 +337,9 @@ def add_queen(queens):
 
 queens = add_queen([])
 print(queens)
-print("\n".join(". "*q + "Q " + ". "*(BOARD_SIZE - q - 1) for q in queens))
+print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
-#33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
+# 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 
 guesses_made = 0
 
@@ -368,4 +367,3 @@ if guess == number:
     print('Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
-	

@@ -1,4 +1,10 @@
-import re, csv, unittest, glob, sys, itertools, random
+import re
+import csv
+import unittest
+import glob
+import sys
+import itertools
+import random
 from time import localtime
 
 
@@ -111,7 +117,6 @@ while bottles_of_beer > 1:
     bottles_of_beer -= 1
 
 """12 lines: Classes"""
-
 class BankAccount(object):
 
 

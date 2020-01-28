@@ -1,3 +1,4 @@
+# defines entered number - palindrom ot not.
 number = int(input("Введите число:"))
 kol_number = 0
 n = number

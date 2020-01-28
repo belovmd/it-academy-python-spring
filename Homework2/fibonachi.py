@@ -1,3 +1,4 @@
+# Show first n fibonacci numbers
 n = int(input("Введите n:"))
 fibonachi_previous = 0
 fibonachi_current = 1

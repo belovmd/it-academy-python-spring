@@ -2,11 +2,9 @@ import re
 import sys
 import glob
 from time import localtime
-import unittest
 from itertools import groupby
 import csv
 import itertools
-import xml.etree.ElementTree as etree
 import random
 
 # 1 line: Output
@@ -152,7 +150,7 @@ print(my_account.balance, my_account.overdrawn())
 # import unittest
 
 
-def median(pool):
+"""def median(pool):
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -167,23 +165,22 @@ class TestMedian(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()"""
 
 
 # 14 lines: Doctest-based testing
 
 
 def median(pool_2):
-    """Statistical median to demonstrate doctest.
-    >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+    """Statistical median to demonstrate doctest. >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     6 #change to 7 in order to pass the test"""
 
     copy_2 = sorted(pool_2)
-    size = len(copy_2)
-    if size % 2 == 1:
-        return copy_2[int((size - 1) / 2)]
+    size_2 = len(copy_2)
+    if size_2 % 2 == 1:
+        return copy_2[int((size_2 - 1) / 2)]
     else:
-        return (copy_2[int(size / 2 - 1)] + copy_2[int(size / 2)]) / 2
+        return (copy_2[int(size_2 / 2 - 1)] + copy_2[int(size_2 / 2)]) / 2
 
 
 if __name__ == '__main__':
@@ -243,10 +240,10 @@ with open('stocks.csv', 'r') as stocksFile:
 BOARD_SIZE = 8
 
 
-def under_attack(col, queens):
+def under_attack(col, queens_18):
     left = right = col
 
-    for r, c in reversed(queens):
+    for r, c in reversed(queens_18):
         left, right = left - 1, right + 1
 
         if c in (left, col, right):
@@ -260,8 +257,8 @@ def solve(n):
 
     smaller_solutions = solve(n - 1)
 
-    return [solution + [(n, i + 1)]
-            for i in range(BOARD_SIZE)
+    return [solution + [(n, i_18 + 1)]
+            for i_18 in range(BOARD_SIZE)
             for solution in smaller_solutions
             if not under_attack(i + 1, solution)]
 
@@ -295,7 +292,7 @@ for p in iter_primes():
     print(p)
 
 # 21 lines: XML/HTML parsing
-
+"""
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -306,7 +303,7 @@ dinner_recipe = '''<html><body><table>
 
 # From http://effbot.org/zone/element-index.htm
 
-# import xml.etree.ElementTree as etree
+import xml.etree.ElementTree as etree
 
 tree = etree.fromstring(dinner_recipe)
 
@@ -314,12 +311,12 @@ tree = etree.fromstring(dinner_recipe)
 # import ElementSoup, StringIO
 # tree = ElementSoup.parse(StringIO.StringIO(dinner_recipe))
 
-pantry = set(['olive oil', 'pesto'])
+pantry = {'olive oil', 'pesto'}
 for ingredient in tree.getiterator('tr'):
     amt, unit, item = ingredient
     if item.tag == "td" and item.text not in pantry:
         print("%s: %s %s" % (item.text, amt.text, unit.text))
-
+"""
 # 28 lines: 8-Queens Problem (define your own exceptions)
 
 
@@ -361,6 +358,7 @@ print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 # import random
 
 guesses_made = 0
+guess_x = 0
 
 name = input('Hello! What is your name?\n')
 
@@ -369,20 +367,20 @@ print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
 
 while guesses_made < 6:
 
-    guess = int(input('Take a guess: '))
+    guess_x = int(input('Take a guess: '))
 
     guesses_made += 1
 
-    if guess < number:
+    if guess_x < number:
         print('Your guess is too low.')
 
-    if guess > number:
+    if guess_x > number:
         print('Your guess is too high.')
 
-    if guess == number:
+    if guess_x == number:
         break
 
-if guess == number:
+if guess_x == number:
     print('Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))

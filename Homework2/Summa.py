@@ -5,6 +5,8 @@
 # Input: Цена одной вещи 3 рубля 20 копеек, посчитать 3 предмета.
 # Output: Общая цена 9 рублей 60 копеек
 # -----------------------------------------------------------------------------
+
+
 def rublei(rub):
     rezultat = "рубл"
     if rub == 1:
@@ -34,4 +36,5 @@ kol = int(input("Введите количество товара:"))
 sum = (rubli + kopeiki / 100) * kol
 rubli = int(sum // 1)
 kopeiki = round((sum % 1) * 100)
-print("Общая цена ", str(rubli) + " " + rublei(rubli) + " " + str(kopeiki) + " " + kopeek(kopeiki))
+print("Общая цена ", str(rubli) + " " + rublei(rubli)
+      + " " + str(kopeiki) + " " + kopeek(kopeiki))

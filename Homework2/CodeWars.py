@@ -7,6 +7,8 @@
 # Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw"
 # spinWords( "This is a test") => returns "This is a test"
 # spinWords( "This is another test" )=> returns "This is rehtona test"
+
+
 def spinWords(stroka):
     list_stroka = stroka.split()
     for i, word in enumerate(list_stroka):
@@ -131,7 +133,7 @@ def solution(number):
 # print(parse("codewars"))
 
 # 4
-# print(binary_to_string('0100100001100101011011000110110001101111'))  # 'Hello'
+# print(binary_to_string('0100100001100101011011000110110001101111')) # 'Hello'
 # print(binary_to_string('00110001001100000011000100110001'))  # '1011'
 
 # 5

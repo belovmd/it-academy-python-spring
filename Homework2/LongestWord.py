@@ -14,4 +14,4 @@ for word in list_words:
     if len(word) > len(long_word):
         long_word = word
 
-print("Самое длинное слово: "+long_word)
+print("Самое длинное слово: " + long_word)

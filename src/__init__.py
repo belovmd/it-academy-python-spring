@@ -5,8 +5,10 @@ import random
 import re
 import sys
 import unittest
-import xml.etree.ElementTree as etree
 from time import localtime
+from itertools import groupby
+import xml.etree.ElementTree as etree
+
 
 
 # 1 line: Output
@@ -111,12 +113,14 @@ REFRAIN = '''
 take one down, pass it around,
 %d bottles of beer on the wall!
 '''
+
 bottles_of_beer = 9
 while bottles_of_beer > 1:
     print(REFRAIN % (bottles_of_beer, bottles_of_beer, bottles_of_beer - 1))
     bottles_of_beer -= 1
-
 # 12 lines: Classes
+
+
 class BankAccount(object):
 
 
@@ -126,16 +130,16 @@ class BankAccount(object):
 	
     def deposit(self, amount):
         self.balance += amount
-		
-		
+
+
     def withdraw(self, amount):
         self.balance -= amount
-		
-		
+
+
     def overdrawn(self):
         return self.balance < 0
-		
-		
+
+
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
@@ -149,16 +153,16 @@ def median(pool):
     if size % 2 == 1:
         return copy[int((size - 1) / 2)]
     else:
-        return (copy[int(size/2 - 1)] + copy[int(size/2)]) / 2
-		
-		
+        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
+
+
 class TestMedian(unittest.TestCase):
 
 
     def testMedian(self):
         self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
-		
-		
+
+
 if __name__ == '__main__':
     unittest.main()
 
@@ -166,25 +170,26 @@ if __name__ == '__main__':
 
 
 def median(pool):
+
     """Statistical median to demonstrate doctest.
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     6 #change to 7 in order to pass the test
     """
+
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
         return copy[int((size - 1) / 2)]
     else:
-        return (copy[int(size/2 - 1)] + copy[int(size/2)]) / 2
-		
-	
+        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
+
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
 # 15 lines: itertools
 
-from itertools import groupby
 lines = '''
 This is the
 first paragraph.
@@ -247,12 +252,12 @@ def solve(n):
         return [[]]
 
     smaller_solutions = solve(n - 1)
-    return [solution + [(n,i + 1)]
+    return [solution + [(n, i + 1)]
         for i in range(BOARD_SIZE)
             for solution in smaller_solutions
                 if not under_attack(i + 1, solution)]
-				
-				
+
+
 for answer in solve(BOARD_SIZE):
     print(answer)
 

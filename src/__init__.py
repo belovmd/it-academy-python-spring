@@ -1,15 +1,13 @@
 import csv
 import glob
 import itertools
+from itertools import groupby
 import random
 import re
 import sys
-import unittest
 from time import localtime
-from itertools import groupby
+import unittest
 import xml.etree.ElementTree as etree
-
-
 
 # 1 line: Output
 
@@ -126,16 +124,10 @@ class BankAccount(object):
 
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
-    
-	
     def deposit(self, amount):
         self.balance += amount
-
-
     def withdraw(self, amount):
         self.balance -= amount
-
-
     def overdrawn(self):
         return self.balance < 0
 
@@ -170,12 +162,9 @@ if __name__ == '__main__':
 
 
 def median(pool):
-
-    """Statistical median to demonstrate doctest.
-    >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-    6 #change to 7 in order to pass the test
-    """
-
+# Statistical median to demonstrate doctest.
+# >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+# 6 #change to 7 in order to pass the test
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -205,7 +194,7 @@ for has_chars, frags in groupby(lines, bool):
 # This is the first paragraph.
 # This is the second.
 
-"""16 lines: csv module, tuple unpacking, cmp() built-in"""
+# 16 lines: csv module, tuple unpacking, cmp() built-in
 # need to define cmp function in Python 3
 
 
@@ -265,10 +254,8 @@ for answer in solve(BOARD_SIZE):
 
 
 def iter_primes():
-
     # an iterator of all numbers between 2 and +infinity
     numbers = itertools.count(2)
-
     # generate primes forever
     while True:
         # get the first number from the iterator (always a prime)

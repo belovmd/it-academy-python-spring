@@ -7,7 +7,8 @@ len(list) - количество элементов в списке
 
 answer = ""
 sentence = input("Введите предложение: ").replace(",", "").replace(".", "")\
-                                         .replace("?", "").replace("!", "").split(' ')
+                                         .replace("?", "").replace("!", "")\
+                                         .split(' ')
 for words in sentence:
     if len(words) > len(answer):
         answer = words

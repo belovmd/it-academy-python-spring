@@ -151,7 +151,7 @@ if __name__ == '__main__':
 
 
 # 14 lines: Doctest-based testing
-def median(pool):
+def test_median(pool):
     # Statistical median to demonstrate doctest.
     # median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     # 6 change to 7 in order to pass the test
@@ -320,8 +320,8 @@ def add_queen(queensss, queens):
 
 queensss = add_queen([])
 print(queensss)
-print("\n".join(". " * q + "Q " + ". " *
-                (BOARD_SIZE - q - 1) for q in queensss))
+print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1)
+      for q in queensss))
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 

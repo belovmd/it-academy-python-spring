@@ -1,6 +1,6 @@
+import glob
 import re
 import sys
-import glob
 from time import localtime
 
 # 1 line: Output
@@ -50,7 +50,8 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
 print('I owe the grocer $%.2f' % grocery_bill)
 
 # 8 lines: Command line arguments, exception handling
-# This program adds up integers that have been passed as arguments in the command line
+# 1) This program adds up integers that have been passed
+# 1.2) as arguments in the command line
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)

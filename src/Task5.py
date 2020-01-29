@@ -5,6 +5,7 @@
 import re
 
 sentence = input("Введите строку: ")
-print("В предложении %s строчных и %s прописных английских букв" % (
-                                                                    len(re.sub(r"[^a-z]", "", sentence)),
-                                                                    len(re.sub(r"[^A-Z]", "", sentence))))
+print("В предложении %s строчных "
+      "и %s прописных английских букв" %
+      (len(re.sub(r"[^a-z]", "", sentence)),
+       len(re.sub(r"[^A-Z]", "", sentence))))

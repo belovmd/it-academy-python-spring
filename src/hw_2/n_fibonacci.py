@@ -1,5 +1,7 @@
-"""
-Calculate n-th Fibonacci number.
+"""Calculate n-th Fibonacci number.
+
+Input: n.
+Output: n-th Fibonacci number.
 """
 
 print("Input n:")

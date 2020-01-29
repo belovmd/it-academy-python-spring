@@ -1,5 +1,5 @@
-"""
-Determine if a number is a palindrome. Without using of strings.
+"""Determine if a number is a palindrome. Without using of strings.
+
 Input: a number.
 Output "Yes" if a palindrome, "No" if not.
 """

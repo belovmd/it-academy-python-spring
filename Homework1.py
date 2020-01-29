@@ -2,6 +2,7 @@ import glob
 import re
 import sys
 from time import localtime
+import unittest
 
 # 1 line: Output
 print('Hello, world!')
@@ -89,4 +90,74 @@ for activity_time in sorted(activities.keys()):
 else:
     print('Unknown, AFK or sleeping!')
 
-print("Hello!")
+# 11 lines: Triple-quoted strings, while loop
+REFRAIN = '''
+%d bottles of beer on the wall,
+%d bottles of beer,
+take one down, pass it around,
+%d bottles of beer on the wall!
+'''
+bottles_of_beer = 9
+
+while bottles_of_beer > 1:
+    print(REFRAIN % (bottles_of_beer, bottles_of_beer,
+                     bottles_of_beer - 1))
+    bottles_of_beer -= 1
+
+
+# 12 lines: Classes
+class BankAccount(object):
+    def __init__(self, initial_balance=0):
+        self.balance = initial_balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        self.balance -= amount
+
+    def overdrawn(self):
+        return self.balance < 0
+
+
+my_account = BankAccount(15)
+my_account.withdraw(50)
+print(my_account.balance, my_account.overdrawn())
+
+
+# 13 lines: Unit testing with unittest
+def median(pool):
+    copy = sorted(pool)
+    size = len(copy)
+    if size % 2 == 1:
+        return copy[int((size - 1) / 2)]
+    else:
+        return (copy[int(size/2 - 1)] + copy[int(size/2)]) / 2
+
+
+class TestMedian(unittest.TestCase):
+    def testMedian(self):
+        self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+# 14 lines: Doctest-based testing
+def median(pool):
+    """Statistical median to demonstrate doctest.
+    >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+    6 #change to 7 in order to pass the test
+    """
+    copy = sorted(pool)
+    size = len(copy)
+    if size % 2 == 1:
+        return copy[int((size - 1) / 2)]
+    else:
+        return (copy[int(size/2 - 1)] + copy[int(size/2)]) / 2
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()

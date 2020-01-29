@@ -2,4 +2,6 @@
 MN = float(input("Введите цену:"))
 L = int(input("Введите количество"))
 total = str(MN * L)
-print("Общая цена " + str(int(MN + L)) + " рублей" + " " + total[-15:-13] + " копеек")
+a = str(int(MN + L))
+b = total[-15:-13]
+print("Общая цена " + a + " рублей" + " " + b + " копеек")

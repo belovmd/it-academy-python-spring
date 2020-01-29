@@ -39,9 +39,6 @@ if __name__ == '__main__':
 
 
 def say_hi(name: str, age: int) -> str:
-    """
-        Hi!
-    """
     # your code here
     return "Hi. My name is {0} and I'm {1} years old".format(name, age)
 
@@ -66,9 +63,6 @@ if __name__ == '__main__':
 
 
 def index_power(array: list, n: int) -> int:
-    """
-        Find Nth power of the element with index N.
-    """
     if n >= len(array):
         return -1
     else:
@@ -111,10 +105,10 @@ if __name__ == '__main__':
     print("Coding complete? Click 'Check' to earn cool rewards!")
 
 
-# 5) You are given an array of integers. You should find the sum of the integers
-# with even indexes (0th, 2nd, 4th...). Then multiply this summed number and
-# the final element of the array together. Don't forget that the first element
-# has an index of 0.#
+# 5) You are given an array of integers. You should find the sum of the
+# integers with even indexes (0th, 2nd, 4th...). Then multiply this summed
+# number and the final element of the array together. Don't forget that the
+# first element has an index of 0.
 # For an empty array, the result will always be 0 (zero).
 # Input: A list of integers.
 # Output: The number as an integer.

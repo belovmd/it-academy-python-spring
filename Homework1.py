@@ -6,8 +6,8 @@ import random
 import re
 import sys
 from time import localtime
-import xml.etree.ElementTree as etree
 import unittest
+import xml.etree.ElementTree as etree
 
 # 1 line: Output
 print('Hello, world!')
@@ -320,7 +320,8 @@ def add_queen(queensss, queens):
 
 queensss = add_queen([])
 print(queensss)
-print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queensss))
+print("\n".join(". " * q + "Q " + ". " *
+                (BOARD_SIZE - q - 1) for q in queensss))
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 
@@ -348,6 +349,7 @@ while guesses_made < 6:
         break
 
 if guess == number:
-    print('Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made))
+    print('Good job, {0}! You guessed my number in {1} guesses!'
+          .format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))

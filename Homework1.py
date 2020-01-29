@@ -3,7 +3,6 @@ import re
 import sys
 from time import localtime
 
-
 # 1 line: Output
 print('Hello, world!')
 
@@ -89,3 +88,5 @@ for activity_time in sorted(activities.keys()):
         break
 else:
     print('Unknown, AFK or sleeping!')
+
+print("Hello!")

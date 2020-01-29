@@ -15,3 +15,12 @@ s = s.replace(".", "")
 s = s.split()
 s.sort(key=len)
 print(s[-1])
+
+# 4
+string = input()
+print(string)
+string_n = ''
+for i in range(len(string)):
+    if string_n.find(string[i]) == -1 and string[i] != ' ':
+        string_n += string[i]
+print(string_n)

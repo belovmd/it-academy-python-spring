@@ -18,7 +18,7 @@ def simple_nod(number):
 
 
 def sum_for_list(lst):
-    """ Instructions
+    """Instructions
 
     Given an array of positive or negative integers
     I= [i1,..,in]

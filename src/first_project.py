@@ -12,4 +12,5 @@ result_kopecks = kopecks * count
 while result_kopecks >= 100:
     result_rubles += 1
     result_kopecks -= 100
-print("{0} rubles {1} kopecks for {2} product".format(result_rubles, result_kopecks, count))
+print("{0} rubles {1} kopecks for {2} product"
+      .format(result_rubles, result_kopecks, count))

@@ -14,9 +14,8 @@ def longest_slide_down(pyramid):
     """
     for line in range(len(pyramid) - 2, -1, -1):
         for column in range(len(pyramid[line])):
-            pyramid[line][column] = max(pyramid[line + 1][column],
-                                        pyramid[line + 1][column + 1]) + \
-                                    pyramid[line][column]
+            pyramid[line][column] += max(pyramid[line + 1][column],
+                                         pyramid[line + 1][column + 1])
 
     return pyramid[0][0]
 

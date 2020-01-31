@@ -1,13 +1,11 @@
 # Найти самое длинное слово в введенном предложении. Учтите что в
 # предложении есть знаки препинания.
 
-text = str(input("Enter text "))
-for ch in [',', '.', '!', '?']:
-    if ch in text:
-        text = text.replace(ch, '')
+text = input("Enter text ")
+punkt = '.,!? ()'
 words = text.split()
-maxlen = words[0]
-for i in range(1, len(words)):
-    if len(words[i]) > len(words[i - 1]):
-        maxlen = words[i]
+maxlen = ''
+for i in words:
+    if len(i.strip(punkt)) > len(maxlen):
+        maxlen = i.strip(punkt)
 print(maxlen)

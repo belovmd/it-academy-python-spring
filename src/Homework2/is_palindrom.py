@@ -1,7 +1,7 @@
 import unittest
 
 
-def count_digits_in_number(number):
+def count_digits(number):
     """Calculating count of digits in number.
 
     :param number: int
@@ -24,11 +24,10 @@ def is_palindrome(n):
     """
     while n > 10:
         end_digit = n % 10
-        first_digit = n // (10 ** (count_digits_in_number(n) - 1))
+        first_digit = n // (10 ** (count_digits(n) - 1))
         if end_digit != first_digit:
             return False
-        n = (n - (first_digit * 10 ** (count_digits_in_number(n) - 1)
-                  + end_digit)) / 10
+        n = (n - (first_digit * 10 ** (count_digits(n) - 1) + end_digit)) / 10
     else:
         return True
 

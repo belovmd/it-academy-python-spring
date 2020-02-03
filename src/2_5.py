@@ -18,4 +18,4 @@ for symbol in new_string:
     elif "A" <= symbol <= "Z":
         big += 1
 
-print("Количество строчных равно {little}, количество прописных {big}".format(little=little, big=big))
+print('Количество строчных равно {little}, количество прописных {big}'.format(little=little, big=big))

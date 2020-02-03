@@ -1,4 +1,5 @@
-"""In this mission you should write a function that introduces a person with the given parameter's attributes.
+"""In this mission you should write a function that
+introduces a person with the given parameter's attributes.
 Input: Two arguments. String and positive integer.
 Output: String.
 Example:

@@ -1,4 +1,5 @@
-"""3. Найти самое длинное слово в введенном предложении. Учтите что в предложении есть знаки препинания.
+"""3. Найти самое длинное слово в введенном предложении.
+Учтите что в предложении есть знаки препинания.
 Подсказки:
 my_string.split([chars]) возвращает список строк.
 len(list) - количество элементов в списке"""
@@ -9,7 +10,7 @@ new_words = []
 words = string.split(" ")
 for element in words:
     element = element.strip(".,!?:")
-    new_words.append(element) 
+    new_words.append(element)
 
 
 def sortByLength(new_words):

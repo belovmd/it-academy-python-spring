@@ -17,16 +17,16 @@ def decrypt(encrypted_text, n)
 """
 
 
-def decrypt(s, n):
-    l = []
+def decrypt(string, n):
+    tmp_list = list()
     for g in range(n):
-        for i in range(len(s) // 2):
-            l.append(s[len(s) // 2 + i] + s[i])
-        if len(s) % 2 == 1:
-            l.append(s[-1])
-        s = ''.join(l)
-        l.clear()
-    return s
+        for i in range(len(string) // 2):
+            tmp_list.append(string[len(string) // 2 + i] + string[i])
+        if len(string) % 2 == 1:
+            tmp_list.append(string[-1])
+        string = ''.join(tmp_list)
+        tmp_list.clear()
+    return string
 
 
 def encrypt(text, n):

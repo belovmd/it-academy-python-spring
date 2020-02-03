@@ -8,7 +8,8 @@ Output: Общая цена 9 рублей 60 копеек
 M = int(input("Введите рублёвую часть цены товара: "))
 N = int(input("Введите копейки: "))
 L = int(input("Введите количество товара: "))
-print("Цена {rub} руб. {kop} коп., посчитать {num} предм.".format(rub=M, kop=N, num=L))
+print("Цена {rub} руб. {kop} коп., "
+      "посчитать {num} предм.".format(rub=M, kop=N, num=L))
 
 P = (M * 100 + N) * L
 PM = P // 100

@@ -9,7 +9,8 @@ say_hi("Frank", 68) == "Hi. My name is Frank and I'm 68 years old"""
 
 
 def introduce(name: str, age: int) -> str:
-    return "Hi. My name is {name} and I'm {age} years old".format(age=age, name=name)
+    return "Hi. My name is {name} " \
+           "and I'm {age} years old".format(age=age, name=name)
 
 
 f = introduce(name=str(input("Insert Name: ")), age=int(input("Insert age: ")))

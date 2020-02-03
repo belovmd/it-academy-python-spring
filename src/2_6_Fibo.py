@@ -24,7 +24,6 @@ After 2nd cycle:
 Fn = 2, n == i = 3
 After 3th cycle:
 Fn = 3, n == i = 4
-.... 
 """
 
 print("Fibonacci number: ", fibo_n)

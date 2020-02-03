@@ -23,7 +23,7 @@ def recursion(node, list_of_cildren, tree_level):
     return list_of_cildren
 
 
-class Node:
+class Node(object):
 
     def __init__(self, left, right, value):
         self.left = left

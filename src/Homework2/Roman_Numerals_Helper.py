@@ -26,7 +26,7 @@ assert(RomanNumerals.from_roman('MMVIII'), 2008, 'MMVIII should == 2008')
 """
 
 
-class RomanNumerals:
+class RomanNumerals(object):
     roman_nums = {
             'I': 1,
             'IV': 4,

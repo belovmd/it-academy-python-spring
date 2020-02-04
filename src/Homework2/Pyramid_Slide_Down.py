@@ -3,10 +3,10 @@
 For example, let's consider the following problem. Imagine that you
 have a pyramid built of numbers, like this one here:
 
-   /3/
-  \7\ 4
- 2 \4\ 6
-8 5 \9\ 3
+   3
+  7 4
+ 2 4 6
+8 5 9 3
 
 Here comes the task...
 Let's say that the 'slide down' is a sum of consecutive numbers

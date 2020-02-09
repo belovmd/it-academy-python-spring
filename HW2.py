@@ -1,10 +1,11 @@
 # 1
-MN = float(input("Введите цену:"))
-L = int(input("Введите количество"))
-total = str(MN * L)
-a = str(int(MN + L))
-b = total[-15:-13]
-print("Общая цена " + a + " рублей" + " " + b + " копеек")
+MN = input("Введите цену:")
+MN = float(MN.replace(",", "."))
+L = int(input("Введите количество:"))
+total = MN * L
+MN_RUB = int(total)
+MN_PEN = int((total - int(total)) * 100)
+print("Общая цена {} рублей {} копеек".format(MN_RUB, MN_PEN))
 
 # 3
 s = input()

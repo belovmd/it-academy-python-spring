@@ -1,5 +1,5 @@
-class Warrior:
-    """ Warrior class
+class Warrior(object):
+    """Warrior class
 
     Two parameters in class constructor: health and attack
     One property is_alive if health parameter > 0
@@ -49,11 +49,11 @@ if __name__ == '__main__':
     dave = Warrior()
     mark = Warrior()
 
-    assert fight(chuck, bruce) == True
-    assert fight(dave, carl) == False
-    assert chuck.is_alive == True
-    assert bruce.is_alive == False
-    assert carl.is_alive == True
-    assert dave.is_alive == False
-    assert fight(carl, mark) == False
-    assert carl.is_alive == False
+    assert fight(chuck, bruce)
+    assert not fight(dave, carl)
+    assert chuck.is_alive
+    assert not bruce.is_alive
+    assert carl.is_alive
+    assert not dave.is_alive
+    assert not fight(carl, mark)
+    assert not carl.is_alive

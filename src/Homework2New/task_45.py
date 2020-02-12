@@ -113,7 +113,7 @@ class Battle(object):
                     and unit_army2_nmb < len(army_2.units) - 1:
 
                 legion_2 = army_2.units[unit_army2_nmb], \
-                           army_2.units[unit_army2_nmb + 1]
+                        army_2.units[unit_army2_nmb + 1]
 
             else:
                 legion_2 = army_2.units[unit_army2_nmb], None
@@ -122,7 +122,7 @@ class Battle(object):
                     and unit_army1_nmb < len(army_1.units) - 1:
 
                 legion_1 = army_1.units[unit_army1_nmb], \
-                           army_1.units[unit_army1_nmb + 1]
+                        army_1.units[unit_army1_nmb + 1]
 
             else:
                 legion_1 = army_1.units[unit_army1_nmb], None
@@ -208,14 +208,14 @@ if __name__ == '__main__':
     dave = Warrior()
     mark = Warrior()
 
-    assert fight(chuck, bruce) == True
-    assert fight(dave, carl) == False
-    assert chuck.is_alive == True
-    assert bruce.is_alive == False
-    assert carl.is_alive == True
-    assert dave.is_alive == False
-    assert fight(carl, mark) == False
-    assert carl.is_alive == False
+    assert fight(chuck, bruce)
+    assert not fight(dave, carl)
+    assert chuck.is_alive
+    assert not bruce.is_alive
+    assert carl.is_alive
+    assert not dave.is_alive
+    assert not fight(carl, mark)
+    assert not carl.is_alive
 
     print("Coding complete? Let's try tests!")
 

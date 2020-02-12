@@ -112,8 +112,9 @@ class Battle(object):
             if army_1.units[unit_army1_nmb].__class__ == '__main__.Lancer' \
                     and unit_army2_nmb < len(army_2.units) - 1:
 
-                legion_2 = army_2.units[unit_army2_nmb], \
-                        army_2.units[unit_army2_nmb + 1]
+                legion_2 = (
+                    army_2.units[unit_army2_nmb],
+                    army_2.units[unit_army2_nmb + 1])
 
             else:
                 legion_2 = army_2.units[unit_army2_nmb], None
@@ -121,8 +122,9 @@ class Battle(object):
             if army_2.units[unit_army2_nmb].__class__ == '__main__.Lancer' \
                     and unit_army1_nmb < len(army_1.units) - 1:
 
-                legion_1 = army_1.units[unit_army1_nmb], \
-                        army_1.units[unit_army1_nmb + 1]
+                legion_1 = (
+                    army_1.units[unit_army1_nmb],
+                    army_1.units[unit_army1_nmb + 1])
 
             else:
                 legion_1 = army_1.units[unit_army1_nmb], None

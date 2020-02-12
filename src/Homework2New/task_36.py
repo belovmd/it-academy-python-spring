@@ -21,8 +21,8 @@ def safe_pawns(pawns: set) -> int:
     for checking_pawn in converted_board:
         for pawn in converted_board:
             if checking_pawn[1] == pawn[1] + 1 and \
-                    (checking_pawn[0] ==
-                     pawn[0] + 1 or checking_pawn[0] == pawn[0] - 1):
+                    (checking_pawn[0] == pawn[0] + 1 or \
+                     checking_pawn[0] == pawn[0] - 1):
                 counter += 1
                 break
     return counter

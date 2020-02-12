@@ -18,11 +18,10 @@ def safe_pawns(pawns: set) -> int:
                         int(element[-1])] for element in pawns]
 
     counter = 0
-    for checking_pawn in converted_board:
+    for ch_pawn in converted_board:
         for pawn in converted_board:
-            if checking_pawn[1] == pawn[1] + 1 and \
-                    (checking_pawn[0] == pawn[0] + 1 or \
-                     checking_pawn[0] == pawn[0] - 1):
+            if ch_pawn[1] == pawn[1] + 1 and \
+                    (ch_pawn[0] == pawn[0] + 1 or ch_pawn[0] == pawn[0] - 1):
                 counter += 1
                 break
     return counter

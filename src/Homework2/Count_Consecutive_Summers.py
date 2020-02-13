@@ -26,14 +26,6 @@ def count_consecutive_summers(num):
     return count
 
 
-def count_consecutive_summers(num):
-    count = 1 + (num%2)*(not not num//2)
-    for i in range(3,1+num//2,2):
-        if not num%i:
-            count += 1
-    return count
-
-
 if __name__ == '__main__':
     assert count_consecutive_summers(42) == 4
     assert count_consecutive_summers(99) == 6

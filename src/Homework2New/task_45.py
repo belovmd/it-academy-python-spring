@@ -684,7 +684,6 @@ if __name__ == '__main__':
     print("Coding complete? Let's try tests!")
 
 if __name__ == '__main__':
-    # These "asserts" using only for self-checking and not necessary for auto-testing
 
     # fight tests
     chuck = Warrior()

@@ -16,7 +16,7 @@ for i in range(1, kol_number + 1, 2):
     if first_number != last_number:
         print("Не палиндром.")
         break
-    number = (number - first_number * 10 ** (kol_number-i) - last_number) / 10
+    number = (number - first_number * 10 ** (kol_number-i) ) // 10
 
 else:
     print("Палиндром!!!")

@@ -6,10 +6,10 @@ while n > 0:
     n = n // 10
     kol_number += 1
 # divide our number into two parts
-n = kol_number // 2
+# n = kol_number // 2
 # kol_number -= 1
 # comparing first part of number with second part, first digit with last digit
-for i in range(1, n + 1,2):
+for i in range(1, kol_number + 1, 2):
     first_number = number // 10 ** (kol_number-i)
     last_number = number % 10
 

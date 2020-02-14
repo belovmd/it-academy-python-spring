@@ -13,5 +13,5 @@ else:
         elif i == len(nmb_list) - 1:
             result.append(str(nmb_list[0] + nmb_list[-2]))
         else:
-            result.append(str(nmb_list[i-1] + nmb_list[i + 1]))
+            result.append(str(nmb_list[i - 1] + nmb_list[i + 1]))
     print(' '.join(result))

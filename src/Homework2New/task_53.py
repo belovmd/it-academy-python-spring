@@ -3,9 +3,9 @@ def longest_palindromic(a):
     result = ''
     for i in range(len(a)):
         for j in range(i, len(a)):
-            tmp_value = a[i:j+1:1]
-            if tmp_value == tmp_value[::-1] and len(a[i:j+1:1]) > len(result):
-                result = a[i:j+1:1]
+            tmp_val = a[i:j + 1:1]
+            if tmp_val == tmp_val[::-1] and len(a[i:j + 1:1]) > len(result):
+                result = a[i:j + 1:1]
     return result
 
 

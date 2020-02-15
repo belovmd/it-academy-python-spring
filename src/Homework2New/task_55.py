@@ -36,7 +36,7 @@ class Text(object):
 
 class SavedText(object):
     """Class SavedText
-    
+
     Should have the next methods:
     save_text(Text) - saves the current text and font. The first saved version
     has the number 0, the second - 1, and so on;

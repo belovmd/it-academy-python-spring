@@ -37,11 +37,10 @@ DeleteAction. Конструктор принимает позицию (pos) и 
 apply принимает строку и возвращает модифицированную строку.
 
 """
-from unittest import TestCase
-from unittest import main
+import unittest
 
 
-class Action:
+class Action(object):
     def __init__(self, pos, text, from_version, to_version):
         self.pos = pos
         self.text = text
@@ -60,7 +59,7 @@ class Action:
         return text[:pos] + str(text_diff) + text[pos + replace_length:]
 
 
-class TextHistory:
+class TextHistory(object):
     DEFAULT_VERSION = 0
     BUFFER = dict()
     act_buff = []
@@ -182,7 +181,7 @@ class DeleteAction(Action):
 # tests
 
 
-class TextHistoryTestCase(TestCase):
+class TextHistoryTestCase(unittest.TestCase):
     def test_text__trivial(self):
         h = TextHistory()
 
@@ -313,4 +312,4 @@ class TextHistoryTestCase(TestCase):
 
 
 if __name__ == '__main__':
-    main()
+    unittest.main()

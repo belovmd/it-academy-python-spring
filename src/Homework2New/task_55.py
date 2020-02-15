@@ -1,6 +1,7 @@
 class Text(object):
     """Class Text
-     Should have the next methods:
+
+    Should have the next methods:
     write(text) - adds (text) to the current text;
     set_font(font name) - sets the chosen font. Font is applied to the whole
     text, even if it’s added after the font is set. The font is displayed in
@@ -35,6 +36,7 @@ class Text(object):
 
 class SavedText(object):
     """Class SavedText
+    
     Should have the next methods:
     save_text(Text) - saves the current text and font. The first saved version
     has the number 0, the second - 1, and so on;

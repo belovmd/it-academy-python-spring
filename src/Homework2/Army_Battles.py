@@ -20,9 +20,9 @@ from collections import deque
 
 
 class Warrior(object):
-    def __init__(self):
-        self.health = 50
-        self.attack = 5
+    def __init__(self, health=50, attack=5):
+        self.health = health
+        self.attack = attack
 
     @property
     def is_alive(self):
@@ -30,17 +30,68 @@ class Warrior(object):
 
 
 class Knight(Warrior):
-    def __init__(self):
+    def __init__(self, attack=7):
         super(Knight, self).__init__()
-        self.attack = 7
+        self.attack = attack
 
 
-def fight(unit_1, unit_2):
+class Defender(Warrior):
+    def __init__(self, health=60, attack=3, defense=2):
+        self.health = health
+        self.attack = attack
+        self.defense = defense
+
+
+class Vampire(Warrior):
+    def __init__(self, health=40, attack=4, vampirizm=50):
+        self.health = health
+        self.attack = attack
+        self.vampirism = vampirizm
+
+
+class Lancer(Warrior):
+    def __init__(self, health=50, attack=6):
+        self.health = health
+        self.attack = attack
+
+
+def fight(unit_1, unit_2, arm_1=None, arm_2=None):
+    def vampire_hilling(vamp, other):
+        if hasattr(other, 'defense'):
+            if other.defense < vamp.attack:
+                hill = (vamp.attack - other.defense) * vamp.vampirism / 100
+                vamp.health += hill
+        else:
+            vamp.health += vamp.attack * (vamp.vampirism / 100)
+
+    def fight_step(attack_unit, def_unit):
+        if hasattr(def_unit, 'defense'):
+            if def_unit.defense < attack_unit.attack:
+                def_unit.health -= (attack_unit.attack - def_unit.defense)
+        else:
+            def_unit.health -= attack_unit.attack
+
+        if hasattr(attack_unit, 'vampirism'):
+            vampire_hilling(attack_unit, def_unit)
+
+    def lancer_hit_second_enemy(lancer, other_army):
+        if len(other_army.queue) > 0:
+            s_unit = other_army.queue[0]
+            if hasattr(s_unit, 'defense'):
+                if s_unit.defense < (lancer.attack * 0.5):
+                    s_unit.health -= ((lancer.attack * 0.5) - s_unit.defense)
+            else:
+                s_unit.health -= lancer.attack * 0.5
+
     while unit_1.is_alive and unit_2.is_alive:
-        unit_2.health -= unit_1.attack
+        fight_step(unit_1, unit_2)
+        if isinstance(unit_1, Lancer) and arm_2 is not None:
+            lancer_hit_second_enemy(unit_1, arm_2)
         if not unit_2.is_alive:
             break
-        unit_1.health -= unit_2.attack
+        fight_step(unit_2, unit_1)
+        if isinstance(unit_2, Lancer) and arm_1 is not None:
+            lancer_hit_second_enemy(unit_2, arm_1)
         if not unit_1.is_alive:
             break
     return unit_1.health > unit_2.health
@@ -80,6 +131,8 @@ class Battle(object):
 
 
 if __name__ == '__main__':
+    # These "asserts" using only for auto-testing
+
     chuck = Warrior()
     bruce = Warrior()
     carl = Knight()
@@ -94,9 +147,13 @@ if __name__ == '__main__':
     assert not dave.is_alive
     assert not fight(carl, mark)
     assert not carl.is_alive
-    print("First part tests complete!!!")
+
+    print("Coding complete! First part of tests passed!!!")
 
 if __name__ == '__main__':
+    # These "asserts" using only for auto-testing
+
+    # fight tests
     chuck = Warrior()
     bruce = Warrior()
     carl = Knight()
@@ -112,6 +169,7 @@ if __name__ == '__main__':
     assert not fight(carl, mark)
     assert not carl.is_alive
 
+    # battle tests
     my_army = Army()
     my_army.add_units(Knight, 3)
 
@@ -126,6 +184,172 @@ if __name__ == '__main__':
     army_4.add_units(Warrior, 30)
 
     battle = Battle()
+
     assert battle.fight(my_army, enemy_army)
     assert not battle.fight(army_3, army_4)
-    print('All tests complete')
+    print("Coding complete! Second part of tests passed!!!")
+
+if __name__ == '__main__':
+    # These "asserts" using only for auto-testing
+
+    # fight tests
+    chuck = Warrior()
+    bruce = Warrior()
+    carl = Knight()
+    dave = Warrior()
+    mark = Warrior()
+    bob = Defender()
+    mike = Knight()
+    rog = Warrior()
+    lancelot = Defender()
+
+    assert fight(chuck, bruce)
+    assert not fight(dave, carl)
+    assert chuck.is_alive
+    assert not bruce.is_alive
+    assert carl.is_alive
+    assert not dave.is_alive
+    assert not fight(carl, mark)
+    assert not carl.is_alive
+    assert not fight(bob, mike)
+    assert fight(lancelot, rog)
+
+    # battle tests
+    my_army = Army()
+    my_army.add_units(Defender, 1)
+
+    enemy_army = Army()
+    enemy_army.add_units(Warrior, 2)
+
+    army_3 = Army()
+    army_3.add_units(Warrior, 1)
+    army_3.add_units(Defender, 1)
+
+    army_4 = Army()
+    army_4.add_units(Warrior, 2)
+
+    battle = Battle()
+
+    assert not battle.fight(my_army, enemy_army)
+    assert battle.fight(army_3, army_4)
+    print("3 part tests passed!!!")
+
+if __name__ == '__main__':
+    # These "asserts" using only for auto-testing
+
+    # fight tests
+    chuck = Warrior()
+    bruce = Warrior()
+    carl = Knight()
+    dave = Warrior()
+    mark = Warrior()
+    bob = Defender()
+    mike = Knight()
+    rog = Warrior()
+    lancelot = Defender()
+    eric = Vampire()
+    adam = Vampire()
+    richard = Defender()
+    ogre = Warrior()
+
+    assert fight(chuck, bruce)
+    assert not fight(dave, carl)
+    assert chuck.is_alive
+    assert not bruce.is_alive
+    assert carl.is_alive
+    assert not dave.is_alive
+    assert not fight(carl, mark)
+    assert not carl.is_alive
+    assert not fight(bob, mike)
+    assert fight(lancelot, rog)
+    assert not fight(eric, richard)
+    assert fight(ogre, adam)
+
+    # battle tests
+    my_army = Army()
+    my_army.add_units(Defender, 2)
+    my_army.add_units(Vampire, 2)
+    my_army.add_units(Warrior, 1)
+
+    enemy_army = Army()
+    enemy_army.add_units(Warrior, 2)
+    enemy_army.add_units(Defender, 2)
+    enemy_army.add_units(Vampire, 3)
+
+    army_3 = Army()
+    army_3.add_units(Warrior, 1)
+    army_3.add_units(Defender, 4)
+
+    army_4 = Army()
+    army_4.add_units(Vampire, 3)
+    army_4.add_units(Warrior, 2)
+
+    battle = Battle()
+
+    assert not battle.fight(my_army, enemy_army)
+    assert battle.fight(army_3, army_4)
+    print("Coding complete? Let's try tests!")
+
+if __name__ == '__main__':
+    # These "asserts" using only for auto-testing
+
+    # fight tests
+    chuck = Warrior()
+    bruce = Warrior()
+    carl = Knight()
+    dave = Warrior()
+    mark = Warrior()
+    bob = Defender()
+    mike = Knight()
+    rog = Warrior()
+    lancelot = Defender()
+    eric = Vampire()
+    adam = Vampire()
+    richard = Defender()
+    ogre = Warrior()
+    freelancer = Lancer()
+    vampire = Vampire()
+
+    assert fight(chuck, bruce)
+    assert not fight(dave, carl)
+    assert chuck.is_alive
+    assert not bruce.is_alive
+    assert carl.is_alive
+    assert not dave.is_alive
+    assert not fight(carl, mark)
+    assert not carl.is_alive
+    assert not fight(bob, mike)
+    assert fight(lancelot, rog)
+    assert not fight(eric, richard)
+    assert fight(ogre, adam)
+    assert fight(freelancer, vampire)
+    assert freelancer.is_alive
+
+    # battle tests
+    my_army = Army()
+    my_army.add_units(Defender, 2)
+    my_army.add_units(Vampire, 2)
+    my_army.add_units(Lancer, 4)
+    my_army.add_units(Warrior, 1)
+
+    enemy_army = Army()
+    enemy_army.add_units(Warrior, 2)
+    enemy_army.add_units(Lancer, 2)
+    enemy_army.add_units(Defender, 2)
+    enemy_army.add_units(Vampire, 3)
+
+    army_3 = Army()
+    army_3.add_units(Warrior, 1)
+    army_3.add_units(Lancer, 1)
+    army_3.add_units(Defender, 2)
+
+    army_4 = Army()
+    army_4.add_units(Vampire, 3)
+    army_4.add_units(Warrior, 1)
+    army_4.add_units(Lancer, 2)
+
+    battle = Battle()
+
+    assert battle.fight(my_army, enemy_army)
+    assert not battle.fight(army_3, army_4)
+    print("All tests passed. Test Finish!!!")

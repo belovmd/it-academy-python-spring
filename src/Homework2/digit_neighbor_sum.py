@@ -15,9 +15,13 @@ def digit_neighbor_sum(str_digits):
     lst = list(map(int, str_digits.split()))
     if len(lst) <= 1:
         return str_digits
-    new_digits_lst = [(lst[i - 1] + lst[i + 1]) if (i + 1) < len(lst) else (
-            lst[i - 1] + lst[0]) for i, _ in enumerate(lst)]
-    return ' '.join(list(map(str, new_digits_lst)))
+    sum_list = list()
+    for ind, _ in enumerate(lst):
+        if (ind + 1) < len(lst):
+            sum_list.append(lst[ind - 1] + lst[ind + 1])
+        else:
+            sum_list.append(lst[ind - 1] + lst[0])
+    return ' '.join(list(map(str, sum_list)))
 
 
 if __name__ == '__main__':

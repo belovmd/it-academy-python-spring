@@ -24,3 +24,15 @@ for i in range(len(string)):
     if string_n.find(string[i]) == -1 and string[i] != ' ':
         string_n += string[i]
 print(string_n)
+
+# 5
+my_str = input()
+catalog = {}
+for let in my_str:
+    if 'a' <= let <= 'z' or 'A' <= let <= 'Z':
+        if let in catalog:
+            catalog[let] = catalog[let] + 1
+        else:
+            catalog[let] = 1
+for k in catalog:
+    print(k, ':', catalog[k])

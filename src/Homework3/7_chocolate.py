@@ -17,12 +17,14 @@
 
 
 def chocolate_1(choco_array, k):
-    """
+    """Solve 1 task.
+
     First step - define count rows and cols of chocolate
     Second step - break chocolate along rows and calculate count pieces
     size 1x1. Then break chocolate along cols and calculate count pieces too.
     All calculated results put into list pieces_in_slice.
     In the finally step we are checking do contain k in list pieces_in_slice.
+
     """
     col, row = len(choco_array), len(choco_array[0])
     pieces_in_slice = list()

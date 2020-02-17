@@ -10,13 +10,13 @@ while n > 0:
 # kol_number -= 1
 # comparing first part of number with second part, first digit with last digit
 for i in range(1, kol_number + 1, 2):
-    first_number = number // 10 ** (kol_number-i)
+    first_number = number // 10 ** (kol_number - i)
     last_number = number % 10
 
     if first_number != last_number:
         print("Не палиндром.")
         break
-    number = (number - first_number * 10 ** (kol_number-i) ) // 10
+    number = (number - first_number * 10 ** (kol_number - i)) // 10
 
 else:
     print("Палиндром!!!")

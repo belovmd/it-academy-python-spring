@@ -15,3 +15,4 @@ def chocolate(n=1, m=1, k=1, t=1):
     if k <= n * m:
         if not (k == 1 and n == m == 2) and k != n * m - 1:
             res_2 = True
+    print(res_1, res_2)

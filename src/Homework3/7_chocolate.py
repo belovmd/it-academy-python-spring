@@ -37,7 +37,21 @@ def chocolate_1(choco_array, k):
     return False
 
 
+def chocolate_2(choco_array, k):
+    """Solve 2 task.
+
+    First step - define count rows and cols of chocolate.
+    To get k pieces size 1x1 possible if k in range from 1 to row*col - 1.
+
+    """
+    col, row = len(choco_array), len(choco_array[0])
+    if 1 < k < row * col - 1:
+        return True
+    return False
+
+
 if __name__ == '__main__':
+    # Test chocolate 1
     assert chocolate_1([[1, 1, 1], [1, 1, 1]], 2)
     assert not chocolate_1([
         [1, 1, 1, 1, 1, 1, 1],
@@ -47,3 +61,20 @@ if __name__ == '__main__':
         [1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1, 1]], 15)
+
+    # Test chocolate 2
+    assert chocolate_2([
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1]], 5)
+    assert not chocolate_2([
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1]], 11)
+
+    assert not chocolate_2([
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1]], 11)
+    assert chocolate_2([
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1]], 5)

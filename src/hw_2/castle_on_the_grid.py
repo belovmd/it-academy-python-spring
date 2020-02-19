@@ -19,7 +19,8 @@ Complete the minimumMoves function in the editor. It must print an integer
 denoting the minimum moves required to get from the starting position to the
 goal."""
 
-from collections import deque, namedtuple
+from collections import deque
+from collections import namedtuple
 
 
 def append_cell(cell, cell_to_move, q, visited, moves):
@@ -43,11 +44,14 @@ def print_moves(moves, n):
 
 
 def bfs(allowed, start_position, finish_position):
-    """ Returns the number of steps(rotations) needs to go to finish
-
-    Some notes.
-    According to the task description 'moves' means 'rotations'.
     """
+    Returns the number of steps(rotations) needs to go to finish
+
+    Some notes:
+    Pay attention that according to the task description 'moves' means
+    'rotations'.
+    """
+
     # Cells for visiting (queue).
     q = deque()
     Cell = namedtuple('Cell', ['x', 'y'])

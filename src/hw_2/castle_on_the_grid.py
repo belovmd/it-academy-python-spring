@@ -44,8 +44,7 @@ def print_moves(moves, n):
 
 
 def bfs(allowed, start_position, finish_position):
-    """
-    Returns the number of steps(rotations) needs to go to finish
+    """Returns the number of steps(rotations) needs to go to finish.
 
     Some notes:
     Pay attention that according to the task description 'moves' means

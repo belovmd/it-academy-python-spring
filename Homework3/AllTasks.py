@@ -68,7 +68,7 @@ def pairs_of_elements(stroka):
     ret_dict = {}
     list = stroka.split()
     for i in list:
-        if not i in ret_dict:
+        if i not in ret_dict:
             kol_el = list.count(i)
             if kol_el > 1:
                 ret_dict[i] = kol_el * (kol_el - 1) / 2

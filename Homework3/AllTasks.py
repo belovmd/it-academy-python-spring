@@ -10,7 +10,7 @@ def fizz_buzz():
             WhatPrint += "Fizz"
         if i % 5 == 0:
             WhatPrint += "Buzz"
-        if not WhatPrint:
+        if WhatPrint == "":
             WhatPrint = i
         print(WhatPrint)
 
@@ -51,6 +51,7 @@ def tuple_practice():
     lst = [element for element in tpl]
     print(lst)
     a, b, c = 'a', 'b', 'python'
+    print(a, b, c)
     tpl = ("123",)
     print("{}, len = {}".format(tpl, len(tpl)))
     for i in tpl[0]:

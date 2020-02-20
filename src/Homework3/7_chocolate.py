@@ -47,6 +47,8 @@ def chocolate_2(choco_array, k):
     col, row = len(choco_array), len(choco_array[0])
     if 1 < k < row * col - 1:
         return True
+    elif k == 1 and (row == 1 or col == 1):
+        return True
     return False
 
 
@@ -78,3 +80,8 @@ if __name__ == '__main__':
         [1, 1, 1, 1],
         [1, 1, 1, 1],
         [1, 1, 1, 1]], 5)
+    assert not chocolate_2([
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1]], 1)
+    assert chocolate_2([[1, 1, 1, 1]], 1)

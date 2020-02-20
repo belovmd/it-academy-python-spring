@@ -13,8 +13,7 @@ For example ("a b c", 3) == "d e f"
 def to_encrypt(text, delta):
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     encrypt_lst = [' ' if char == ' ' else alphabet[
-        (alphabet.index(char) + delta) % len(alphabet)]
-                for char in text]
+        (alphabet.index(char) + delta) % len(alphabet)] for char in text]
     return ''.join(encrypt_lst)
 
 

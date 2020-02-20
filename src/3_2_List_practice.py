@@ -15,7 +15,8 @@
 import copy
 
 list0 = ['a', 'b', 'c', 'd']
-list1 = [element1 + element2 for element1 in list0[0:2] for element2 in list0[1:4]]
+list1 = [element1 + element2 for element1 in list0[0:2]
+         for element2 in list0[1:4]]
 # "end" of slice not included!!!!!!!!!!!!!!!!!!!
 print(list1)
 

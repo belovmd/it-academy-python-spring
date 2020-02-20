@@ -5,27 +5,29 @@ def cut_kusok_area(n, m, k):
     от шоколадки кусок площадью ровно k
     Площадь k и разлом это кратные длине и(или) ширине величины
     поэтому проверяем кратность k хотя бы одной из сторон.
-    И площадь k должна быть <= площади шоколадки
+    И площадь k должна быть < площади шоколадки ( n * m )
     """
 
-    if (k % n == 0 or k % m == 0) and k <= n * m:
+    if (k % n == 0 or k % m == 0) and k < n * m:
         return True
     return False
 
 
-def cut_dolek(self, k):
+def cut_dolek(n, m, k):
     """Ровно k долек
 
-    Вернет True, если можно отломить от шоколадки (без ровно)
+    Вернет True, если можно отломить от шоколадки ровно
     k долек за некоторое количество разломов.
+    Последний кусучек надо учитывыть при разломе !
+    Он всегда даст пару в случае  k = n * m - 1
     """
 
-    if k <= self.n * self.m:
+    if k < n * m - 1 or k == n * m:
         return True
     return False
 
 
-def cut_dolek_razlomov(self, k, t):
+def cut_dolek_razlomov(n, m, k, t):
     """Ровно k долек за t разломов
 
     Вернет True, если можно отломить от шоколадки ровно
@@ -37,3 +39,6 @@ def cut_dolek_razlomov(self, k, t):
 
 print(cut_kusok_area(5, 8, 10))
 print(cut_kusok_area(5, 8, 28))
+
+print(cut_dolek(5, 8, 39))
+print(cut_dolek(3, 3, 5))

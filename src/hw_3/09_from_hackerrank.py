@@ -24,7 +24,7 @@ def sherlock_and_anagrams(s):
     anagram_count = 0
     n = len(s)
     for anagram_length in range(1, n + 1):
-        substrings = [''.join(sorted(s[i: i+anagram_length]))
+        substrings = [''.join(sorted(s[i: i + anagram_length]))
                       for i in range(0, n - anagram_length + 1)]
 
         s_counter = Counter(substrings)

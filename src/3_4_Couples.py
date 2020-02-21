@@ -16,8 +16,8 @@ list1 = str1.split(' ')
 for element in list1:
     if element not in list2 and list1.count(element) > 1:
         number_of_couples = \
-            (list1.count(element) *
-             (list1.count(element) - 1)) / 2
+            (list1.count(element)
+             * (list1.count(element) - 1)) / 2
         print("Element {} : {} coupl(es)"
               .format(element, int(number_of_couples)))
         # exclude element from list1

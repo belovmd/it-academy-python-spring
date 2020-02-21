@@ -40,5 +40,5 @@ if __name__ == '__main__':
                                                           9, 15, 7], 'Test 4'
 
     print('Input line of integers:')
-    lst = list(map(int, input().split()))
+    lst = [int(x) for x in input().split()]
     print(*calculate_neighbors_sum(lst))

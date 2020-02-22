@@ -5,11 +5,9 @@ def fizzbuzz():
     multiple of 3 print Fizz, instead numbers multiple of 5 print Buzz,
     instead numbers multiple both of 3 and 5 print FizzBuzz
     """
-    sequence = (
-        [nmb if (nmb % 3 != 0 and nmb % 5 != 0)
-         else 'FizzBuzz' if (nmb % 3 == 0 and nmb % 5 == 0)
-         else 'Fizz' if (nmb % 3 == 0)
-         else'Buzz' for nmb in range(1, 101)])
+    sequence = []
+    for x in range(1, 101):
+        sequence.append('Fizz' * (x % 3 == 0) + 'Buzz' * (x % 5 == 0) or x)
     return sequence
 
 

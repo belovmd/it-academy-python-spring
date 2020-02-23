@@ -1,3 +1,4 @@
+# 33 lines: "Guess the Number" Game
 import random
 
 guesses_made = 0

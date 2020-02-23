@@ -8,8 +8,8 @@
 
 
 def fizz_buzz():
-    return ['Fizz' * (a % 3 == 0) + 'Buzz' * (a % 5 == 0) or
-            a for a in range(1, 101)]
+    return ['Fizz' * (a % 3 == 0) + (
+            'Buzz' * (a % 5 == 0)) or a for a in range(1, 101)]
 
 
 if __name__ == '__main__':

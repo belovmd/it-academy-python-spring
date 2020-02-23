@@ -4,6 +4,7 @@ from collections import Counter
 def anagrams(word, words):
     """Instructions
 
+     Anagrams
     'abba' & 'baab' == true
     'abba' & 'bbaa' == true
     'abba' & 'abbba' == false

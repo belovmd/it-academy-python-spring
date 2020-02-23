@@ -1,8 +1,8 @@
 def tree_by_levels(node):
-    """Collect all values of children from tree
+    """Collect all values of nodes from tree
 
     :param node: class Node(left, right, value)
-    :return: list of all children from tree
+    :return: list of all nodes values from tree
     """
     list_of_roots = recursion(node, [], 0) or []
     return [root for level in list_of_roots for root in level if root]
@@ -11,7 +11,7 @@ def tree_by_levels(node):
 def recursion(node, list_of_cildren, tree_level):
     """Tree traversal recursion
 
-    Function collecting values of all children from class Node
+    Function collecting values of all nodes values from class Node
     with recursion
     """
     if not node:

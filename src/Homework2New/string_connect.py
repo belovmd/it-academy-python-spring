@@ -1,3 +1,4 @@
+# Task - Delete all whitespaces and all duplicate symbols from the string
 test_string = input('Enter string: ')
 string_without_whitespaces = ''.join(test_string.split())
 output_string = ''

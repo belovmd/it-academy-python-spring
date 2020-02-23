@@ -4,6 +4,8 @@ import re
 def check_pangram(text):
     """Pangram checker
 
+    Define if string is panagram - string should consist from all letters from
+    latin alphabet
     :param text: string
     :return: bool
     """

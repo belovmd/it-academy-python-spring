@@ -1,3 +1,4 @@
+# Task - Define if number is polindrom
 try:
     var = int(input('Enter the number: '))
     var_test = var // 10

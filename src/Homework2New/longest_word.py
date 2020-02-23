@@ -1,3 +1,4 @@
+# task - Find longest word in the string
 test_string = input('Enter string: ')
 punckt = """" ,.?!/()*{}[]:;"'"""
 

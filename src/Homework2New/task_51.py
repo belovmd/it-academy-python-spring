@@ -6,6 +6,7 @@ VALUES = {'e': 1, 'a': 1, 'i': 1, 'o': 1, 'n': 1, 'r': 1,
 
 
 def worth_of_words(words):
+    """Find word with maximum sum of char's index from VALUES"""
 
     list_sum = list(map(lambda x: sum(map(lambda y: VALUES[y], x)), words))
     index = list_sum.index(max(list_sum))

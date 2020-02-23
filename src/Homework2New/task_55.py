@@ -14,22 +14,27 @@ class Text(object):
     """
 
     def __init__(self):
+        """Text and font init"""
         self.text = ''
         self.font = ''
 
     def write(self, text=''):
+        """Text writer"""
         self.text += text
 
     def set_font(self, font=''):
+        """Set font in text"""
         if font:
             self.font = font
 
     def show(self):
+        """Show new text"""
         if self.font:
             return f'[{self.font}]{self.text}[{self.font}]'
         return f'{self.text}'
 
     def restore(self, text_memory_object):
+        """Restore text from memory"""
         self.text, self.font = (
             text_memory_object['text'], text_memory_object['font'])
 
@@ -48,12 +53,14 @@ class SavedText(object):
         self.versions_of_text = []
 
     def save_text(self, text_object):
+        """Text saver"""
         self.versions_of_text.append(
             {'text': text_object.text, 'font': text_object.font})
         if len(self.versions_of_text) > 10:
             self.versions_of_text.pop(0)
 
     def get_version(self, number):
+        """Get text version from memory"""
         return self.versions_of_text[number]
 
 

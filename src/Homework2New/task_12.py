@@ -1,6 +1,8 @@
 def bouncingball(h, bounce, window):
     """Instructions
 
+    How much times ball thrown from height h will be seen in window
+    with height window.
     Float parameter "h" in meters must be greater than 0
     Float parameter "bounce" must be greater
     than 0 and less than 1

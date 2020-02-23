@@ -1,6 +1,7 @@
 def rgb(r, g, b):
     """Instructions
 
+    Color converter
     rgb(255, 255, 255) # returns FFFFFF
     rgb(255, 255, 300) # returns FFFFFF
     rgb(0,0,0) # returns 000000

@@ -1,6 +1,7 @@
 def namelist(names):
     """Instructions
 
+    Connect names from list with ',' and '&' in the end
     namelist([ {'name': 'Bart'}, {'name': 'Lisa'}, {'name': 'Maggie'} ])
     # returns 'Bart, Lisa & Maggie'
     namelist([ {'name': 'Bart'}, {'name': 'Lisa'} ])

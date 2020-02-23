@@ -3,9 +3,9 @@ def productfib(prod):
 
     prod:: given integer natural argument
     return:: list with two fibonacci numbers
-    whose multiplication >= prod and flag ='False'
-    if multiplication > prod, flag = 'True'
-    if multiplication = prod
+    whose multiplication >= prod and
+    flag ='False' if multiplication > prod,
+    flag = 'True' if multiplication = prod
     prod = 45678
     return = [233, 377, False]
     """

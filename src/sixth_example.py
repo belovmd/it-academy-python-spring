@@ -11,7 +11,6 @@ if first__fibonacci == 1:
 if second_fibonacci == 1:
     print(1)
 for i in range(quantity):
-    fibonacci = first__fibonacci + second_fibonacci
-    first__fibonacci = second_fibonacci
-    second_fibonacci = fibonacci
-    print(fibonacci)
+    first__fibonacci, second_fibonacci = second_fibonacci, \
+                                         first__fibonacci + second_fibonacci
+    print(second_fibonacci)

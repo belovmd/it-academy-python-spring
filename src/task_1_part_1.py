@@ -1,19 +1,20 @@
-"""
-Task:
+""" Simple programs task
+
 https://wiki.python.org/moin/SimplePrograms
 Try to run these simple programs as examples.
 Make pull request
 Fix code style warnings.
+
+Part 1.
 """
+
 
 import csv
 import doctest
 import glob
 import itertools
-import random
 import re
 import sys
-import unittest
 
 import xml.etree.ElementTree as eTree
 
@@ -147,32 +148,12 @@ my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
 
-# 13 lines: Unit testing with unittest
-def median(pool):
-    copy = sorted(pool)
-    size = len(copy)
-    if size % 2 == 1:
-        return copy[int((size - 1) / 2)]
-    else:
-        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
-
-
-class TestMedian(unittest.TestCase):
-    def testMedian(self):
-        self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
-
-
-# Uncomment two following lines to run unit test
-# if __name__ == '__main__':
-#    unittest.main()
-
-
 # 14 lines: Doctest-based testing
 def calculate_median(pool):
     """Statistical median to demonstrate doctest.
 
     >>> calculate_median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-    6 #change to 7 in order to pass the test
+    7
     """
     copy = sorted(pool)
     size = len(copy)
@@ -340,31 +321,3 @@ queens_count = add_queen([])
 print(queens_count)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1)
                 for q in queens_count))
-
-
-# 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
-guesses_made = 0
-guess = 0
-name = input('Hello! What is your name?\n')
-
-number = random.randint(1, 20)
-print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
-
-while guesses_made < 6:
-    guess = int(input('Take a guess: '))
-    guesses_made += 1
-
-    if guess < number:
-        print('Your guess is too low.')
-
-    if guess > number:
-        print('Your guess is too high.')
-
-    if guess == number:
-        break
-
-if guess == number:
-    print('Good job, {0}! You guessed my number in {1} guesses!'.format(
-        name, guesses_made))
-else:
-    print('Nope. The number I was thinking of was {0}'.format(number))

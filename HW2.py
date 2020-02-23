@@ -1,4 +1,4 @@
-# for #3
+# for №3
 import string
 
 # 1
@@ -36,3 +36,22 @@ for let in my_str:
             catalog[let] = 1
 for k in catalog:
     print(k, ':', catalog[k])
+
+# n-th Fibonacci number
+fib1 = fib2 = 1
+n = int(input())
+if n < 2:
+    quit()
+print(fib1, end=' ')
+print(fib2, end=' ')
+for i in range(2, n):
+    fib1, fib2 = fib2, fib1 + fib2
+    print(fib2, end=' ')
+
+# Palindrome (True or False)
+num_pal = input()
+rev_num_pal = num_pal[::-1]
+if num_pal == rev_num_pal:
+    print('True')
+else:
+    print('False')

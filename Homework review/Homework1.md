@@ -42,4 +42,4 @@ pieces of commented code)
 everywhere (it's not accurate to separate it with one line in one files and with
  two in another)
 10. PR should be named according to our guidelines.
-11. Please don't remove init file
+11. Please don't remove \_\_init__.py file

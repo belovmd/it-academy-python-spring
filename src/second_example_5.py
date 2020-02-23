@@ -1,7 +1,7 @@
 # https://py.checkio.org/
 def index_power(array: list, n: int) -> int:
-    """
-    You are given an array with positive numbers and a number N.
+
+    """You are given an array with positive numbers and a number N.
 
     You should find the N-th power of the element in the array with the index N
 

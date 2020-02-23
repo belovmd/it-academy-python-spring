@@ -1,7 +1,7 @@
 # https://py.checkio.org/
 def checkio(number: int) -> int:
-    """
-    You are given a positive integer. Your function should calculate the
+
+    """You are given a positive integer. Your function should calculate the
 
     product of the digits excluding any zeroes.
 

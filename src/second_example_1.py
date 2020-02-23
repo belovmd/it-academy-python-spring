@@ -1,7 +1,7 @@
 # https://py.checkio.org/
 def correct_sentence(text: str) -> str:
-    """
-    For the input of your function, you will be given one sentence.
+
+    """For the input of your function, you will be given one sentence.
 
     You have to return a corrected version, that starts with a capital
 
@@ -10,7 +10,7 @@ def correct_sentence(text: str) -> str:
     Pay attention to the fact that not all of the fixes are necessary.
 
     If a sentence already ends with a period (dot),
-    
+
     then adding another one will be a mistake.
 
     Input: A string.

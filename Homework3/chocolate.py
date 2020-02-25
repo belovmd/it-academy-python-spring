@@ -18,13 +18,15 @@ def cut_dolek(n, m, k):
 
     Вернет True, если можно отломить от шоколадки ровно
     k долек за некоторое количество разломов.
-    Последний кусучек надо учитывыть при разломе !
-    Он всегда даст пару в случае  k = n * m - 1
+    Необходимо рассмотреть крайние случаи:
+    1. Один кусочек не отломать ни как, если 1*1 или 2*2 !
+    2. Последний кусучек также надо учитывыть при разломе!
+    Он всегда даст пару в случае, если k = n * m - 1
     """
+    if n == 1 and m == 1 or k == 1 and n == 2 and m == 2 or k == n * m - 1:
+        return False
+    return True
 
-    if k < n * m - 1 or k == n * m:
-        return True
-    return False
 
 
 def cut_dolek_razlomov(n, m, k, t):
@@ -32,13 +34,20 @@ def cut_dolek_razlomov(n, m, k, t):
 
     Вернет True, если можно отломить от шоколадки ровно
     k долек с помощью t разломов
+    Сначала проверим не попадаем ли мы под крайние случаи.
     """
 
-    pass
+    if cut_dolek(n, m, k):
+       pass
 
+    return False
 
 print(cut_kusok_area(5, 8, 10))
+print(cut_kusok_area(5, 8, 10))
 print(cut_kusok_area(5, 8, 28))
-
+print()
 print(cut_dolek(5, 8, 39))
 print(cut_dolek(3, 3, 5))
+print()
+print(cut_dolek_razlomov(5, 8, 0, 0))
+print(cut_dolek_razlomov(5, 8, 40, 1))

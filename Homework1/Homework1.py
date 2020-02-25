@@ -1,29 +1,34 @@
+# 1 line: Output
 def hello():
     print('Hello, world!')
+
+
 # -----------------------------------------------------------------------------
-
-
+# 2 lines: Input, assignment
 def input_hi():
     name = input('What is your name?\n')
     print('Hi, %s.' % name)
+
+
 # -----------------------------------------------------------------------------
-
-
+# 3 lines: For loop, built-in enumerate function, new style formatting
 def enumerate_function():
     friends = ['john', 'pat', 'gary', 'michael']
     for i, name in enumerate(friends):
         print("iteration {iteration} is {name}".format(iteration=i, name=name))
+
+
 # -----------------------------------------------------------------------------
-
-
+# 4 lines: Fibonacci, tuple assignment
 def tuple_assignment():
     parents, babies = (1, 1)
     while babies < 100:
         print('This generation has {0} babies'.format(babies))
         parents, babies = (babies, parents + babies)
+
+
 # -----------------------------------------------------------------------------
-
-
+# 5 lines: Functions
 def functions():
     def greet(name):
         print('Hello', name)
@@ -31,9 +36,10 @@ def functions():
     greet('Jack')
     greet('Jill')
     greet('Bob')
+
+
 # -----------------------------------------------------------------------------
-
-
+# 6 lines: Import, regular expressions
 def regular_expressions():
     import re
     for test_string in ['555-1212', 'ILL-EGAL']:
@@ -41,9 +47,10 @@ def regular_expressions():
             print(test_string, 'is a valid US local phone number')
         else:
             print(test_string, 'rejected')
+
+
 # -----------------------------------------------------------------------------
-
-
+# 7 lines: Dictionaries, generator expressions
 def generator_expressions():
     prices = {'apple': 0.40, 'banana': 0.50}
     my_purchase = {
@@ -52,9 +59,10 @@ def generator_expressions():
     grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                        for fruit in my_purchase)
     print('I owe the grocer $%.2f' % grocery_bill)
+
+
 # -----------------------------------------------------------------------------
-
-
+# 8 lines: Command line arguments, exception handling
 def exception_handling():
     # This program adds up integers that have been passed as arguments in
     # the command line
@@ -64,9 +72,10 @@ def exception_handling():
         print('sum =', total)
     except ValueError:
         print('Please supply integer arguments')
+
+
 # -----------------------------------------------------------------------------
-
-
+# 9 lines: Opening files
 def opening_files():
     # indent your Python code to put into an email
     import glob
@@ -80,9 +89,10 @@ def opening_files():
                 print('    ' + line.rstrip())
 
         print()
+
+
 # -----------------------------------------------------------------------------
-
-
+# 10 lines: Time, conditionals, from..import, for..else
 def for_else():
     from time import localtime
 
@@ -102,9 +112,10 @@ def for_else():
             break
     else:
         print('Unknown, AFK or sleeping!')
+
+
 # -----------------------------------------------------------------------------
-
-
+# 11 lines: Triple-quoted strings, while loop
 def triple_quoted_strings():
     REFRAIN = '''
     %d bottles of beer on the wall,
@@ -117,9 +128,10 @@ def triple_quoted_strings():
         print(REFRAIN % (bottles_of_beer, bottles_of_beer,
                          bottles_of_beer - 1))
         bottles_of_beer -= 1
+
+
 # -----------------------------------------------------------------------------
-
-
+# 12 lines: Classes
 def classes():
     class BankAccount(object):
         def __init__(self, initial_balance=0):
@@ -137,9 +149,10 @@ def classes():
     my_account = BankAccount(15)
     my_account.withdraw(50)
     print(my_account.balance, my_account.overdrawn())
+
+
 # -----------------------------------------------------------------------------
-
-
+# 13 lines: Unit testing with unittest
 def testing_unittest():
     import unittest
 
@@ -157,9 +170,15 @@ def testing_unittest():
 
     if __name__ == '__main__':
         unittest.main()
+
+
 # -----------------------------------------------------------------------------
+# 14 lines: Doctest-based testing
+# There is in module testing_doctest.py
 
 
+# -----------------------------------------------------------------------------
+# 15 lines: itertools
 def itertools():
     from itertools import groupby
     lines = '''
@@ -176,9 +195,10 @@ def itertools():
     # PRINTS:
     # This is the first paragraph.
     # This is the second.
+
+
 # -----------------------------------------------------------------------------
-
-
+# 16 lines: csv module, tuple unpacking, cmp() built-in
 def unpacking_csv():
     import csv
     # need to define cmp function in Python 3
@@ -200,9 +220,10 @@ def unpacking_csv():
         for ticker, name, price, change, pct in stocks:
             status = status_labels[cmp(float(change), 0.0)]
             print('%s is %s (%.2f)' % (name, status, float(pct)))
+
+
 # -----------------------------------------------------------------------------
-
-
+# 18 lines: 8-Queens Problem (recursion)
 def recursion8quin():
     BOARD_SIZE = 8
 
@@ -229,9 +250,10 @@ def recursion8quin():
 
     for answer in solve(BOARD_SIZE):
         print(answer)
+
+
 # -----------------------------------------------------------------------------
-
-
+# 20 lines: Prime numbers sieve w/fancy generators
 def generators_yield():
     import itertools
 
@@ -253,9 +275,10 @@ def generators_yield():
         if p > 1000:
             break
         print(p)
+
+
 # -----------------------------------------------------------------------------
-
-
+# 21 lines: XML/HTML parsing
 def parsing_XML_HTML():
     dinner_recipe = '''<html><body><table>
     <tr><th>amt</th><th>unit</th><th>item</th></tr>
@@ -278,9 +301,10 @@ def parsing_XML_HTML():
         amt, unit, item = ingredient
         if item.tag == "td" and item.text not in pantry:
             print("%s: %s %s" % (item.text, amt.text, unit.text))
+
+
 # -----------------------------------------------------------------------------
-
-
+# 28 lines: 8-Queens Problem (define your own exceptions)
 def define_your_own_exceptions():
     BOARD_SIZE = 8
 
@@ -311,9 +335,10 @@ def define_your_own_exceptions():
     print(queens)
     print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1)
                     for q in queens))
+
+
 # -----------------------------------------------------------------------------
-
-
+# 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 def guess_number_game():
     import random
 
@@ -343,26 +368,4 @@ def guess_number_game():
         print('Good job, {0}! My number in {1}!'.format(name, guesses_made))
     else:
         print('Nope. The number I was thinking of was {0}'.format(number))
-# -----------------------------------------------------------------------------
 
-
-# hello()
-# input_hi()()
-# enumerate_function()
-# tuple_assignment()
-# functions()
-# regular_expressions()
-# generator_expressions()  #???
-# exception_handling()     #???
-# opening_files()
-# for_else()
-# triple_quoted_strings()
-# classes()
-# testing_unittest()
-# itertools()             #???
-# unpacking_csv()         #???
-# recursion8quin()        #???
-# generators_yield()
-# parsing_XML_HTML()
-# define_your_own_exceptions()
-# guess_number_game()

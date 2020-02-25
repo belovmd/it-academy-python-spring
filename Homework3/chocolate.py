@@ -28,7 +28,6 @@ def cut_dolek(n, m, k):
     return True
 
 
-
 def cut_dolek_razlomov(n, m, k, t):
     """Ровно k долек за t разломов
 
@@ -36,11 +35,10 @@ def cut_dolek_razlomov(n, m, k, t):
     k долек с помощью t разломов
     Сначала проверим не попадаем ли мы под крайние случаи.
     """
-
     if cut_dolek(n, m, k):
        pass
-
     return False
+
 
 print(cut_kusok_area(5, 8, 10))
 print(cut_kusok_area(5, 8, 10))

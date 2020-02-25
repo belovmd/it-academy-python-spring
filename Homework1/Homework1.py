@@ -368,4 +368,3 @@ def guess_number_game():
         print('Good job, {0}! My number in {1}!'.format(name, guesses_made))
     else:
         print('Nope. The number I was thinking of was {0}'.format(number))
-

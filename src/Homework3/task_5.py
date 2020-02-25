@@ -16,9 +16,9 @@ def unique_elements_spec(input_list):
     :param input_list: list of IMMUTABLE elements
     :return: list of unique element of input_list
     """
-    dict_count = dict.fromkeys(input_list, 0)
+    dict_count = {}
     for element in input_list:
-        dict_count[element] += 1
+        dict_count[element] = dict_count.get(element, 0) + 1
     return [key for key, value in dict_count.items() if value == 1]
 
 

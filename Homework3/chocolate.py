@@ -36,7 +36,7 @@ def cut_dolek_razlomov(n, m, k, t):
     Сначала проверим не попадаем ли мы под крайние случаи.
     """
     if cut_dolek(n, m, k):
-       pass
+        pass
     return False
 
 

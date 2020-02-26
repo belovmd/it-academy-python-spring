@@ -18,4 +18,3 @@ for element in number_list:
         number_list.remove(element)
         number_list.append(element)
 print(number_list)
-

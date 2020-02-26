@@ -9,7 +9,7 @@
 # 5. Скопируйте список и добавьте в него элемент '2a'
 # такчтобы в исходном списке этого элемента не было.
 
-import  copy
+import copy
 
 first_list = [a + b for a in "ab" for b in "bcd"]
 print(first_list)
@@ -22,8 +22,3 @@ print(second_list.pop(1))
 third_list = copy.deepcopy(second_list)
 third_list.append('2a')
 print(third_list)
-
-
-
-
-

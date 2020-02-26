@@ -34,8 +34,8 @@ def convert_grille_to_list(cipher_grille):
 def get_symbols(cip_gr, cip_pass):
     """Get symbols from cip_pass by cip_gr pattern"""
     return ''.join(
-        [cip_pass[r_i][c_i] for r_i in range(4) for c_i in range(4) if (
-                cip_gr[r_i][c_i] == 1)])
+        [cip_pass[r_i][c_i] for r_i in range(4) for c_i in (
+            range(4)) if cip_gr[r_i][c_i] == 1])
 
 
 def recall_password(cipher_grille, ciphered_password):

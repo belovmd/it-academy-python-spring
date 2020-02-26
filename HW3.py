@@ -14,12 +14,12 @@ while i < 100:
 i = 0
 while i < 100:
     i += 1
-    print('Fizz'*(i % 3 == 0) + 'Buzz'*(i % 5 == 0) or i)
+    print('Fizz' * (i % 3 == 0) + 'Buzz' * (i % 5 == 0) or i)
 
 # 2
 f1 = 'ab'
 f2 = 'bcd'
-lst1 = [i+k for i in f1 for k in f2]
+lst1 = [i + k for i in f1 for k in f2]
 print(lst1)
 
 del lst1[1::2]
@@ -27,7 +27,7 @@ print(lst1)
 
 g1 = '1234'
 g2 = 'a'
-lst2 = [i+k for i in g1 for k in g2]
+lst2 = [i + k for i in g1 for k in g2]
 print(lst2)
 
 lst2.remove('2a')

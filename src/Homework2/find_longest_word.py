@@ -1,3 +1,10 @@
+"""Find the longest word in sentence
+
+Your program must find the longest word in sentence.
+Another symbols such as *!-=/ &^% etc must be ignored in find.
+
+"""
+
 import re
 import unittest
 

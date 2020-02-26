@@ -1,7 +1,13 @@
+"""String optimization
+
+Function deletes all repeated symbols and whitespaces from input
+"""
+
+
 def optimize_string(string):
     """String optimization.
 
-    Function deletes all reapeated symbols and whitespaces from input
+    Function deletes all repeated symbols and whitespaces from input
     string.
 
     :param string: input string
@@ -16,4 +22,5 @@ def optimize_string(string):
     return clean_str
 
 
-assert optimize_string('a  ababb c   abc e f') == 'abcef'
+if __name__ == '__main__':
+    assert optimize_string('a  ababb c   abc e f') == 'abcef'

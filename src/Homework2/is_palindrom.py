@@ -1,3 +1,8 @@
+""" Is number palindrome?
+
+Program must check if the number is a palindrome
+
+"""
 import unittest
 
 

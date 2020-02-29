@@ -5,7 +5,7 @@
 - PR with 120+ rows evaluates as +1.
 - PR with 80+ rows evaluates as +0,5.
 - PR that doesn't pass any of PR checklist checks takes -0,5.
-- PR that doesn't pass any of PR checklist checks takes -1.
+- PR that doesn't pass any 2 of PR checklist checks takes -1.
 - All review comments should be addressed. Missed comments causes score 
 penalties.
 

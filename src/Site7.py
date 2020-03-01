@@ -1,8 +1,8 @@
-# 7) You are given a set of square coordinates where we have placed white pawns.
-# You should count how many pawns are safe.  A pawn is safe if another pawn can
-# capture a unit on that square. We have several white pawns on the chess board
-# and only white pawns. You should design your code to find how many pawns
-# are safe.
+# 7) You are given a set of square coordinates where we have placed white
+# pawns. You should count how many pawns are safe.  A pawn is safe if another
+# pawn can capture a unit on that square. We have several white pawns on the
+# chess board and only white pawns. You should design your code to find how
+# many pawns are safe.
 
 
 def safe_pawns(pawns: set) -> int:

@@ -1,14 +1,9 @@
 # Выведите n-ое число Фибоначчи, используя только временные переменные,
 # циклические операторы и условные операторы. n - вводится
-
 n = int(input("Enter n "))
-f1 = f2 = 1
-s = 0
-if n == 1 or n == 2:
-    print(1)
-else:
-    for i in range(2, n):
-        s = f1 + f2
-        f1 = f2
-        f2 = s
-    print(s)
+fib1 = 0
+fib2 = 1
+while n:
+    fib1, fib2 = fib2, fib1 + fib2
+    n -= 1
+print(fib1)

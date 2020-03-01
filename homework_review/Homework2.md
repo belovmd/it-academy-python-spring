@@ -1,6 +1,6 @@
 ## Homework2 review
 
-### Homework1 evaluation
+### Homework2 evaluation
 - Maximum score is +10 minimum is 0.
 - Completed tasks 1, 3-5 are scored as +5.
 - Completed tasks 6, 7 are scored as +1.

@@ -1,4 +1,4 @@
-"""https://py.checkio.org/mission/even-last/solve/
+""" https://py.checkio.org/mission/even-last/solve/
 
 You are given an array of integers. You should find the sum of the integers
 with even indexes (0th, 2nd, 4th...). Then multiply this summed number and
@@ -24,13 +24,11 @@ def checkio(array):
     else:
         return 0
 
-    # 1-row solution
+    # 1-row alternative solution
     # return (sum([element for element in array[::2]]) *
     #         array[-1]) if array else 0
 
 
-# These "asserts" using only for self-checking
-# and not necessary for auto-testing
 if __name__ == '__main__':
     print('Example:')
     print(checkio([0, 1, 2, 3, 4, 5]))

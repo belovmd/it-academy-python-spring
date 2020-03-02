@@ -19,6 +19,7 @@ Complete the minimumMoves function in the editor. It must print an integer
 denoting the minimum moves required to get from the starting position to the
 goal."""
 
+
 from collections import deque
 from collections import namedtuple
 
@@ -32,7 +33,6 @@ def append_cell(cell, cell_to_move, q, visited, moves):
 
 
 def print_moves(moves, n):
-    # print(moves)
     m = []
     for i in range(n):
         m.append([0 for _ in range(n)])
@@ -104,7 +104,6 @@ def bfs(allowed, start_position, finish_position):
                 y -= 1
             else:
                 break
-    # print_moves(moves, len(allowed))
     return moves[finish_position]
 
 
@@ -139,4 +138,4 @@ if __name__ == '__main__':
     assert(minimum_moves(grid2, 1, 4, 0, 0)) == 5, 'Test 3'
 
     # example:
-    # print(minimum_moves(grid2, 1, 4, 0, 0))
+    print(minimum_moves(grid2, 1, 4, 0, 0))

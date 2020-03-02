@@ -2,9 +2,9 @@
 
 The function should recognise if a subject line is stressful. A stressful
 subject line means that
- - all letters are in uppercase,
- - and/or ends by at least 3 exclamation marks,
-  - and/or contains at least one of the following “red” words:
+    1) all letters are in uppercase,
+    2) and/or ends by at least 3 exclamation marks,
+    3) and/or contains at least one of the following “red” words:
 "help", "asap", "urgent". Any of those "red" words can be
 spelled in different ways - "HELP", "help", "HeLp", "H!E!L!P!", "H-E-L-P",
 even in a very loooong way "HHHEEEEEEEEELLP," they just can't have any other
@@ -43,14 +43,6 @@ def is_stressful(sentence):
             if result:
                 break
     return result
-
-    # import itertools
-    #
-    # def is_stressful(subj):
-    #     s = ''.join(
-    #         c for c, _ in itertools.groupby(subj.casefold()) if c.isalpha())
-    #     return subj.isupper() or subj.endswith('!' * 3) or \
-    #            'help' in s or 'asap' in s or 'urgent' in s
 
 
 if __name__ == '__main__':

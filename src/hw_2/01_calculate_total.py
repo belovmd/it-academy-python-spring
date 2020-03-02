@@ -7,6 +7,7 @@ Input:
 Output: total sum.
 """
 
+
 print("Input roubles, penny, amount:")
 roubles, penny, amount = map(int, input().split())
 

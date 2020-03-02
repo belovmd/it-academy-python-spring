@@ -1,4 +1,4 @@
-"""https://py.checkio.org/mission/digits-multiplication/solve/
+""" https://py.checkio.org/mission/digits-multiplication/solve/
 
 You are given a positive integer. Your function should calculate the product
 of the digits excluding any zeroes.
@@ -27,7 +27,6 @@ if __name__ == '__main__':
     print('Example:')
     print(checkio(123405))
 
-    # These "asserts" using only for self-checking
     assert checkio(123405) == 120
     assert checkio(999) == 729
     assert checkio(1000) == 1

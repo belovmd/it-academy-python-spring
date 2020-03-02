@@ -9,20 +9,25 @@
 shouldn't have this element.
 """
 
+
 # Task 1
 list1 = [char1 + char2 for char1 in 'ab' for char2 in 'bcd']
 print(list1)
+
 
 # Task 2
 list2 = list1[::2]
 print(list2)
 
+
 # Task 3
 list3 = [str(number) + 'a' for number in range(1, 5)]
 print(list3)
 
+
 # Task 4
 print(list3[1])
+
 
 # Task 5
 source_list = ['1a', '2a', '3a', '4a']

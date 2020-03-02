@@ -8,6 +8,7 @@
 Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар
 """
 
+
 from collections import Counter
 from itertools import combinations
 

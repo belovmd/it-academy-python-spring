@@ -23,9 +23,9 @@ def sort_list(lst):
 
 if __name__ == '__main__':
     # Example
-    # list1 = [0, 1, 0, 0, 0, 2, 3, 0, 4, 5, 0, 0]
-    # sort_list(list1)
-    # print(list1)
+    list1 = [0, 1, 0, 0, 0, 2, 3, 0, 4, 5, 0, 0]
+    sort_list(list1)
+    print(list1)
 
     list2 = [0, 1, 0, 2, 0, 0, 0, 3, 0, 4, 5, 6, 0, 0, 0]
     sort_list(list2)

@@ -4,6 +4,7 @@
 раз. Элементы нужно выводить в том порядке, в котором они встречаются в списке.
 """
 
+
 from collections import Counter
 
 
@@ -22,8 +23,8 @@ def count_equal_with_dictionary(elements):
 
 if __name__ == '__main__':
     # Example:
-    # print(count_equal_elements([3, 3, 4, 3, 5, 8]))
-    # print(count_equal_with_dictionary([3, 3, 4, 3, 5, 8]))
+    print(count_equal_elements([3, 3, 4, 3, 5, 8]))
+    print(count_equal_with_dictionary([3, 3, 4, 3, 5, 8]))
 
     elements1 = [1, 1, 1, 2, 3, 4, 5, 3, 3, 0, 3, 3]
     expected1 = [2, 4, 5, 0]

@@ -10,7 +10,6 @@ data = [('Vasia', 'en'), ('Katya', 'en'), ('Katya', 'it'), ('Katya', 'fr'),
 total = {x[0]: [] for x in data}
 for name, language in data:
     total[name].append(language)
-# print(total)
 
 popular_languages = []
 non_popular_languages = []

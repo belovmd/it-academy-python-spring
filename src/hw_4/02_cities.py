@@ -3,7 +3,7 @@
 Get country(ies) by a city.
 
 Input data:
-N - countries number
+N - number of countries
 Each line from the following N lines contains:
 a country and a list of cities of this country.
 M - queries count
@@ -28,13 +28,17 @@ Russia
 Russia
 """
 
+print('Input N - number of countries:')
 n = int(input())
+print('Input country and it''s cities:')
 atlas = {}
 for _ in range(n):
     country, *cities = input().split()
     atlas[country] = set(cities)
 
+print('Input M - number of queries:')
 m = int(input())
+print('Input cities:')
 queries = []
 for _ in range(m):
     queries.append(input())
@@ -44,4 +48,5 @@ for city in queries:
     for country, cities in atlas.items():
         if city in cities:
             result.append(country)
-    print(' '.join(result))
+    print('{city} is in {country_list}.'
+          .format(city=city, country_list=', '.join(result)))

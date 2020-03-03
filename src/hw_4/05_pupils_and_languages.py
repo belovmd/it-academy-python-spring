@@ -41,7 +41,6 @@ for i in range(n):
         languages.add(language)
     journal[i] = pupils_languages
 
-
 popular_languages = []
 non_popular_languages = []
 

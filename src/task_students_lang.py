@@ -8,7 +8,7 @@ def student_languages():
     """
 
     nmb_of_students = int(input('Enter number of students: '))
-    
+
     stud_languages, lang_set = [], set()
 
     for stud_nmb in range(nmb_of_students):

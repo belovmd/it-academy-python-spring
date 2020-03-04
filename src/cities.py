@@ -38,5 +38,3 @@ for item in range(int(input("Введите количество городов:
         if cities in dict_countries[key]:
             lst.append(key)
 print(lst)
-
-

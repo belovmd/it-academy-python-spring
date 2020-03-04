@@ -18,9 +18,9 @@ def country_of_cities():
 
     for _ in range(country_nmb):
         country_data = input('Enter country and cities of country: ').split()
-        country, cities = country_data[0], country_data[1:]
+        country, *cities = country_data
 
-        countries_of_city = (
+        countries_of_city.update(
             {city: countries_of_city.get(city, []) + [country] for city in
              cities}
         )

@@ -4,6 +4,7 @@
 n - вводится
 """
 
+
 n = int(input("Insert the number: "))
 
 fibo_n_minus_1 = 0

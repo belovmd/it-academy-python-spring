@@ -9,7 +9,7 @@ string = str(input("Insert: "))
 new_words = []
 words = string.split(" ")
 for element in words:
-    element = element.strip(".,!?:")
+    element = element.strip("""`~!@#$%^&*(){}[];:'".,/?<>_""")
     new_words.append(element)
 
 

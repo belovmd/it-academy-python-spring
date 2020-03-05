@@ -1,7 +1,8 @@
-import requests
 from bs4 import BeautifulSoup as bsoup
 import logging
 from openpyxl import Workbook
+import requests
+
 
 
 def html_request(html_url_, headers):
@@ -162,7 +163,7 @@ def xls_save(file_name_, html_url_, headers):
 
         jobs_data.save(file_name_)
 
-    except:
+    except Exception:
         print(f'Error with open/save "{file_name_}" ')
 
 

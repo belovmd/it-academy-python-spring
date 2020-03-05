@@ -100,9 +100,9 @@ def ordered_list(list):
     print(list)
 
 
-# fizz_buzz()
-# list_practice()
-# tuple_practice()
-# pairs_of_elements("1 2 5 9 1 36 8 5 9 6 1 9 4 3 5 8 9 1 1")
-# unique_elements([7,2,4,5,7,4])
+fizz_buzz()
+list_practice()
+tuple_practice()
+pairs_of_elements("1 2 5 9 1 36 8 5 9 6 1 9 4 3 5 8 9 1 1")
+unique_elements([7,2,4,5,7,4])
 ordered_list([0, 1, 5, 0, 0, 5, 7, 9, 0, 0])

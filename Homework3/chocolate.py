@@ -36,7 +36,21 @@ def cut_dolek_razlomov(n, m, k, t):
     Сначала проверим не попадаем ли мы под крайние случаи.
     """
     if cut_dolek(n, m, k):
-        pass
+        tt = t
+        kk = 0
+        while tt>0 :
+            for i in range(n+1,1,-1):
+                for j in range(m+1,1,-1):
+                    if cut_kusok_area(n, m, i*j):
+                         tt -= 1
+                         k = k + i*j
+                         if not cut_dolek_razlomov(i, j, kk, tt):
+                            if kk==k and tt==0:
+                                return True
+                    elif kk==k and tt==0:
+                        return True
+    if kk==k and tt==0:
+        return True
     return False
 
 

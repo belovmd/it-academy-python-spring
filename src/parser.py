@@ -4,7 +4,6 @@ from openpyxl import Workbook
 import requests
 
 
-
 def html_request(html_url_, headers):
     """Request function
 

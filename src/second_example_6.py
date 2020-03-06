@@ -13,11 +13,13 @@ def checkio(text: str) -> str:
                     max_count = lower_registor.count(element)
     return max_word
 
+
 if __name__ == '__main__':
     print("Example:")
     print(checkio("Hello World!"))
 
-    # These "asserts" using only for self-checking and not necessary for auto-testing
+    # These "asserts" using only for self-checking and
+    # not necessary for auto-testing
     assert checkio("Hello World!") == "l", "Hello test"
     assert checkio("How do you do?") == "o", "O is most wanted"
     assert checkio("One") == "e", "All letter only once."

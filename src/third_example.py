@@ -11,4 +11,3 @@ for word in list_word:
     if len(word) > len(max_word):
         max_word = word
 print(max_word)
-

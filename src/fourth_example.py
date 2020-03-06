@@ -6,6 +6,6 @@
 word = input("Enter sentence: ")
 new_word = ""
 for index in word:
-    if index not in new_word and index != '':
+    if index not in new_word:
         new_word += index
 print(new_word.replace(" ", ""))

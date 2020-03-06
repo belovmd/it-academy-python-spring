@@ -7,10 +7,7 @@
 rubles = int(input("Enter rubles: "))
 kopecks = int(input("Enter kopecks: "))
 count = int(input("Enter counts product: "))
-result_rubles = rubles * count
-result_kopecks = kopecks * count
-while result_kopecks >= 100:
-    result_rubles += 1
-    result_kopecks -= 100
+result_rubles = rubles * count + kopecks * count // 100
+result_kopecks = kopecks * count % 100
 print("{0} rubles {1} kopecks for {2} product"
       .format(result_rubles, result_kopecks, count))

@@ -22,6 +22,7 @@ def checkio(f, g):
     :return: A function h which takes arbitrary inputs and returns a two-tuple
     """
     def h(*args, **kwargs):
+        """Inner function"""
         try:
             f_result = f(*args, **kwargs)
         except Exception:

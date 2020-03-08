@@ -15,9 +15,15 @@ Precondition: elements can be ints or strings
 
 
 def frequency_sort(items):
-    
+    dct_items = {element: items.count(element)
+                 for element in items}
+    dct_items_sorted = {key: value for key, value
+                        in sorted(dct_items.items(),
+                                  key=lambda x: x[1],
+                                  reverse=True)}
+    lst = [element for element in dct_items_sorted
+           for _ in range(dct_items_sorted.get(element))]
+    return lst
 
-    return None
 
-
-print(frequency_sort([4, 6, 2, 2, 6, 4, 4, 4]))
+print(frequency_sort([4, 6, 2, 2, 6, 4, 2, 4, 4]))

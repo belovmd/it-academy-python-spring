@@ -24,26 +24,17 @@ re.match("[a-zA-Z0-9]+", password)
 """
 
 
+import re
+
+
 def checkio(data: str) -> bool:
     if 10 <= len(data) <= 64:
-
-        for symbol in data:
-            if "0" <= str(symbol) <= "9":
-                for symbol in data:
-                    if "a" <= str(symbol) <= "z":
-                        for symbol in data:
-                            if "A" <= str(symbol) <= "Z":
-                                return True
-                            else:
-                                pass
-                    else:
-                        pass
-            else:
-                pass
-    if None:
-        pass
-    else:
-        return False
+        if re.search('[0-9]', data)\
+                and re.search('[a-z]', data)\
+                and re.search('[A-Z]', data):
+            return True
+        else:
+            return False
 
 
-print(checkio("!@aaaaaaaaaaaaaaaaaaaA"))
+print(checkio("1aaaaaaaaaaaaaaaaaaaA"))

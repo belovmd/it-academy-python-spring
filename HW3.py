@@ -10,13 +10,15 @@ while i < 100:
         print('Buzz')
     else:
         print(i)
+
 # 1.2 Но лучше вот так
 i = 0
 while i < 100:
     i += 1
     print('Fizz' * (i % 3 == 0) + 'Buzz' * (i % 5 == 0) or i)
 
-# 2
+
+# 2==========
 f1 = 'ab'
 f2 = 'bcd'
 lst1 = [i + k for i in f1 for k in f2]
@@ -37,7 +39,8 @@ lst2.extend(lst2.copy())
 lst2.append('2a')
 print(lst2)
 
-# 3
+
+# 3==========
 a1 = list('abc')
 b1 = tuple('abc')
 print(b1)

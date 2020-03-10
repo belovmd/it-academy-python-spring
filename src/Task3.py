@@ -6,9 +6,9 @@ len(list) - количество элементов в списке
 """
 
 answer = ""
-sentence = input("Введите предложение: ").replace(",", "").replace(".", "")\
-                                         .replace("?", "").replace("!", "")\
-                                         .split(' ')
+sentence = input("Введите предложение: ")
+sentence = "".join(elem for elem in sentence
+                   if elem.isalpha() or elem == " ").split()
 for words in sentence:
     if len(words) > len(answer):
         answer = words

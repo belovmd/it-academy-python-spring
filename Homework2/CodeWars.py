@@ -111,11 +111,12 @@ def solution(number):
             sum_multiple += i
     return sum_multiple
 
+
 # -----------------------------------------------------------------------------
 # 1
-print(spinWords( "Hey fellow warriors" ))
-print(spinWords( "This is a test"))
-print(spinWords( "This is another test" ))
+print(spinWords("Hey fellow warriors"))
+print(spinWords("This is a test"))
+print(spinWords("This is another test"))
 
 # 2
 print(disarium_number(89))
@@ -125,15 +126,15 @@ print(disarium_number(175))
 print(disarium_number(25))
 
 # 3
-print(parse("iiisdoso")) # [8, 64]
+print(parse("iiisdoso"))  # [8, 64]
 print(parse("ooo"))    # [0,0,0])
-print(parse("ioioio")) # [1,2,3])
-print(parse("idoiido")) # [0,1])
-print(parse("isoisoiso")) # [1,4,25])
+print(parse("ioioio"))  # [1,2,3])
+print(parse("idoiido"))  # [0,1])
+print(parse("isoisoiso"))  # [1,4,25])
 print(parse("codewars"))
 
 # 4
-print(binary_to_string('0100100001100101011011000110110001101111')) # 'Hello'
+print(binary_to_string('0100100001100101011011000110110001101111'))  # 'Hello'
 print(binary_to_string('00110001001100000011000100110001'))  # '1011'
 
 # 5

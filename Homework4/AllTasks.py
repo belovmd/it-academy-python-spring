@@ -132,7 +132,7 @@ print(dict_comprehensions())
 # 2 --------------------------------------------------------------------------
 stroka = """2
 Russia Moscow Petersburg Novgorod Kaluga
-Ukraine Kiev Donetsk Odessa      
+Ukraine Kiev Donetsk Odessa
 3
 Odessa
 Moscow
@@ -147,8 +147,8 @@ print(two_list("1 7 2 5 7", "1 7 4 6 2"))
 print(count_different("1 7 2 5 7", "1 7 4 6 2"))
 
 # 5 --------------------------------------------------------------------------
-stroka = """3          
-2    
+stroka = """3
+2
 Russian
 English
 3

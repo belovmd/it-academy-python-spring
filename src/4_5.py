@@ -31,20 +31,23 @@ French
 на следующих строках - список таких языков.
 """
 
-
 number = int(input("Insert the number of students: "))
 data_list = []
 
 for element in range(number):
-    number_of_languages = int(input("Insert the number "
-                                    "of languages for student №{number}: ".format(number=(element + 1))))
+    number_of_languages = \
+        int(input("Insert the number of languages for student "
+                  "№{number}: ".format(number=(element + 1))))
 
     for languages_element in range(number_of_languages):
-        data_list.append(str(input("Insert the language №{numb}: ".format(numb=(languages_element + 1)))))
+        data_list.append(str(input(
+            "Insert the language "
+            "№{numb}: ".format(numb=(languages_element + 1)))))
 
 print(data_list)
 
-dct_all_languages = {languages: data_list.count(languages) for languages in data_list}
+dct_all_languages = \
+    {languages: data_list.count(languages) for languages in data_list}
 
 print(dct_all_languages)
 
@@ -57,6 +60,7 @@ print(know_to_everyone, "\nLanguages known to everyone: ", end='')
 for lang in dct_all_languages:
     if dct_all_languages[lang] == number:
         print(lang, end=' ')
-print("\nNumber of all unique languages:", len(dct_all_languages), "\nAll unique languages: ", end='')
+print("\nNumber of all unique languages:",
+      len(dct_all_languages), "\nAll unique languages: ", end='')
 for lang in dct_all_languages:
     print(lang, end=' ')

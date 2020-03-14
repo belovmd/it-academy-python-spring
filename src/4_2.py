@@ -50,4 +50,3 @@ for cities in incoming_cities:
         if cities in element:
             print(element[0], end=' ')
     print("\r")
-

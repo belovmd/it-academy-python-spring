@@ -25,8 +25,10 @@ def set_call_result(f_name, f_result):
             for line in f:
                 function_name, results = line.split(DICT_SEPARATOR)
                 if not function_found and function_name == f_name:
-                    results = (results[:-1] + ELEMENTS_SEPARATOR
-                               + str(f_result) + END_OF_LINE)
+                    results = (results[:-1]
+                               + ELEMENTS_SEPARATOR
+                               + str(f_result)
+                               + END_OF_LINE)
                     function_found = True
                 lines.append(function_name + DICT_SEPARATOR + results)
 

@@ -10,9 +10,8 @@ import random
 
 
 COLORS_LIST = ['red', 'green', 'blue', 'yellow', 'white']
-DICT_SEPARATOR = ':'
-ELEMENTS_SEPARATOR = ','
-END_OF_LINE = '\n'
+DICT_SEP = ':'
+ELEMENTS_SEP = ','
 FILE_NAME = 'calls.txt'
 RANDOM_RANGE = 100
 
@@ -23,19 +22,16 @@ def set_call_result(f_name, f_result):
     if path.exists(FILE_NAME):
         with open(FILE_NAME, 'r') as f:
             for line in f:
-                function_name, results = line.split(DICT_SEPARATOR)
+                function_name, res = line.split(DICT_SEP)
                 if not function_found and function_name == f_name:
-                    results = (results[:-1] +
-                               ELEMENTS_SEPARATOR +
-                               str(f_result) +
-                               END_OF_LINE)
+                    res = res[:-1] + ELEMENTS_SEP + str(f_result) + '\n'
                     function_found = True
-                lines.append(function_name + DICT_SEPARATOR + results)
+                lines.append(function_name + DICT_SEP + res)
 
     if not function_found:
-        lines.append(f_name + DICT_SEPARATOR + str(f_result) + END_OF_LINE)
+        lines.append(f_name + DICT_SEP + str(f_result) + '\n')
 
-    with open(FILE_NAME, 'w') as f:
+    with open(FILE_NAME, 'w+') as f:
         f.writelines(lines)
 
 

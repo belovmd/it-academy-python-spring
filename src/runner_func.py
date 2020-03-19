@@ -1,7 +1,9 @@
-import test_func_1 as file1
-import test_func_2 as file2
-import test_func_3
-from test_func_1 import func3
+# please uncomment all imports
+
+# import test_func_1 as file1
+# from test_func_1 import func3
+# import test_func_2 as file2
+# import test_func_3
 
 
 def runner(*args):

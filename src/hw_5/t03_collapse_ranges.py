@@ -25,7 +25,7 @@ def get_ranges(lst):
 
 
 if __name__ == '__main__':
-    assert get_ranges([1,2,3,4,5,6,7,8]) == '1-8', 'Test 0'
+    assert get_ranges([1, 2, 3, 4, 5, 6, 7, 8]) == '1-8', 'Test 0'
     assert get_ranges([0, 1, 2, 3, 4, 7, 8, 10]) == '0-4,7-8,10', 'Test 1'
     assert get_ranges([4, 7, 10]) == '4,7,10', 'Test 2'
     assert get_ranges([2, 3, 8, 9]) == '2-3,8-9', 'Test 3'

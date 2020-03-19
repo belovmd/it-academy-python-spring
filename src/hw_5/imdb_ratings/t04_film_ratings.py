@@ -26,16 +26,16 @@ YEARS_FILE_PATH = 'years.txt'
 
 
 def get_film_year(film_title):
-    pattern = r'\d\d\d\d'
+    pattern = r'\d{4}'
     result = re.findall(pattern, film_title)
     return result[-1] if result else ''
 
 
-def calculate_top_films(file_path=FILE_PATH):
+def get_top_250_movies(file_path=FILE_PATH):
     try:
         file = open(file_path, 'r')
     except IOError as e:
-        print('Unable to open the file', FILE_PATH)
+        print('Unable to open the file {}'.format(FILE_PATH), e)
     else:
         # create years dict
         current_year = datetime.datetime.now().year
@@ -99,4 +99,4 @@ def create_top_250_movies(titles: list):
 
 
 if __name__ == '__main__':
-    calculate_top_films()
+    get_top_250_movies()

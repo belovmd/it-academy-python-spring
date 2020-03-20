@@ -1,6 +1,7 @@
+from random import randint
 from time import gmtime
 from time import strftime
-from random import randint
+
 
 MY_LOG_FILE = "./data5/fib.log"
 

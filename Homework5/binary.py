@@ -1,11 +1,15 @@
+
+
 # 5 --------------------------------------------------------------------------
 # Написать программу которая находит ближайшую степень
 # двойки к введенному числу. 10(8), 20(16), 1(1), 13(16)
 def power2(digit):
     digit2 = digit
     while True:
-        if digit and not digit & (digit - 1): return digit
-        if digit2 and not digit2 & (digit2 - 1): return digit2
+        if digit and not digit & (digit - 1):
+            return digit
+        if digit2 and not digit2 & (digit2 - 1):
+            return digit2
         digit -= 1
         digit2 += 1
 
@@ -16,7 +20,8 @@ def power2(digit):
 def maxdiv2(digit):
     digit1 = digit
     while digit1 > 0:
-        if not (digit % digit1 or digit1 & (digit1 - 1)): return digit1
+        if not (digit % digit1 or digit1 & (digit1 - 1)):
+            return digit1
         digit1 -= 1
 
 

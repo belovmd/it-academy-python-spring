@@ -14,10 +14,12 @@ else:
     top250, ratings, years = [], {}, {}
     while True:
         line = f.readline()
-        if not line or line[:3] == "New": break
+        if not line or line[:3] == "New":
+            break
     while True:
         line = f.readline().strip()
-        if not line or line[:6] == "BOTTOM": break
+        if not line or line[:6] == "BOTTOM":
+            break
         lst_line = line.split()
         year = lst_line.pop()[1:5]
         years[year] = years.get(year, 0) + 1

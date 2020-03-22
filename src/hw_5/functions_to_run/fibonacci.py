@@ -22,7 +22,9 @@ def solve_fibonacci_task():
                 first, second = second, current
                 i += 1
 
-    fibonacci(5)
+    n = 5
+    print("The first {} Fibonacci numbers are:".format(n))
+    fibonacci(n)
 
 
 if __name__ == '__main__':

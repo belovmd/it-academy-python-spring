@@ -13,6 +13,6 @@ def is_palindrome():
         reverted_number = reverted_number * 10 + temp % 10
         temp = temp // 10
     if number == reverted_number:
-        print("Yes")
+        print("Yes, {} is a palindrome.".format(number))
     else:
-        print("No")
+        print("No, {} is not a palindrome.".format(number))

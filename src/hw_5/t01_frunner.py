@@ -11,9 +11,9 @@ import hw_5.functions_to_run
 
 def runner(*args):
     pack = hw_5.functions_to_run
-    imported_functions = [getattr(pack, module_name)
-                          for module_name in pack.__all__
-                          if callable(getattr(pack, module_name))]
+    imported_functions = [getattr(pack, func_name)
+                          for func_name in dir(pack)
+                          if callable(getattr(pack, func_name))]
 
     if args:
         functions_to_run = [func for func in imported_functions

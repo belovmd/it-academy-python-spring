@@ -11,7 +11,7 @@ getattr и setattr).
 """
 
 
-class Tasks:
+class Tasks(object):
     def sort_list(self):
         """Упорядоченный список.
 

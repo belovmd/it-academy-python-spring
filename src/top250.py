@@ -61,8 +61,8 @@ def years(my_dict):
         for keys in range(int(min(years_dict.keys())),
                           int(max(years_dict.keys())) + 1):
             if str(keys) in years_dict.keys():
-                f.write(str(keys) + ' ' + '|' * years_dict[str(keys)]
-                        + '\n')
+                f.write(str(keys) + ' ' + '|' *
+                        years_dict[str(keys)] + '\n')
 
 
 func_result = top_250()

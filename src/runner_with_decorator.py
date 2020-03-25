@@ -13,7 +13,7 @@ getattr и setattr).
 
 class Tasks:
     def sort_list(self):
-        """ Упорядоченный список.
+        """Упорядоченный список.
 
         Дан список целых чисел. Требуется переместить все ненулевые
         элементы в левую часть списка, не меняя их порядок,
@@ -31,21 +31,21 @@ class Tasks:
         print(lst)
 
     def fibonacci(self):
-        """ Число Фибоначчи
+        """Число Фибоначчи
 
         Выведите n-ое число Фибоначчи, используя только временные
         переменные, циклические операторы и условные операторы.
         n - вводится
         """
-        first_number = second_number = 1
+        f_number = s_number = 1
         n = int(input("Enter the n-th Fibonacci number: "))
         while n > 2:
-            first_number, second_number = second_number, first_number + second_number
+            f_number, s_number = s_number, f_number + s_number
             n -= 1
-        print(second_number)
+        print(s_number)
 
     def symmetric_difference(self):
-        """ 4. Даны два списка чисел.
+        """4. Даны два списка чисел.
 
         Посчитайте, сколько различных чисел входит только в один
         из этих списков
@@ -71,7 +71,8 @@ def dec(runner):
 @dec
 def runner(*args):
     if len(args) == 0:
-        args = [func for func in dir(Tasks) if callable(getattr(Tasks, func)) and not func.startswith("__")]
+        args = [func for func in dir(Tasks) if callable(
+                getattr(Tasks, func)) and not func.startswith("__")]
     for elem in args:
         print("Function name: ", elem)
         getattr(tasks, elem)()

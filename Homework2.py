@@ -34,8 +34,8 @@ def say_hi(name, age):
 
 
 if __name__ == '__main__':
-    assert say_hi("Alex", 32) == "Hi. My name is Alex and I'm 32 years old", "First"
-    assert say_hi("Frank", 68) == "Hi. My name is Frank and I'm 68 years old", "Second"
+    assert say_hi("Alex", 32) == "Hi. My name is Alex and I'm 32 years old"
+    assert say_hi("Frank", 68) == "Hi. My name is Frank and I'm 68 years old"
     print('Done. Time to Check.')
 
 """Cоздать функцию, которая получает массив(tuple)
@@ -72,10 +72,11 @@ if __name__ == '__main__':
     assert index_power([1, 3, 10, 100], 3) == 1000000, "Cube"
     assert index_power([0, 1], 0) == 1, "Zero power"
     assert index_power([1, 2], 3) == -1, "IndexError"
-    print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
+    print("Coding complete? Click 'Check'")
 
 """Дан кусок текста.
-Соберите все заглавные буквы в одно слово в том порядке как они встречаются в куске текста. """
+Соберите все заглавные буквы в одно слово в том порядке
+как они встречаются в куске текста. """
 
 
 def find_message(text: str) -> str:
@@ -94,10 +95,10 @@ if __name__ == '__main__':
     print('Example:')
     print(find_message("How are you? Eh, ok. Low or Lower? Ohhh."))
 
-    assert find_message("How are you? Eh, ok. Low or Lower? Ohhh.") == "HELLO", "hello"
+    assert find_message("How are you? Eh, ok. Low or Lower? Ohhh.")
     assert find_message("hello world!") == "", "Nothing"
     assert find_message("HELLO WORLD!!!") == "HELLOWORLD", "Capitals"
-    print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
+    print("Coding complete? Click 'Check'")
 
 """Найти самое длинное слово в введенном предложении.
 Учтите что в предложении есть знаки препинания."""
@@ -115,7 +116,8 @@ for i in range(1, len(list)):
 
 print(list[id])
 
-"""Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы.
+"""Вводится строка. Требуется удалить из нее повторяющиеся символы и
+все пробелы.
 Например, если было введено "abc cde def", то должно быть выведено "abcdef"""
 
 st = input('enter: ')
@@ -125,7 +127,8 @@ for i in st:
         newSt += i
 print(newSt)
 
-"""Посчитать количество строчных (маленьких) и прописных (больших) букв в введенной строке.
+"""Посчитать количество строчных (маленьких) и
+прописных (больших) букв в введенной строке.
 Учитывать только английские буквы."""
 
 word = input()
@@ -160,9 +163,11 @@ while i < n - 2:
 print(fib2)
 
 """
-Определите, является ли число палиндромом (читается слева направо и справа налево одинаково).
+Определите, является ли число палиндромом
+(читается слева направо и справа налево одинаково).
 Число положительное целое, произвольной длины.
-Задача требует работать только с числами (без конвертации числа в строку или что-нибудь еще)
+Задача требует работать только с числами
+(без конвертации числа в строку или что-нибудь еще)
 """
 
 s = input()

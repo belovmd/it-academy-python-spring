@@ -1,8 +1,8 @@
 # for №2.6
 from bs4 import BeautifulSoup
-import string
-# for №3
 import requests
+# for №3
+import string
 
 
 # 1 --------------------------------------------------
@@ -16,8 +16,10 @@ print("Общая цена {} рублей {} копеек".format(MN_RUB, MN_PE
 
 
 # 2.1 ------------------------------------------------
-"""You are given a positive integer. Your function should calculate the product of the digits excluding any zeroes.
-For example: The number given is 123405. The result will be 1*2*3*4*5=120 (don't forget to exclude zeroes).
+"""You are given a positive integer. Your function should calculate the
+product of the digits excluding any zeroes.
+For example: The number given is 123405. The result will be
+1*2*3*4*5=120 (don't forget to exclude zeroes).
 Input: A positive integer.
 Output: The product of the digits as an integer."""
 
@@ -38,9 +40,10 @@ digits_mult(1111)
 
 
 # 2.2 ------------------------------------------------
-"""You are given a chunk of text. Gather all capital letters in one word in the order that they appear in the text.
-For example: text = "How are you? Eh, ok. Low or Lower? Ohhh.", if we collect all of the capital letters, we get the
-message "HELLO".
+"""You are given a chunk of text. Gather all capital letters in one word
+in the order that they appear in the text.
+For example: text = "How are you? Eh, ok. Low or Lower? Ohhh.", if we
+collect all of the capital letters, we get the message "HELLO".
 Input: A text as a string (unicode).
 Output: The secret message as a string or an empty string."""
 
@@ -59,8 +62,9 @@ find_message("HELLO WORLD!!!")
 
 
 # 2.3 ------------------------------------------------
-"""You are given an array of integers. You should find the sum of the integers with even indexes (0th, 2nd, 4th...).
-Then multiply this summed number and the final element of the array together. Don't forget that the first element has
+"""You are given an array of integers. You should find the sum of the integers
+with even indexes (0th, 2nd, 4th...). Then multiply this summed number and the
+final element of the array together. Don't forget that the first element has
 an index of 0.
 For an empty array, the result will always be 0 (zero).
 Input: A list of integers.
@@ -84,8 +88,10 @@ even_the_last([])
 
 
 # 2.4 ------------------------------------------------
-"""You are given the current stock prices. You have to find out which stocks cost more.
-Input: The dictionary where the market identifier code is a key and the value is a stock price.
+"""You are given the current stock prices. You have to find out which stocks
+cost more.
+Input: The dictionary where the market identifier code is a key and the value
+is a stock price.
 Output: The market identifier code (ticker symbol) as a string."""
 
 
@@ -106,12 +112,14 @@ best_stock({"CAC": 91.1, "ATX": 1.01, "TASI": 120.9})
 
 
 # 2.5 ------------------------------------------------
-"""You are given two strings and you have to find an index of the second occurrence of the second string in the first
-one.
-Let's go through the first example where you need to find the second occurrence of "s" in a word "sims". It’s easy to
-find its first occurrence with a function index or find which will point out that "s" is the first symbol in a word
-"sims" and therefore the index of the first occurrence is 0. But we have to find the second "s" which is 4th in a row
-and that means that the index of the second occurrence (and the answer to a question) is 3.
+"""You are given two strings and you have to find an index of the second
+occurrence of the second string in the first one.
+Let's go through the first example where you need to find the second
+occurrence of "s" in a word "sims". It’s easy to find its first occurrence
+with a function index or find which will point out that "s" is the first
+symbol in a word "sims" and therefore the index of the first occurrence is 0.
+But we have to find the second "s" which is 4th in a row and that means that
+the index of the second occurrence (and the answer to a question) is 3.
 Input: Two strings.
 Output: Int or None"""
 

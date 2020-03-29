@@ -43,3 +43,19 @@ Redundant files (configs, etc. ) are put to .gitignore
 18. Task 2.4. It should be deleted and printed simultaneously. Your code doesn't solve task.
 19. Task 3.4. It doesn't contain elements `1, 2, 3`. Code doesn't solve task.  
 20. Please remove redundant comments from code.
+21. Failed PR checks - tasks description
+22. Please divide tasks with two blank lines if you're doing them in one file
+23. Task 1. It doesn't solve task in homework (both versions)
+24. Task 2.1. It can be one-line solution. 
+25. Task 2.3. It can be one-line solution.
+26. Task 2.5. It doesn't solve task in homework.
+27. Task 6. Contradicts with task description in homework.
+28. Redundant comments in code.
+29. Task 2.1. `'abcd'` would be enough.
+30. Task 3.3. Your code doesn't make assignments.
+31. Task 2.1. It doesn't solve task in homework. 
+32. Task 2.2. It doesn't solve task in homework. 
+33. FAILED CI CHECKS
+34. Task 2.1. Redundant parentheses.
+35. Task 3.3. Your code doesn't solve task in homework.
+36. Task 3.4. You code doesn't solve task in homework.

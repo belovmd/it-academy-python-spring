@@ -22,7 +22,7 @@ Please make sure you've passed PR checklist
 - [ ] my PR named according guidelines: `Homework2: Name Surname`
 - [ ] my PR contains complete tasks descriptions for all tasks
 - [ ] my PR made from fork feature brunch to maxim master branch.
-- [ ] my PR don't contain only code that solves Homework1 tasks.
+- [ ] my PR don't contain only code that solves Homework2 tasks.
 Redundant files (configs, etc. ) are put to .gitignore
 
 

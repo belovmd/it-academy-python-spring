@@ -6,8 +6,10 @@ def fizzbuzz():
     instead numbers multiple both of 3 and 5 print FizzBuzz
     """
 
-    return ['Fizz' * (x % 3 == 0) + 'Buzz' * (x % 5 == 0)
-            or x for x in range(1, 101)]
+    return [
+        'Fizz' * (x % 3 == 0) + 'Buzz' * (x % 5 == 0) or x
+        for x in range(1, 101)
+    ]
 
 
 if __name__ == '__main__':

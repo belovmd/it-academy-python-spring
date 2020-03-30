@@ -10,7 +10,7 @@
 
 lst = [0, 2, 3, 4, 5, 6, 7, 8, 9, 0, 2, 3, 4, 5, 0, 2, 3, 0]
 for item in range(len(lst)):
-    if lst[item] is 0:
+    if not lst[item]:
         lst.pop(item)
         lst.append(0)
 print(lst)

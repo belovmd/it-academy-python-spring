@@ -11,7 +11,7 @@ tup = tuple(['a', 'b', 'c'])
 print("1. ", tup)
 lst = [elem for elem in tup]
 print("2. ", lst)
-a, b, c = [elem for elem in ("a", 2, "python")]
+a, b, c = 'a', 2, 'python'
 print("3.  a = {}, b = {}, c = {}".format(a, b, c))
 tup = ([1, 2, 3],)
 print("4.  len =", len(tup), type(tup))

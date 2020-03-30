@@ -13,10 +13,7 @@ pair = 0
 
 """Создаем словарь {цифра : количество}"""
 for item in lst:
-    if item not in book.keys():
-        book[item] = 1
-    else:
-        book[item] += 1
+    book[item] = book.get(item, 0) + 1
 
 """Подсчитываем количество пар по формуле"""
 for item in book.values():

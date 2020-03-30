@@ -12,14 +12,17 @@ list1 = ['a', 'b', 'c']
 tuple1 = tuple(list1)
 print(type(tuple1), tuple1)
 
+
 tuple2 = ('a', 'b', 'c')
 list2 = list(tuple2)
 print(type(list2), list2)
 
+
 a, b, c = 'a', 2, 'python'
 print("a = {a}, b = {b}, c = {c}".format(a=a, b=b, c=c))
 
-tuple4 = tuple([1, 2, 3])
+
+tuple4 = tuple([[1, 2, 3], ], )
+print('length = {}'.format(len(tuple4)))
 for element in tuple4:
-    print(element)
-print('Length = {length}'.format(length=len(tuple4)))
+    print(*element)

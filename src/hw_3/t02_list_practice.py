@@ -4,7 +4,7 @@
     ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
 2. Use slice to get the following list: ['ab', 'ad', 'bc'].
 3. Use list generator to get the following list: ['1a', '2a', '3a', '4a']
-4. Use one line solution to get '2a' element and print it.
+4. Use one line solution to delete '2a' element and print it.
 5. Copy list and add element '2a'. After this operation the source list
 shouldn't have this element.
 """
@@ -21,16 +21,15 @@ print(list2)
 
 
 # Task 3
-list3 = [str(number) + 'a' for number in range(1, 5)]
+list3 = [number + 'a' for number in '1234']
 print(list3)
 
 
 # Task 4
-print(list3[1])
+print(list3.pop(1))
 
 
 # Task 5
-source_list = ['1a', '2a', '3a', '4a']
-target_list = source_list.copy()
-target_list.append(source_list.pop(1))
-print('target_list = {}, source_list = {}'.format(target_list, source_list))
+list4 = list3.copy()
+list4.append('2a')
+print('target_list = {}, source_list = {}'.format(list4, list3))

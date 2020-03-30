@@ -2,10 +2,5 @@
 # кратных 3 пишет Fizz, вместо чисел кратный 5 пишет Buzz, а вместо чисел
 # одновременно кратных и 3 и 5 - FizzBuzz
 for i in range(1, 101):
-    if i % 3 == 0 and i % 5 == 0:
-        i = 'FizzBuzz'
-    elif i % 3 == 0:
-        i = 'Fizz'
-    elif i % 5 == 0:
-        i = 'Buzz'
-    print(i)
+    print((not i % 15) * 'FizzBuzz' or (not i % 3) * 'Fizz' or
+          (not i % 5) * 'Buzz' or i)

@@ -2,7 +2,9 @@
 # один раз. Элементы нужно выводить в том порядке, в котором они встречаются
 # в списке.
 lst = [1, 2, 3, 4, 1, ]
-# lst = [1, 1, ]
-# lst = [1, 'a', 1, 'b']
-# lst = []
-[print(el) for el in lst if lst.count(el) == 1]
+dct = {}
+for el in lst:
+    dct[el] = dct.get(el, 0) + 1
+for key, value in dct.items():
+    if value == 1:
+        print(key)

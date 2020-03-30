@@ -15,7 +15,6 @@ print(type(tpl2), type(lst2))
 a, b, c = 'a', 2, 'python'
 print(c)
 
-tpl3 = (1,)
-for i in range(3):
-    print(tpl3[0] + i)
+tpl3 = ((1, 2, 3),)
+[print(el) for el in tpl3[0]]
 print('Lenth =', len(tpl3))

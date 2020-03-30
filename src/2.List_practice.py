@@ -12,10 +12,10 @@ lst1 = [a + b for a in 'ab' for b in 'bcd']
 print(lst1)
 lst2 = lst1[::2]
 print(lst2)
-lst3 = [str(num) + a for num in range(1, 5) for a in 'a']
+lst3 = [num + 'a' for num in '1234']
 print(lst3)
-lst3.remove('2a')
-print(lst3)
+print([el for el in lst3 if el != '2a'])
+lst3 = [el for el in lst3 if el != '2a']
 lst4 = copy.deepcopy(lst3)
 lst4.append('2a')
 print('List3 = {}\nList4 = {}'.format(lst3, lst4))

@@ -82,11 +82,10 @@ def pairs_of_elements(stroka):
 def unique_elements(list):
     dict_count = {}
     for el in list:
-        dict_count[el]=dict_count.get(el,0) + 1
+        dict_count[el] = dict_count.get(el, 0) + 1
     for el in list:
         if dict_count[el] == 1:
             print(el)
-
 
 
 # ----------------------------------------------------------------------

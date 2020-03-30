@@ -9,8 +9,8 @@ if a number is divisible by 5 print 'Buzz'.
 
 def fizz_buzz(n):
     return (n % 3 == 0 and n % 5 == 0 and 'FizzBuzz') or (
-            n % 3 == 0 and 'Fizz') or (
-            n % 5 == 0 and 'Buzz') or n
+        n % 3 == 0 and 'Fizz') or (
+        n % 5 == 0 and 'Buzz') or n
 
 
 if __name__ == '__main__':

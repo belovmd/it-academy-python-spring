@@ -10,7 +10,7 @@ def fizz_buzz():
             WhatPrint += "Fizz"
         if i % 5 == 0:
             WhatPrint += "Buzz"
-        if WhatPrint == "":
+        if not WhatPrint:
             WhatPrint = i
         print(WhatPrint)
 
@@ -80,9 +80,13 @@ def pairs_of_elements(stroka):
 # только один раз. Элементы нужно выводить в том порядке,
 # в котором они встречаются в списке.
 def unique_elements(list):
-    for i in list:
-        if list.count(i) == 1:
-            print(i, end=" ")
+    dict_count = {}
+    for el in list:
+        dict_count[el]=dict_count.get(el,0) + 1
+    for el in list:
+        if dict_count[el] == 1:
+            print(el)
+
 
 
 # ----------------------------------------------------------------------

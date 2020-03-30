@@ -7,7 +7,7 @@ def fizzbuzz():
     """
 
     return ['Fizz' * (x % 3 == 0) + 'Buzz' * (x % 5 == 0)
-            if (x % 3 == 0 or x % 5 == 0) else x for x in range(1, 101)]
+            or x for x in range(1, 101)]
 
 
 if __name__ == '__main__':

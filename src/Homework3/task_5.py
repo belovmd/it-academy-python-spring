@@ -16,10 +16,12 @@ def unique_elements_spec(input_list):
     :param input_list: list of IMMUTABLE elements
     :return: list of unique element of input_list
     """
-    dict_count = {}
-    for element in input_list:
-        dict_count[element] = dict_count.get(element, 0) + 1
-    return [key for key, value in dict_count.items() if value == 1]
+    repeat_el_set, input_set = set(), set(input_list)
+
+    for el in input_list:
+        repeat_el_set.add(el) if el not in input_set else input_set.remove(el)
+
+    return [element for element in input_list if element not in repeat_el_set]
 
 
 if __name__ == '__main__':
@@ -32,3 +34,4 @@ if __name__ == '__main__':
     assert unique_elements_spec([2, (1, 2, ), (1, )]) == [2, (1, 2, ), (1, )]
     assert unique_elements_spec([(1, ), (1, 2, ), (1, )]) == [(1, 2, )]
     assert unique_elements_spec(['1', 1, (1, )]) == ['1', 1, (1, )]
+    assert unique_elements_spec([3, 1, 7, 1, 10, 2, 7, 1, 1]) == [3, 10, 2]

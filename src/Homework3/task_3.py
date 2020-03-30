@@ -7,7 +7,7 @@ def tuple_practice():
     print(temp_tuple)
 
     # Create tuple (a, b, c) and list from tuple
-    temp_tuple = 'a', 'b', 'c'
+    temp_tuple = ('a', 'b', 'c', )
     temp_list = list(temp_tuple)
     print(temp_list)
 

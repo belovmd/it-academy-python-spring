@@ -1,13 +1,13 @@
 def ordered_list(input_list):
     """Ordered list
 
-    :param input_list: list of elements
+    :param input_list: list of integers
     :return: sorted list where all 0 elements in the end of list
     """
     el_index, iter_count = 0, len(input_list)
 
     while iter_count > 0:
-        if input_list[el_index] == 0:
+        if not input_list[el_index]:
             input_list.append(input_list.pop(el_index))
         else:
             el_index += 1

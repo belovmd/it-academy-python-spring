@@ -10,7 +10,7 @@ def list_practice():
     print(result_list_task_22)
 
     # Generator of the list ['1a', '2a', '3a', '4a']
-    result_list_task_23 = [str(nmb_el) + 'a' for nmb_el in range(1, 5)]
+    result_list_task_23 = [nmb_el + 'a' for nmb_el in '1234']
     print(result_list_task_23)
 
     # From list above delete item '2a' and print it

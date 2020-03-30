@@ -17,15 +17,16 @@ def recall_password(cipher_grille, ciphered_password):
     :return: string
     """
 
-    second_tuple = tuple(zip(*reversed(cipher_grille)))
-    third_tuple = tuple(zip(*reversed(second_tuple)))
-    fourth_tuple = tuple(zip(*reversed(third_tuple)))
+    default_tuple = tuple([tuple(x) for x in cipher_grille])
+    first_rotation_tuple = tuple(zip(*reversed(default_tuple)))
+    second_rotation_tuple = tuple(zip(*reversed(first_rotation_tuple)))
+    third_rotation_tuple = tuple(zip(*reversed(second_rotation_tuple)))
 
     cipher_grille_list = [
-        cipher_grille,
-        second_tuple,
-        third_tuple,
-        fourth_tuple,
+        default_tuple,
+        first_rotation_tuple,
+        second_rotation_tuple,
+        third_rotation_tuple,
     ]
     password = ''
     for temp_tuple in cipher_grille_list:

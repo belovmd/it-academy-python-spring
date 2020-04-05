@@ -10,11 +10,14 @@
 
 def unique_elements(lst):
     """Return unique elements in list"""
-    unique_lst = list()
-    for item in lst:
-        if item not in unique_lst:
-            unique_lst.append(item)
-    return unique_lst
+    unique_el, not_unique = set(lst), set()
+    for element in lst:
+        try:
+            unique_el.remove(element)
+        except KeyError:
+            not_unique.add(element)
+    unique = set(lst) - not_unique
+    return [el for el in lst if el in unique]
 
 
 if __name__ == '__main__':

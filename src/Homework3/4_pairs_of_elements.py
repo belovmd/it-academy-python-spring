@@ -13,14 +13,11 @@
 def count_pairs(num_string):
     """Return dict contains element: count of element's pairs"""
     count_el = dict()
+    count_pairs_el = dict()
     for element in num_string.split():
         count_el[element] = count_el.get(element, 0) + 1
-    for elem, count in count_el.items():
-        count_el[elem] = 0
-        for item in range(count):
-            for _ in range(item + 1, count):
-                count_el[elem] += 1
-    return count_el
+        count_pairs_el[element] += count_el[element] - 1
+    return count_pairs_el
 
 
 if __name__ == '__main__':

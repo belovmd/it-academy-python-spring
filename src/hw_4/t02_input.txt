@@ -1,0 +1,9 @@
+3
+Russia Moscow Petersburg Novgorod Kaluga
+Belarus Minsk Brest
+France Paris Brest Marcel
+4
+Petersburg
+Moscow
+Marcel
+Brest

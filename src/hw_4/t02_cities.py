@@ -23,30 +23,27 @@ Moscow
 Novgorod
 
 Output:
-Ukraine
-Russia
-Russia
+Odessa is in Ukraine
+Moscow is in Russia
+Novgorod is in Russia
 """
 
-print('Input N - number of countries:')
-n = int(input())
-print('Input country and it''s cities:')
-atlas = {}
-for _ in range(n):
-    country, *cities = input().split()
-    atlas[country] = set(cities)
 
-print('Input M - number of queries:')
-m = int(input())
-print('Input cities:')
-queries = []
-for _ in range(m):
-    queries.append(input())
+from collections import defaultdict
 
-for city in queries:
-    result = []
-    for country, cities in atlas.items():
-        if city in cities:
-            result.append(country)
-    print('{city} is in {country_list}.'
-          .format(city=city, country_list=', '.join(result)))
+
+atlas = defaultdict(set)
+with open('t02_input.txt', 'r') as file:
+    # Read number of countries, countries and cities
+    n = int(file.readline())
+    for _ in range(n):
+        country_in, *cities_in = file.readline().strip().split()
+        for _, city in enumerate(cities_in):
+            atlas[city].add(country_in)
+
+    # Read number of queries and cities
+    m = int(file.readline())
+    for _ in range(m):
+        city_in = file.readline().strip()
+        print('{city} is in {country_list}'.
+              format(city=city_in, country_list=', '.join(atlas[city_in])))

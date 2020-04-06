@@ -9,10 +9,13 @@
 """
 
 # 5 - 4 - 7 - 9 - dino
-singe_list = [1, 2, 3, 2, 5, 2, 4, 3, 7, 2, 9, 1, 'string', 'dino', 'string']
 
-for element in singe_list:
-    if singe_list.count(element) == 1:
-        print(element)
-
-print([element for element in singe_list if singe_list.count(element) == 1])
+symbol_list = [1, 2, 3, 2, 5, 2, 4, 3, 7, 2, 9, 1, 'string', 'dino', 'string']
+symbol_dict = dict()
+for elem in symbol_list:
+    symbol_dict[elem] = symbol_dict.get(elem, 0) + 1
+symbol_list.clear()
+for symbol, quantity in symbol_dict.items():
+    if quantity == 1:
+        symbol_list.append(symbol)
+print(symbol_list)

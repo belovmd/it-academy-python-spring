@@ -17,8 +17,10 @@
 string_number = '1 2 3 4 5 1 2 3 5 3 7 4 2 1 6 4 3 7 2 4 1 3 6 5 4 2 6'
 list_number = string_number.split()
 list_number.sort()
-dict_number = {element: list_number.count(element) for element in list_number}
-dict_number = {key: int(dict_number.get(key) * (dict_number.get(key) - 1) / 2)
-               for key in dict_number}
-print(dict_number)
-print("sum pairs: {}".format(sum(dict_number.values())))
+dict_pairs = dict()
+for elem in list_number:
+    dict_pairs[elem] = dict_pairs.get(elem, 0) + 1
+for key in dict_pairs:
+    dict_pairs[key] = int(dict_pairs.get(key) * (dict_pairs.get(key) - 1) / 2)
+print(dict_pairs)
+print("sum pairs: {}".format(sum(dict_pairs.values())))

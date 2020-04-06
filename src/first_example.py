@@ -5,13 +5,14 @@
 # а вместо чисел одновременно кратных и 3 и 5 - FizzBuzz
 
 for element in range(1, 101):
-    if element % 3 == 0 and element % 5 == 0:
+    if not element % 15:
         print("FizzBuzz")
         continue
-    elif element % 3 == 0:
+    elif not element % 3:
         print("Fizz")
         continue
-    elif element % 5 == 0:
+    elif not element % 5:
         print("Buzz")
         continue
-    print(element)
+    else:
+        print(element)

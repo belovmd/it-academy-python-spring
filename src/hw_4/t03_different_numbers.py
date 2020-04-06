@@ -1,27 +1,24 @@
 """ Count different numbers
 
-Caunt all different numbers from two lists of numbers.
+Даны два списка чисел. Посчитайте, сколько различных чисел содержится
+одновременно как в первом списке, так и во втором.
 
-Input:
-List of numbers
-List of numbers
-
-Output:
-a number
-
-Example:
-Input:
+Пример
+Входные данные:
     1 2 3 4 4 4 5
     2 2 4 6 6 6 8
-Output:
-    2
-Explanation:
-   These two lists has following common numbers:
-   2, 2, 2, 4, 4, 4, 4
-   There are only 2 different numbers: 2, 4.
+Вывод:
+    1 3 5 6 8
+Пояснение:
+    В первом списке содержатся различные числа: 1 2 3 4 5
+    Во втором: 2 4 6 8
+    Общие числа из обоих списков: 2 4
+    Различные числа из обоих списков: 1 3 5 6 8 - ответ на вопрос "сколько": 5.
 """
 
 
 set1 = set(input().split())
 set2 = set(input().split())
-print(len(set1.intersection(set2)))
+symm_diff = [int(number) for number in set1.symmetric_difference(set2)]
+print('Different numbers are: {}, length is {}.'.
+      format(symm_diff, len(symm_diff)))

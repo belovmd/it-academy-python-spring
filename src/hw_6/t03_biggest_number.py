@@ -1,5 +1,10 @@
 """ Function to test is biggest_number
 
+
+By my mistake I used wrong function for writing tests. I decided not to delete
+this file and test (test_biggest_number.py) from a homework #6.
+
+Task that a function solves:
 Yuliya has a list of numbers. Help her to concatenate these numbers as a
 strings to get as biggest number as possible.
 """

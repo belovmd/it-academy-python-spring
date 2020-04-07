@@ -30,11 +30,10 @@ def runner(*func):
 
     if not func:
         for element in HomeWorks.__dict__:
-            if str(element) != '__module__' and \
-                    str(element) != '__dict__' \
-                    and str(element) != '__weakref__' \
-                    and str(element) != '__doc__':
+            attr = ['__module__', '__dict__',
+                    '__weakref__', '__doc__']
+            if str(element) not in attr:
                 getattr(HomeWorks(), element, "Task is not chosen")()
 
 
-runner()
+runner('hello_world', 'friends_list')

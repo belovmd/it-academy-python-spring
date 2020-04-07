@@ -27,14 +27,13 @@ Russia
 Russia
 """
 
-dict_countries = {}
-for item in range(int(input("Введите количество стран: "))):
-    lst = input("Введите страну и города: ").split()
-    dict_countries.update({lst[0]: {item for item in lst[1:]}})
-lst = []
-for item in range(int(input("Введите количество городов: "))):
-    cities = input("Введите города: ")
-    for key in dict_countries.keys():
-        if cities in dict_countries[key]:
-            lst.append(key)
-print(lst)
+dict_cities = {}
+for _ in range(int(input("Введите количество стран: "))):
+    country, *cities = input("Введите страну и города: ").split()
+    for city in cities:
+        dict_cities[city] = dict_cities.get(city, []) + [country]
+lst_countries = []
+for _ in range(int(input("Введите количество городов: "))):
+    city = input("Введите название города: ")
+    if city in dict_cities.keys():
+        print(dict_cities[city])

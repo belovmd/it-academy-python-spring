@@ -27,18 +27,21 @@ French
 на следующих строках - список таких языков.
 """
 
-dict_language = {}
-my_set = set()
-for item in range(int(input("Введите количество учеников: "))):
-    lst = []
-    for count in range(int(input("Введите количество языков:"))):
-        lst.append(input("Введите языки которые знает ученик: "))
-    dict_language.update({item: {elem for elem in lst}})
-    my_set.update({elem for elem in lst})
-lst = list(my_set)
-for values in dict_language.values():
-    my_set = my_set.intersection(values)
-print("Количество языков которые знаю школьники:", len(lst))
-print("Языки которые знают школьники:", *lst)
-print("Количество языков которые знает хотя бы один школьник:", len(my_set))
-print("Языки которые знает хотя бы один школьник:", *my_set)
+student_languages = {}
+languages_set = set()
+for student in range(int(input("Введите количество учеников: "))):
+    language_lst = []
+    for _ in range(int(input("Введите количество языков: "))):
+        language_lst.append(input
+                            ("Введите языки которые знает ученик: "))
+    student_languages.update({student:
+                             {elem for elem in language_lst}})
+    languages_set.update({elem for elem in language_lst})
+languages = list(languages_set)
+for values in student_languages.values():
+    languages_set = languages_set.intersection(values)
+print("Количество языков которые знают школьники:", len(languages))
+print("Языки которые знают школьники:", *languages)
+print("Количество языков которые знает хотя бы один школьник:",
+      len(languages_set))
+print("Языки которые знает хотя бы один школьник:", *languages_set)

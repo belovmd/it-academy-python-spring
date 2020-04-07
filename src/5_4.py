@@ -62,10 +62,10 @@ dct_years = {element: list_years.count(element)
 
 with open('ratings.txt', 'w') as file:
     for element in dct_ratings:
-        file.write(element + ' : ' +
-                   str(dct_ratings[element]) + '\n')
+        file.write(element + ' : '
+                   + str(dct_ratings[element]) + '\n')
 
 with open('years.txt', 'w') as file:
     for element in dct_years:
-        file.write(element + ' : ' +
-                   str(dct_years[element]) + '\n')
+        file.write(element + ' : '
+                   + str(dct_years[element]) + '\n')

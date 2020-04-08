@@ -36,4 +36,4 @@ def runner(*func):
                 getattr(HomeWorks(), element, "Task is not chosen")()
 
 
-runner('hello_world', 'friends_list')
+runner()

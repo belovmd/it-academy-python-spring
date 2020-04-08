@@ -7,8 +7,7 @@ def dict_generator():
             values:
                  cubes of integer keys
     """
-    tmp_dict = {i: i**3 for i in range(1, 21)}
-    return tmp_dict
+    return {i: i**3 for i in range(1, 21)}
 
 
 if __name__ == '__main__':

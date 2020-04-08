@@ -16,6 +16,9 @@ def to_camel_case(name):
             new_string += char.upper()
         elif char != '_':
             new_string += char
+        else:
+            # if char=='_' or name[index - 1] != '_'- Don't need this condition
+            pass
     return new_string
 
 

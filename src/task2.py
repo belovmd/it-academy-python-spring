@@ -8,20 +8,13 @@
 # Выходные данные:
 # Для каждого из запроса выведите название страны, в котором находится
 # данный город.
+lst_of_countries = {}
 N = int(input("Enter number of countries "))
-countries = {}
-for el in range(N):
-    string = input('Enter country and cities ')
-    countries.update({string[0]: string[1:]})
-
-M = int(input("Enter number of cities "))
-cities = []
-for i in range(M):
-    string = input('Enter cities ')
-    cities.append(string)
-
-while cities:
-    for key in countries:
-        if cities[0] in countries.get(key):
-            print(key)
-    cities = cities[1:]
+for _ in range(N):
+    country, *cities = input().split()
+    for el in cities:
+        lst_of_countries[el] = lst_of_countries.get(el, '') + country + ' '
+print('Enter M and cities')
+M, *lst_of_cities = input().split()
+for el in lst_of_cities:
+    print(el, lst_of_countries.get(el))

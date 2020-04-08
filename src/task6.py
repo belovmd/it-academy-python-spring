@@ -2,9 +2,12 @@
 # непробельных символов идущих подряд, слова разделены одним или большим
 # числом пробелов или символами конца строки. Определите, сколько различных
 # слов содержится в этом тексте.
-text = 'Adsds dasda rfs, dfsdf! ASD,df'
-for char in text:
-    if char.lower() < 'a' or char.lower() > 'z':
-        text = text.replace(char, ' ')
-set_of_words = set(text.split())
-print(len(set_of_words))
+
+
+def diff_words(text):
+    return len(set(text.split()))
+
+
+print(diff_words('sda sadas sdad,dsd a'))
+print(diff_words('Aaaa'))
+print(diff_words(''))

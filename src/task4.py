@@ -3,8 +3,9 @@
 
 
 def quantity(lst1, lst2):
-    diff_num = set(lst1) - (set(lst2))
-    return 'Quantity of different numbers = {}'.format(len(diff_num))
+    lst1, lst2 = set(lst1), set(lst2)
+    lst1.symmetric_difference_update(lst2)
+    return 'Quantity of different numbers = {}'.format(lst1)
 
 
 print(quantity([1, 2, 3, 4], [1]))

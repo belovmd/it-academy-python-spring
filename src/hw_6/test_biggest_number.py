@@ -47,3 +47,7 @@ class TestBiggestNumber(unittest.TestCase):
                 expected += line.strip()
 
         self.assertEqual(expected, result)
+
+    def test_none_input(self):
+        with self.assertRaises(TypeError):
+            biggest_number(None)

@@ -36,7 +36,7 @@ class TestCountPairs(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_set(self):
-        elements = set([123, 234, 345, 123])
+        elements = {123, 234, 345, 123}
         expected = 0
         actual = count_pairs(elements)
         self.assertEqual(expected, actual)
@@ -47,7 +47,7 @@ class TestCountPairs(unittest.TestCase):
         with self.assertRaises(TypeError):
             count_pairs(foo)
 
-    @data(4, 5.5, True)
+    @data(4, 5.5, True, None)
     def test_non_iterable(self, elements):
         with self.assertRaises(TypeError):
             count_pairs(elements)

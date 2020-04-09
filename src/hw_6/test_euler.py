@@ -85,7 +85,7 @@ class TestEuler(unittest.TestCase):
 
         self.assertIsNotNone(solve_euler_task(11))
 
-    @data('10', 'ten', 10.33)
+    @data('10', 'ten', 10.33, None)
     def test_incorrect_input(self, n):
         """ Test that exception raises when input is incorrect"""
 

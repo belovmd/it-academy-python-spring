@@ -13,4 +13,3 @@ list2.reverse()
 for element in list1:
     if (len(list1) - list2.index(element) - list1.index(element)) == 1:
         print(element)
-

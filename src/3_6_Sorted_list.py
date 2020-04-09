@@ -11,7 +11,7 @@
 list1 = [1, 2, 0, 3, 4, 5, 6, 0, 7, 1, 5, 0, 6]
 
 for element in list1:
-    if element == 0:
+    if not element:
         list1.remove(element)
         list1.append(element)
 

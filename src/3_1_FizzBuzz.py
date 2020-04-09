@@ -9,11 +9,11 @@ Fizz, вместо чисел кратный 5 пишет Buzz, а
 number = 0
 while number < 100:
     number += 1
-    if number % 3 == 0 and number % 5 == 0:
+    if not number % 15:
         print("FizzBuzz")
-    elif number % 3 == 0:
+    elif not number % 3:
         print("Fizz")
-    elif number % 5 == 0:
+    elif not number % 5:
         print("Buzz")
     else:
         print(number)

@@ -5,10 +5,12 @@
 встречаются в списке."""
 
 
-list1 = [1, 2, 3, 4, 5, 6, 7, 1, 5, 6]
-list2 = []
+list1 = [1, 2, 2, 3, 7, 5, 6, 4, 1, 5, 6, 'f']
+
+list2 = list1.copy()
+list2.reverse()
 
 for element in list1:
-    if list1.count(element) == 1 and element not in list2:
+    if (len(list1) - list2.index(element) - list1.index(element)) == 1:
         print(element)
-        list2.append(element)
+

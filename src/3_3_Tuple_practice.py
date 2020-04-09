@@ -16,11 +16,10 @@ tuple2 = ('a', 'b', 'c')
 list2 = list(tuple2)
 print(list2)
 
+a, b, c = 'a', 2, 'python'
 
-print("{a} {b} {c}".format(a='a', b=2, c='python'))
-
-a = (1, 2, 3)
-tuple3 = (a, )
+ele = (1, 2, 3)
+tuple3 = (ele,)
 
 for element in tuple3:
     for elements in element:

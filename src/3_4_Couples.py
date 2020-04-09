@@ -9,15 +9,27 @@
 Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар"""
 
 str1 = str(input("Insert string: "))
-list2 = []
+list_temp = []
 
 list1 = str1.split(' ')
 
+for number in range(len(list1)):
+    list1[number] = int(list1[number])
+
+list1.sort()
+
+list2 = list1.copy()
+list2.reverse()
+
 for element in list1:
-    if element not in list2 and list1.count(element) > 1:
+    if element not in list_temp:
+
+        number_of_element = \
+            len(list1) - list2.index(element) - list1.index(element)
+
         number_of_couples = \
-            (list1.count(element) * (list1.count(element) - 1)) / 2
+            (number_of_element * (number_of_element - 1)) / 2
+
         print("Element {} : {} coupl(es)"
               .format(element, int(number_of_couples)))
-        # exclude element from list1
-        list2.append(element)
+        list_temp.append(element)

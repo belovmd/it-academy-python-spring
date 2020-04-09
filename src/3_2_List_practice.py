@@ -14,21 +14,21 @@
 
 import copy
 
-list0 = ['a', 'b', 'c', 'd']
+list0 = 'abcd'
 list1 = [element1 + element2 for element1 in list0[0:2]
          for element2 in list0[1:4]]
-# "end" of slice not included!!!!!!!!!!!!!!!!!!!
+
 print(list1)
 
 list2 = list1[0::2]
 print(list2)
 
-list3 = [str(number) + 'a' for number in range(1, 5)]
+list3 = [element + 'a' for element in '1234']
 print(list3)
 
-list3.remove('2a')
-print(list3)
+print(list3.pop(list3.index('2a')))
 
 list4 = copy.copy(list3)
 list4.append('2a')
 print(list4)
+print(list3)

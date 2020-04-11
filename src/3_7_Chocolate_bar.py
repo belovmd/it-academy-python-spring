@@ -22,7 +22,6 @@ k долек размера с помощью t разломов
 Описание решения поместите в docstring
 """
 
-
 """
 1. Условие:
 Определите, можно ли одним разломом
@@ -54,7 +53,6 @@ first(1, 8, 7)
 first(2, 8, 4)
 first(3, 5, 4)
 first(1, 8, 8)
-
 
 """
 2. Условие:
@@ -89,19 +87,22 @@ first(1, 8, 8)
 def second(n, m, k):
     if k < n * m:
 
-        big_size = max([n, m])
-        lit_size = min([n, m])
+        big_side = max([n, m])
+        lit_side = min([n, m])
         razl = 0
 
         while k > 0:
-            if not k % big_size or not k % lit_size:
+            if not k % big_side or not k % lit_side:
                 razl += 1
                 k = 0
             else:
 
-                if k > big_size:
+                if k > big_side:
                     razl += 1
-                    k, lit_size = (k % big_size), (lit_size - (k // big_size))
+                    if k % lit_side == (big_side - k // lit_side):
+                        k, big_side = (k % lit_side), (big_side - (k // lit_side))
+                    else:
+                        k, lit_side = (k % big_side), (lit_side - (k // big_side))
                 else:
                     razl += 2
                     k = 0
@@ -112,8 +113,9 @@ def second(n, m, k):
 
 
 print('\nВторая задача:')
-second(3, 5, 6)
-second(3, 5, 7)
-second(3, 5, 8)
-second(3, 5, 16)
-second(4, 5, 11)
+second(3, 5, 6)  # сразу отламываем с одной стороны
+second(3, 5, 10)  # сразу отламываем с другой стороны
+second(3, 5, 7)  # отламываем от большей стороны, меньшая становится меньше, остаток можно отломить за 1 раз
+second(4, 5, 11)  # отламываем от меньшей стороны, большая становится меньше, остаток можно отломить за 1 раз
+second(3, 5, 8)  # случай, когда за 1 или 2 разлома получить k кусочков нельзя, максимально возможно число разломов
+second(3, 5, 16)  # неверно указанный размер K

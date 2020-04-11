@@ -112,9 +112,11 @@ def second(n, m, k):
                 if k > big_side:
                     razl += 1
                     if k % lit_side == (big_side - k // lit_side):
-                        k, big_side = (k % lit_side), (big_side - (k // lit_side))
+                        k, big_side = \
+                            (k % lit_side), (big_side - (k // lit_side))
                     else:
-                        k, lit_side = (k % big_side), (lit_side - (k // big_side))
+                        k, lit_side = \
+                            (k % big_side), (lit_side - (k // big_side))
                 else:
                     razl += 2
                     k = 0

@@ -85,7 +85,7 @@ def languages():
             lst_pupil.append(set())
             for ind_m in range(m):
                 lst_pupil[ind_n].add(input('Enter {} language for {} pupil:'.
-                                             format(ind_m + 1, ind_n + 1)))
+                                           format(ind_m + 1, ind_n + 1)))
 
     one_pupil = set()
     one_pupil = one_pupil.union(*lst_pupil)

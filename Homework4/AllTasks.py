@@ -1,6 +1,3 @@
-import copy
-
-
 # 1. Dict comprehensions
 # Создайте словарь с помощью генератора словарей, так чтобы его ключами
 # были числа от 1 до 20, а значениями кубы этих чисел.
@@ -21,26 +18,28 @@ def dict_comprehensions():
 # Выходные данные
 # Для каждого из запроса выведите название страны,
 # в котором находится данный город.
-def cities(str_country_cities):
-    list_str = str_country_cities.split("\n")
-    dict_cities = dict()
-    list_countrys = ["нет страны для города в базе данных."]
-    n = 0
-    for stroka in list_str:
-        if stroka.isdigit():
-            if n > 0:
-                n = -1
-        elif n > 0 and stroka:
-            lists = stroka.split()
-            for inds, s in enumerate(lists):
-                if inds == 0:
-                    list_countrys.append(s)
-                else:
-                    dict_cities[s] = n
-        elif stroka:
-            print(stroka, " => ", list_countrys[dict_cities.get(stroka, 0)])
-        if n >= 0:
-            n += 1
+def make_dict_cities(list_str_country):
+    dict_cities = {}
+    for country_city in list_str_country:
+        list_cities = country_city.split()
+        country = list_cities.pop(0)
+        for city in list_cities:
+            dict_cities[city] = country
+    return dict_cities
+
+
+def input_output_cities():
+    list_str_country = []
+    n = int(input("Enter number of strings:"))
+    print("Enter strings: 'Country City1 City2... CityN'")
+    for i in range(n):
+        list_str_country.append(input('Enter string:'))
+
+    dict_cities = make_dict_cities(list_str_country)
+
+    m = int(input("Enter number of requests:"))
+    for i in range(m):
+        print(" => ", dict_cities.get(input("Enter city:"), 'No matching'))
 
 
 # -----------------------------------------------------------------------------
@@ -60,7 +59,7 @@ def two_list(str1, str2):
 def count_different(str1, str2):
     set1 = set(str1.split())
     set1.difference_update(set(str2.split()))
-    return set1
+    return len(set1)
 
 
 # -----------------------------------------------------------------------------
@@ -77,28 +76,23 @@ def count_different(str1, str2):
 # Начиная со второй строки - список таких языков. Затем - количество языков,
 # которые знает хотя бы один школьник, на следующих строках
 # - список таких языков.
-def languages(stroka):
-    list_str = stroka.split("\n")
+def languages():
     lst_pupil = []
-    n_str = -2
-    for s_str in list_str:
-        s_str = s_str.strip()
-        if n_str == -2:
-            n_str = -1
-        elif s_str.isdigit():
-            n_str += 1
+    n = int(input("Enter number of pupils:"))
+    for ind_n in range(n):
+        m = int(input("How much languages knows {} pupil:".format(ind_n + 1)))
+        if m:
             lst_pupil.append(set())
-        elif s_str:
-            lst_pupil[n_str].add(s_str)
+            for ind_m in range(m):
+                lst_pupil[ind_n].add(input('Enter {} language for {} pupil:'.
+                                             format(ind_m + 1, ind_n + 1)))
 
-    lst2_pupil = copy.deepcopy(lst_pupil)
+    one_pupil = set()
+    one_pupil = one_pupil.union(*lst_pupil)
     all_pupil = lst_pupil.pop(0)
     all_pupil.intersection_update(*lst_pupil)
     print(len(all_pupil))
     print(all_pupil)
-    one_pupil = lst2_pupil.pop(0)
-    for lst in lst2_pupil:
-        one_pupil.symmetric_difference_update(lst)
     print(len(one_pupil))
     print(one_pupil)
 
@@ -130,7 +124,7 @@ def evklid(d1, d2):
 print(dict_comprehensions())
 
 # 2 --------------------------------------------------------------------------
-stroka = """2
+"""2
 Russia Moscow Petersburg Novgorod Kaluga
 Ukraine Kiev Donetsk Odessa
 3
@@ -138,8 +132,7 @@ Odessa
 Moscow
 Novgorod
 """
-cities(stroka)
-
+input_output_cities()
 # 3 --------------------------------------------------------------------------
 print(two_list("1 7 2 5 7", "1 7 4 6 2"))
 
@@ -160,10 +153,10 @@ Russian
 Italian
 French
 """
-languages(stroka)
+languages()
 
-# 6
+# 6 --------------------------------------------------------------------------
 print(words(stroka))
 
-# 7
+# 7 --------------------------------------------------------------------------
 print(evklid(19, 17))

@@ -13,18 +13,21 @@ M городов, перечисленных выше.
 
 """
 cnt_countries = int(input('Enter count of countries:'))
-countries = dict()
+cities_dict = dict()
 for num in range(cnt_countries):
-    line = input(f'Enter country name #{num} with its cities:').split()
-    countries[line[0]] = set(line[1:])
-cnt_queries = int(input('Enter count of queries:'))
-queries = list()
-for num in range(cnt_queries):
-    queries.append(input(f'Enter query #{num} for city:'))
+    line = input(f'#{num}: Enter country name with its cities:').split()
+    country = line[0]
+    cities = line[1:]
+    cities_dict.update({
+        city: cities_dict.get(city, []) + [country] for city in cities
+    })
+
+cnt, *queries = input('Enter count of queries and cities inline:').split()
+
 for city in queries:
-    city_in_countries = [
-        country for country, cities in countries.items() if city in cities]
-    if city_in_countries:
-        print(f'{city} city is in', *city_in_countries)
+    city_in_countries = cities_dict.get(city, None)
+    if city_in_countries is not None:
+        print(f'{city} city is in', end=' ')
+        print(*city_in_countries, sep=', ', end='\n')
     else:
         print(f'{city} city did not find in any countries!!!')

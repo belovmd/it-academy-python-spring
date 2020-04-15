@@ -108,3 +108,4 @@ venv.bak/
 .tox/
 .gitignore/
 requirements.txt
+.DS_Store

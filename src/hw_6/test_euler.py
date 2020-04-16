@@ -52,7 +52,7 @@ class TestEuler(unittest.TestCase):
           (999, 999),)
     @unpack
     def test_func(self, n, expected):
-        """ Test function func with correct input"""
+        """Test function func with correct input"""
 
         self.assertEqual(expected, func(n))
 
@@ -62,12 +62,12 @@ class TestEuler(unittest.TestCase):
           (154, 66040, 'Test for summing logic'))
     @unpack
     def test_logic(self, n_max, expected, message):
-        """ Test logic to find sum(f(n)), 2 <= n <= n_max"""
+        """Test logic to find sum(f(n)), 2 <= n <= n_max"""
 
         self.assertEqual(expected, solve_euler_task(n_max), msg=message)
 
     def test_logic_for_lower_bound(self):
-        """ Test for the lower bound"""
+        """Test for the lower bound"""
 
         n = 2
         expected = func(n)
@@ -76,18 +76,18 @@ class TestEuler(unittest.TestCase):
 
     @data(1, 1001, 10000, -3, 0, 1345)
     def test_out_of_range(self, n_max):
-        """ Test with out of range input"""
+        """Test with out of range input"""
 
         self.assertIsNone(solve_euler_task(n_max))
 
     def test_that_returns_value(self):
-        """ Test that returns a value at least"""
+        """Test that returns a value at least"""
 
         self.assertIsNotNone(solve_euler_task(11))
 
     @data('10', 'ten', 10.33, None)
     def test_incorrect_input(self, n):
-        """ Test that exception raises when input is incorrect"""
+        """Test that exception raises when input is incorrect"""
 
         with self.assertRaises(TypeError):
             solve_euler_task(n)

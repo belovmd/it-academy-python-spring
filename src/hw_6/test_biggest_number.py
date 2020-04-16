@@ -2,7 +2,9 @@ import os
 import unittest
 
 from .t03_biggest_number import biggest_number
-from ddt import ddt, data, unpack
+from ddt import data
+from ddt import ddt
+from ddt import unpack
 
 
 @ddt
@@ -17,20 +19,20 @@ class TestBiggestNumber(unittest.TestCase):
            'Test the same numbers'],)
     @unpack
     def test_sorting_logic(self, numbers, expected, message):
-        """ Test sorting logic"""
+        """Test sorting logic"""
 
         actual = biggest_number(numbers)
         self.assertEqual(expected, actual, msg=message)
 
     def test_bad_input(self):
-        """ Test that exception raises when using list of int as input"""
+        """Test that exception raises when using list of int as input"""
 
         numbers = [1, 3, 9, 34]
         with self.assertRaises(TypeError):
             biggest_number(numbers)
 
     def test_bigger_input(self):
-        """ Test bigger and correct input"""
+        """Test bigger and correct input"""
 
         numbers = []
         dir_name = os.path.dirname(__file__)
@@ -49,5 +51,7 @@ class TestBiggestNumber(unittest.TestCase):
         self.assertEqual(expected, result)
 
     def test_none_input(self):
+        """Test that exception raises when input parameter is None"""
+
         with self.assertRaises(TypeError):
             biggest_number(None)

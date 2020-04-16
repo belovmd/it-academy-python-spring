@@ -41,7 +41,7 @@ def run_until_no_err(max_attempts):
 
 @run_until_no_err(NUMBER_OF_ATTEMPTS)
 def count_pairs():
-    """ Decorated function from Variant 3: homework 3 task 4 """
+    """Decorated function from Variant 3: homework 3 task 4 """
 
     print('Input elements:')
     elements = [int(number) for number in input().strip().split()]

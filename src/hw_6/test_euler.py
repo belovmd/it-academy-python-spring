@@ -16,10 +16,10 @@ f(157) = 743757 (157743757 = ...567000743757)
 """
 
 
-import unittest
 from ddt import data
 from ddt import ddt
 from ddt import unpack
+import unittest
 
 
 LAST_NUMBERS = 3

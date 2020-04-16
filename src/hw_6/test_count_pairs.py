@@ -3,10 +3,11 @@
 Variant 3: homework 3 task 4
 """
 
-from itertools import combinations
+
 from ddt import data
 from ddt import ddt
 from ddt import unpack
+from itertools import combinations
 
 import unittest
 

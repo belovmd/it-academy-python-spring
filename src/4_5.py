@@ -58,7 +58,8 @@ for el in data_list_separated:
 for numb in range(1, len(data_set_separated)):
     data_set_separated[0].intersection_update(data_set_separated[numb])
 
-print("The number of languages known to everyone: ", len(data_set_separated[0]))
+print("The number of languages known to everyone: ",
+      len(data_set_separated[0]))
 print("Languages known to everyone: ", end='')
 for languages in data_set_separated[0]:
     print(languages, end=' ')

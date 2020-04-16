@@ -29,19 +29,20 @@ Russia
 Russia
 """
 
-
 number_of_states = int(input("Insert number of states: "))
 incoming_data_dict = {}
 for _ in range(number_of_states):
     state_and_cities = str(input("Insert state and cities in this state: "))
     state_and_cities = state_and_cities.split()
-    state_and_cities = {element: state_and_cities[0] for element in state_and_cities[1:]}
+    state_and_cities = {element: state_and_cities[0]
+                        for element in state_and_cities[1:]}
     for element in incoming_data_dict:
         if element in state_and_cities:
             incoming_data_dict[element] += (', ' + state_and_cities[element])
-            state_and_cities = {key: state_and_cities[key] for key in state_and_cities.keys() - {element}}
+            state_and_cities = {
+                key: state_and_cities[key]
+                for key in state_and_cities.keys() - {element}}
     incoming_data_dict.update(state_and_cities)
-
 
 number_of_cities = int(input("Insert number of cities: "))
 incoming_cities = []

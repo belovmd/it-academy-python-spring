@@ -33,34 +33,37 @@ French
 
 number = int(input("Insert the number of students: "))
 data_list = []
+data_list_separated = []
+data_set_separated = []
 
 for element in range(number):
-    number_of_languages = \
-        int(input("Insert the number of languages for student "
-                  "№{number}: ".format(number=(element + 1))))
+    data_list_separated.append([])
+    number_of_languages = int(input(
+        "Insert the number of languages for student "
+        "№{number}: ".format(number=(element + 1))))
 
     for languages_element in range(number_of_languages):
-        data_list.append(str(input(
+        lang = str(input(
             "Insert the language "
-            "№{numb}: ".format(numb=(languages_element + 1)))))
+            "№{numb}: ".format(numb=(languages_element + 1))))
+        data_list.append(lang)
+        data_list_separated[element].append(lang)
 
-print(data_list)
+set_all_languages = set(data_list)
 
-dct_all_languages = \
-    {languages: data_list.count(languages) for languages in data_list}
+for el in data_list_separated:
+    el = set(el)
+    data_set_separated.append(el)
 
-print(dct_all_languages)
+for numb in range(1, len(data_set_separated)):
+    data_set_separated[0].intersection_update(data_set_separated[numb])
 
-print("The number of languages known to everyone: ", end='')
-know_to_everyone = 0
-for lang in dct_all_languages:
-    if dct_all_languages[lang] == number:
-        know_to_everyone += 1
-print(know_to_everyone, "\nLanguages known to everyone: ", end='')
-for lang in dct_all_languages:
-    if dct_all_languages[lang] == number:
-        print(lang, end=' ')
-print("\nNumber of all unique languages:",
-      len(dct_all_languages), "\nAll unique languages: ", end='')
-for lang in dct_all_languages:
+print("The number of languages known to everyone: ", len(data_set_separated[0]))
+print("Languages known to everyone: ", end='')
+for languages in data_set_separated[0]:
+    print(languages, end=' ')
+
+print("\nNumber of all unique languages:", len(set_all_languages))
+print("All unique languages:", end=' ')
+for lang in set_all_languages:
     print(lang, end=' ')

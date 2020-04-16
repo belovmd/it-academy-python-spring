@@ -14,5 +14,4 @@ while a != 0 and b != 0:
         a %= b
     elif a < b:
         b %= a
-
-print(a + b)
+    print(a or b)

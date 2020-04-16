@@ -15,8 +15,7 @@ list_2 = [int(element) for element in list_2]
 
 list_1.extend(list_2)
 
-dct_numbers = {element: list_1.count(element)
-               for element in list_1}
+set_numbers = set(list_1)
 
 print("The number of different numbers "
-      "in lists: ", len(dct_numbers))
+      "in lists: ", len(set_numbers))

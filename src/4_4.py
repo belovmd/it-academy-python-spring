@@ -11,21 +11,19 @@ select_the_list = int(input("Insert number "
                             "of the list: "))
 
 if select_the_list == 1:
-    lst = input_1.split()
-    lst = [int(element) for element in lst]
+    selected, not_selected = input_1, input_2
 
 elif select_the_list == 2:
-    lst = input_2.split()
-    lst = [int(element) for element in lst]
+    selected, not_selected = input_2, input_1
 
 else:
     print("You did not select the list of numbers.")
     raise SystemExit
 
-dct_numbers = {element: lst.count(element)
-               for element in lst}
+selected = {int(element) for element in selected.split()}
+not_selected = {int(element) for element in not_selected.split()}
 
 print("The number of different numbers "
       "in list {number}:"
       .format(number=select_the_list),
-      len(dct_numbers))
+      len(selected.difference(not_selected)))

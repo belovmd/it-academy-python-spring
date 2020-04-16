@@ -17,7 +17,10 @@ f(157) = 743757 (157743757 = ...567000743757)
 
 
 import unittest
-from ddt import ddt, data, unpack
+from ddt import data
+from ddt import ddt
+from ddt import unpack
+
 
 LAST_NUMBERS = 3
 MAX = 1000

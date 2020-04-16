@@ -65,5 +65,3 @@ if __name__ == '__main__':
     assert lucy.show_invite() == "Midnight Pub: Saturday, 10:00 AM"
     assert nick.show_invite() == "Midnight Pub: Friday, 9:00 PM"
     assert chuck.show_invite() == "No party..."
-
-

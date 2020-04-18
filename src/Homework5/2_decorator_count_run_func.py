@@ -4,9 +4,9 @@
 
 """
 
+from functools import wraps
 import json
 import logging
-from functools import wraps
 
 logging.basicConfig(
     level=logging.INFO,

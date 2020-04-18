@@ -11,10 +11,11 @@
 
 def get_ranges(lst: list) -> str:
     """get_ranges:
+
     Take in input list of sorted different numbers and return
     string with ranges these numbers.
-
     """
+
     start_range = end_range = lst[0]
     result = []
     for ind, element in enumerate(lst[:-1]):

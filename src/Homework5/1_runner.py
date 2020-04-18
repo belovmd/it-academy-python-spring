@@ -27,8 +27,8 @@ def runner(*args):
         funcs = args
     else:
         funcs = [attr for attr in funcs_for_task_1.__dict__ if not (
-                attr.startswith('__')) and callable(getattr(funcs_for_task_1,
-                                                            attr))]
+            attr.startswith('__')
+        ) and callable(getattr(funcs_for_task_1, attr))]
     run(funcs)
     return amount_result
 

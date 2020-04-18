@@ -8,8 +8,8 @@
 ratings.txt – гистограмма рейтингов, years.txt – гистограмма годов.
 
 """
-import logging
 from collections import Counter
+import logging
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,13 +32,14 @@ def save_to_file(filename, data):
 
 
 def parser(file_path, begin_with=28):
-    """parser:
+    """parser function:
+
     Parse text file with film ratings and save results into another files:
         - top250_movies.txt
         - ratings.txt
         - years.txt
-
     """
+
     film_names = []
     ratings = []
     years = []

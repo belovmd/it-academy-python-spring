@@ -32,11 +32,12 @@ def save_to_file(filename, data):
 
 
 def parser(file_path, begin_with=28):
-    """
+    """parser:
     Parse text file with film ratings and save results into another files:
         - top250_movies.txt
         - ratings.txt
         - years.txt
+
     """
     film_names = []
     ratings = []

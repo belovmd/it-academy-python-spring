@@ -1,11 +1,12 @@
 """2 - Decorator count run function all time
 Создайте декоратор, который хранит результаты вызовы функции (за все время
 вызовов, не только текущий запуск программы)
+
 """
+
 import json
 import logging
 from functools import wraps
-
 
 logging.basicConfig(
     level=logging.INFO,
@@ -15,9 +16,7 @@ logger = logging.getLogger(__name__)
 
 
 def count_run(func):
-    """
-    Accumulate count of function runs, and save number in to file
-    """
+    """Accumulate count of function runs, and save number in to file"""
     try:
         with open('count_run.json', 'r') as file_handler:
             data = file_handler.read()
@@ -30,9 +29,7 @@ def count_run(func):
 
     @wraps(func)
     def wrap(*args, **kwargs):
-        """
-        Wrapper function
-        """
+        """Wrapper function"""
         nonlocal count
         result = func(*args, **kwargs)
         count += 1
@@ -48,9 +45,7 @@ def count_run(func):
 
 @count_run
 def simple_function(x, y):
-    """
-    Return sum of two elements x and y
-    """
+    """Return sum of two elements x and y"""
     return x + y
 
 

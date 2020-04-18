@@ -5,13 +5,15 @@
     get_ranges([0, 1, 2, 3, 4, 7, 8, 10]) // "0-4,7-8,10"
     get_ranges([4,7,10]) // "4,7,10"
     get_ranges([2, 3, 8, 9]) // "2-3,8-9"
+
 """
 
 
 def get_ranges(lst: list) -> str:
-    """
+    """get_ranges:
     Take in input list of sorted different numbers and return
     string with ranges these numbers.
+
     """
     start_range = end_range = lst[0]
     result = []

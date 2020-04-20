@@ -1,2 +1,4 @@
+sympy
+ddt
 flake8
 pydocstyle

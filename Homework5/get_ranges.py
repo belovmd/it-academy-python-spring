@@ -6,16 +6,17 @@
 #  get_ranges([4,7,10]) // "4,7,10"
 #  get_ranges([2, 3, 8, 9]) // "2-3,8-9"
 
-
+# create list from lists new_lst[[elem1, elem2], ....]
 def get_ranges(lst):
     new_lst = []
-    i_new_lst = 0
+    index_new_lst = 0
     for elem in lst:
-        if not new_lst or new_lst[i_new_lst][1] + 1 != elem:
+        if not new_lst or new_lst[index_new_lst][1] + 1 != elem:
             new_lst.append([elem, elem])
-            i_new_lst = len(new_lst) - 1
+            index_new_lst = len(new_lst) - 1
         else:
-            new_lst[i_new_lst][1] += 1
+            new_lst[index_new_lst][1] += 1
+    # create and return string from list
     for ind, elem in enumerate(new_lst):
         if elem[0] == elem[1]:
             new_lst[ind] = str(elem[0])

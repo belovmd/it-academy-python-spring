@@ -57,10 +57,14 @@ def runner(*args):
         args = []
         glob_args = dir(tasks)
         for arg in glob_args:
-            if str(getattr(tasks, arg))[:9] == "<function":
+            if callable(getattr(tasks, arg)) and not arg.startswith("__"):
                 args.append(arg)
+    print(args)
     for arg in args:
-        getattr(tasks, arg)(dict_func_param.get(arg, ""))
+        if arg in dict_func_param:
+            getattr(tasks, arg)(dict_func_param.get(arg))
+        else:
+            getattr(tasks, arg)()
 
 
 runner()

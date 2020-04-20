@@ -31,9 +31,11 @@ else:
         for line in top250:
             f.write(line + "\n")
     with open("./data5/ratings.txt", "w") as f:
-        ratings = sorted(ratings.items(), key=lambda item: item[1])
+        ratings = sorted(ratings.items(), key=lambda item: item[1], reverse=True)
+        f.write("Rank : Repetition\n")
         for line in ratings:
-            f.write("{} : {}\n".format(line[0], line[1]))
+            str_format = "{:>4} : {:>3} {:*^" + str(line[1]) + "}\n"
+            f.write(str_format.format(line[0], line[1], "*"))
     with open("./data5/years.txt", "w") as f:
         years = sorted(years.items(), key=lambda item: item[1], reverse=True)
         for line in years:

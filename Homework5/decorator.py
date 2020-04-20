@@ -1,7 +1,6 @@
 from random import randint
-from time import gmtime
-from time import strftime
-
+from time import localtime, strftime
+from datetime import datetime
 
 MY_LOG_FILE = "./data5/fib.log"
 
@@ -13,7 +12,8 @@ def dec_logfile(fun):
     def wrapper(*args, **kwargs):
         result = fun(*args, **kwargs)
         with open(MY_LOG_FILE, "a") as f:
-            f.write("  number {} => {}\n".format(args[0], result))
+            f.write("Time: {}, Function: {}, number {} => {}\n".
+                    format(datetime.now(), fun.__name__, args[0], result))
         return result
 
     return wrapper
@@ -31,6 +31,6 @@ def funfib(n):
 
 
 with open(MY_LOG_FILE, "a") as f:
-    f.write("Begin in " + strftime("%Y-%m-%d %H:%M:%S\n", gmtime()))
+    f.write("Begin in " + strftime("%Y-%m-%d %H:%M:%S\n", localtime()))
 for index in range(50):
     funfib(randint(1, 100))

@@ -1,5 +1,5 @@
-import functools
 import datetime
+import functools
 
 
 def counter_calls_single_file(func):
@@ -79,8 +79,7 @@ def counter_calls_common_file(func):
             for name, calls in data_dict.items():
                 file.writelines(
                     '{} calls: {} last function call: {}\n'.format(
-                        name, str(calls[0]), calls[1])
-                                )
+                        name, str(calls[0]), calls[1]))
 
         return result
     return wrapper

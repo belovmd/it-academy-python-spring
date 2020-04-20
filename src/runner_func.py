@@ -1,21 +1,13 @@
-# please uncomment all imports
+import test_func_1
+import test_func_2
+import test_func_3
+from types import FunctionType
 
-# import test_func_1 as file1
-# from test_func_1 import func3
-# import test_func_2 as file2
-# import test_func_3
+all_modules = [test_func_1, test_func_2, test_func_3]
 
 
 def runner(*args):
     """Runner of callable objects without arguments
-
-    Try to call all callable objects from all importing objects or
-    all callable objects with names from args in all importing objects
-    Add condition type(obj).__name__ == 'function' before 'try'
-    if need just function calls.
-
-    In case of necessary arguments for callable objects
-    error message will print
 
     :param args: list of names of callable objects
     :return: None
@@ -28,7 +20,7 @@ def runner(*args):
         :return: None
         """
         attr_in_query = attr in args or not args
-        if callable(obj) and not attr.startswith('__') and attr_in_query:
+        if isinstance(obj, FunctionType) and attr_in_query:
             try:
                 obj()
             except TypeError as error:
@@ -46,10 +38,8 @@ def runner(*args):
 
     list_of_modules = [
         obj for attr, obj in all_attrs.items()
-        if type(obj).__name__ == 'module' and not attr.startswith('__')
+        if type(obj).__name__ == 'module'
     ]
-
-    args = set(args)
 
     for module in list_of_modules:
         for attr in module.__dir__():

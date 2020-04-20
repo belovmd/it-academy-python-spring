@@ -1,4 +1,5 @@
 import functools
+import datetime
 
 
 def counter_calls_single_file(func):
@@ -10,7 +11,7 @@ def counter_calls_single_file(func):
 
     try:
         with open('{}_counter.txt'.format(func.__name__), 'r') as file:
-            counter = int(file.read())
+            name, counter = file.readline().split(': ')
     except FileNotFoundError:
         counter = 0
     except Exception:
@@ -21,11 +22,14 @@ def counter_calls_single_file(func):
     def wrapper(*args, **kwargs):
 
         nonlocal counter
+        call_time = datetime.datetime.now()
         result = func(*args, **kwargs)
-        counter += 1
+        counter = int(counter) + 1
 
         with open('{}_counter.txt'.format(func.__name__), 'w') as file:
-            file.write(str(counter))
+            file.write(
+                '{}: {}\nlast function call time: {}'.format(
+                    func.__name__, str(counter), call_time))
 
         return result
     return wrapper
@@ -44,6 +48,7 @@ def counter_calls_common_file(func):
     def wrapper(*args, **kwargs):
 
         nonlocal data_dict
+        call_time = datetime.datetime.now()
         result = func(*args, **kwargs)
         func_name = func.__name__
 
@@ -51,13 +56,15 @@ def counter_calls_common_file(func):
             with open('counter_common.txt', 'r') as file:
 
                 for line in file.readlines():
-                    name, value = line.strip().split(' calls: ')
-                    data_dict[name] = value
+                    name_value, last_call_time = line.strip().split(
+                        ' last function call: ')
+                    name, value = name_value.split(' calls: ')
+                    data_dict[name] = [value, last_call_time]
 
-                data_dict.setdefault(func_name, 0)
+                data_dict.setdefault(func_name, [0, call_time])
 
         except FileNotFoundError:
-            data_dict.setdefault(func_name, 0)
+            data_dict.setdefault(func_name, [0, call_time])
 
         except Exception:
             print(
@@ -65,11 +72,15 @@ def counter_calls_common_file(func):
             )
             return result
 
-        data_dict[func_name] = int(data_dict.get(func_name)) + 1
+        data_dict[func_name][0] = int(data_dict.get(func_name)[0]) + 1
+        data_dict[func_name][1] = call_time
 
         with open('counter_common.txt', 'w') as file:
             for name, calls in data_dict.items():
-                file.writelines('{} calls: {}\n'.format(name, str(calls)))
+                file.writelines(
+                    '{} calls: {} last function call: {}\n'.format(
+                        name, str(calls[0]), calls[1])
+                                )
 
         return result
     return wrapper

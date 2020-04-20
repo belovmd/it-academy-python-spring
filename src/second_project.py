@@ -4,12 +4,13 @@
 
 """
 
-countries = {}
+countries = dict()
+city = list()
 for element in range(int(input("Enter quantity countries: "))):
-    words = input("Enter country and towns: ").split()
-    countries.update({words[0]: {elem for elem in words[1:]}})
-for element in range(int(input("Enter quantity towns: "))):
-    town = (input("Enter town: "))
-    for key in countries.keys():
-        if town in countries[key]:
-            print(key)
+    country_and_cities = (input("Enter country and cities: ").split())
+    for elem in country_and_cities[1:]:
+        countries.update({elem: country_and_cities[0]})
+for element in range(int(input("Enter quantity cities: "))):
+    city.append(input("Enter city: "))
+for element in city:
+    print(countries.get(element))

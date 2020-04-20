@@ -6,6 +6,6 @@
 
 first_number = 30
 second_number = 18
-while first_number != 0 and second_number != 0:
+while first_number and second_number:
     first_number, second_number = second_number, first_number % second_number
-print(first_number + second_number)
+print(first_number)

@@ -3,17 +3,25 @@
 # runner() – все фукнции вызываются по очереди
 # runner(‘func_name’) – вызывается только функцию func_name.
 # runner(‘func’, ‘func1’...) - вызывает все переданные функции
-import func
+import functions
 
 
 def runner(*names):
+    func_list = [getattr(functions, el) for el in dir(functions) if
+                 callable(getattr(functions, el))]
     if names:
-        [print(getattr(func, el)) for el in names]
+        for el in names:
+            if hasattr(functions, str(el)) and getattr(functions,
+                                                       el) in func_list:
+                try:
+                    getattr(functions, el)()
+                except TypeError:
+                    print('Function {} has no args'.format(el))
     else:
-        [print(getattr(func, el)) for el in dir(func)
-         if el.startswith('__') is False]
+        print('Enter function!')
 
 
-runner('different_words')
-runner('nod', 'different_words')
+runner('nod')
 runner()
+runner(5)
+runner('nod', 'quantity', 'different_words')

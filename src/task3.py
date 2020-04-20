@@ -4,17 +4,24 @@
 
 
 def get_ranges(lst):
-    lst_index = []
-    while lst:
-        interval = [el for i, el in enumerate(lst) if el == lst[0] + i]
-        if len(interval) == 1:
-            lst_index.append(str(interval[0]))
+    intervals = []
+    intervals_str = ''
+    i = 0
+    for el in lst:
+        if not intervals or intervals[i][1] + 1 != el:
+            intervals.append([el, el])
+            i = len(intervals) - 1
         else:
-            lst_index.append('{} - {}'.format(interval[0], interval[-1]))
-        lst = lst[len(interval):]
-    return ', '.join(lst_index)
+            intervals[i][1] += 1
+    for el in intervals:
+        if len(set(el)) == 1:
+            intervals_str += '{}, '.format(el[0])
+        else:
+            intervals_str += '{} - {}, '.format(el[0], el[1])
+    return intervals_str.rstrip(', ')
 
 
+print(get_ranges([1, 2, 3, 7, 8, 10]))
 print(get_ranges([0, 1, 2, 3, 4, 7, 8, 10]))
 print(get_ranges([4, 7, 10]))
-print(get_ranges([2, 3, 8, 9]))
+print(get_ranges([2, 3, 8, 9, 10]))

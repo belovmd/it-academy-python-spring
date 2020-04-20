@@ -1,5 +1,6 @@
 from random import randint
-from time import localtime, strftime
+from time import localtime
+from time import strftime
 from datetime import datetime
 
 MY_LOG_FILE = "./data5/fib.log"

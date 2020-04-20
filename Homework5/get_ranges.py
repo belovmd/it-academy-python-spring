@@ -6,6 +6,7 @@
 #  get_ranges([4,7,10]) // "4,7,10"
 #  get_ranges([2, 3, 8, 9]) // "2-3,8-9"
 
+
 # create list from lists new_lst[[elem1, elem2], ....]
 def get_ranges(lst):
     new_lst = []

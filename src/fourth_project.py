@@ -45,9 +45,9 @@ def document_parser():
                     break
                 counter += 1
             top_movies_file.close()
-            year_histogram()
-            rating_histogram()
-            print('Success')
+        year_histogram()
+        rating_histogram()
+        print('Success')
     except FileNotFoundError:
         print('File not found')
 
@@ -56,7 +56,8 @@ def year_histogram():
     quantity_years.update(Counter(movies_years))
     with open(years_path, 'w') as file_years:
         for year, quantity in quantity_years.items():
-            result = str(year) + ' : ' + str(quantity) + '\n'
+            histogram = ' *' * quantity
+            result = str(year) + ': ' + str(quantity) + histogram + '\n'
             file_years.write(result)
 
 
@@ -64,7 +65,8 @@ def rating_histogram():
     quantity_ratings.update(Counter(movies_ratings))
     with open(ratings_path, 'w') as file_ratings:
         for rating, quantity in quantity_ratings.items():
-            result = str(rating) + ' : ' + str(quantity) + '\n'
+            histogram = ' *' * quantity
+            result = str(rating) + ': ' + str(quantity) + histogram + '\n'
             file_ratings.write(result)
 
 

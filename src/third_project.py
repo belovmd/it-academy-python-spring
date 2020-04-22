@@ -13,16 +13,26 @@ get_ranges([2, 3, 8, 9]) // "2-3,8-9"
 """
 
 
-def get_ranges(lst):
-    lst_index = []
-    while lst:
-        interval = [el for i, el in enumerate(lst) if el == lst[0] + i]
-        if len(interval) == 1:
-            lst_index.append(str(interval[0]))
+def get_ranges(source_list: list):
+    new_list = list()
+    result = str()
+    index = 0
+    for element in source_list:
+        if not new_list or new_list[index][1] + 1 != element:
+            new_list.append([element, element])
+            index = len(new_list) - 1
         else:
-            lst_index.append('{} - {}'.format(interval[0], interval[-1]))
-        lst = lst[len(interval):]
-    return ', '.join(lst_index)
+            new_list[index][1] += 1
+    index = 0
+    for element in new_list:
+        if element[index] == element[index + 1]:
+            result += '{}, '.format(str(element[index]))
+        else:
+            result += '{}-{}, '.format(
+                str(element[index]),
+                str(element[index + 1])
+            )
+    return result.rstrip(', ')
 
 
 print(get_ranges([0, 1, 2, 3, 4, 7, 8, 10]))

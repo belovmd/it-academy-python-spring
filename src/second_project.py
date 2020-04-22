@@ -4,35 +4,30 @@
 
 """
 
-import os
+from datetime import datetime
+
+now = str()
+now = datetime.now()
 
 
 def dec(function):
-    numbers = 0
-
-    def wrapper():
-        nonlocal numbers
-        numbers += function()
-        return numbers
+    def wrapper(*args, **kwargs):
+        result = function(*args, **kwargs)
+        with open('text.txt', 'a') as file:
+            file.write('function: {}\t datetime: {}\t result: {}\n'.format(
+                function.__name__,
+                now.strftime('%d-%m-%Y %H:%M'),
+                result)
+            )
+        return result
 
     return wrapper
 
 
 @dec
-def func():
-    return 1
+def power(number):
+    return number ** 2
 
 
-if os.path.exists('text.txt'):
-    with open('text.txt', 'a') as file:
-        for elem in range(3):
-            file.write(str(func()))
-            file.write('\n')
-    print("File added success")
-else:
-    try:
-        with open('text.txt', 'w') as file:
-            file.write('start\n')
-            print("File created success")
-    except FileNotFoundError:
-        print('File not found')
+for i in range(1, 10):
+    power(i)

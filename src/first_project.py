@@ -12,18 +12,32 @@ runner(‘func’, ‘func1’...) - вызывает все переданны�
 
 import tasks_module
 
+params = {
+    'swap_numbers': [1, 4, 0, 3, 6, 2, 0, 2],
+    'fibonacci': 15,
+    'remove_duplicate_characters': 'abc cde eft'
+}
+
 
 def runner(*args):
     function = []
     [function.append(elem) for elem in dir(tasks_module) if elem[:2] != '__']
-    if args:
-        for elem in args:
-            print(getattr(tasks_module, elem))
-    else:
-        for elem in function:
-            print(getattr(tasks_module, elem))
+    try:
+        if args:
+            for elem in args:
+                callable(getattr(tasks_module, elem)(params.get(elem)))
+        else:
+            for elem in function:
+                callable(getattr(tasks_module, elem)(params.get(elem)))
+    except AttributeError:
+        print('Attribute error')
+    except TypeError:
+        print('Type error')
 
 
-runner()
-runner('swap_numbers')
-runner('remove_duplicate_characters', 'swap_numbers', 'fibonacci')
+if __name__ == '__main__':
+    runner()
+    runner('swap_numbers')
+    runner('remove_duplicate_characters', 'swap_numbers', 'fibonacci')
+    runner(1234)
+    runner('12345')

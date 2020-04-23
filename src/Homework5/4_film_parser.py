@@ -62,8 +62,10 @@ def parser(file_path, begin_with=28):
                 except Exception as ex:
                     logger.warning(f"Error parse data: {ex}")
                     break
-        ranks_gist = [f'{r} - {c}' for r, c in Counter(ratings).most_common()]
-        years_gist = [f'{y} - {c}' for y, c in Counter(years).most_common()]
+        sorted_ratings = sorted(Counter(ratings).items(), key=lambda a: a[0])
+        sorted_years = sorted(Counter(years).items(), key=lambda a: a[0])
+        ranks_gist = [f'{r} - {"*" * c}' for r, c in sorted_ratings]
+        years_gist = [f'{y} - {"*" * c}' for y, c in sorted_years]
         save_to_file('top250_movies.txt', film_names)
         save_to_file('ratings.txt', ranks_gist)
         save_to_file('years.txt', years_gist)

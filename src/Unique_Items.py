@@ -8,4 +8,4 @@ lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 1, 2, 3, 1]
 my_dict = {}
 for item in lst:
     my_dict[item] = my_dict.get(item, 0) + 1
-print([key for key, value in my_dict.items() if value is 1])
+print([key for key, value in my_dict.items() if value == 1])

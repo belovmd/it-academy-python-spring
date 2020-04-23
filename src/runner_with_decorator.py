@@ -9,6 +9,7 @@ getattr и setattr).
 2. Создайте декоратор, который хранит результаты вызовы функции
 (за все время вызовов, не только текущий запуск программы)
 """
+from datetime import datetime
 
 
 class Tasks(object):
@@ -59,11 +60,11 @@ class Tasks(object):
 
 def dec(runner):
     def wrapper(*args):
+        print("Дата и время предыдущих запусков функции:")
         with open('src/log', 'r+') as f:
-            my_count = int(f.read()) + 1
-            print("Number of function calls: ", my_count)
-            f.seek(0)
-            f.write(str(my_count))
+            for elem in f.readlines():
+                print(elem, end="")
+            f.write(str(datetime.now()) + "\n")
         return runner(*args)
     return wrapper
 

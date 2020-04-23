@@ -29,32 +29,26 @@ def file_handler(file_name):
         return [line.strip() for line in file]
 
 
-def ratings_gist_handler(file_name):
+def gist_handler(file_name, expression):
     """Ratings gist file parser
 
-    If we don't know separator between rating and value
+    If we don't know format between rating and value
     we should use re.
-    If format of ratings.txt is set we can use file_handler function
+    :param expression: expression for regex
     :param file_name: <directory>/ratings.txt
     :return: list of tuples
     """
     with open(file_name) as file:
-        return [(re.findall(r'\d\.\d', line), re.findall(r'\d+$', line))
-                for line in file]
-
-
-def years_gist_handler(file_name):
-    """Years gist file parser
-
-    If we don't know separator between year and value
-    we should use re.
-    If format of ratings.txt is set we can use file_handler function
-    :param file_name: <directory>/years.txt
-    :return: list of tuples
-    """
-    with open(file_name) as file:
-        return [(re.findall(r'\d{4}', line), re.findall(r'\d+$', line))
-                for line in file]
+        result = []
+        for line in file:
+            ratings = re.findall(expression, line)
+            line = line.rstrip()
+            symbol = line[-1]
+            value = 0
+            while symbol == line[-value - 1]:
+                value += 1
+            result.append((ratings, value))
+        return result
 
 
 @ddt.ddt
@@ -105,14 +99,14 @@ class IMDBParserTest(unittest.TestCase):
 
     @unittest.skipIf(not os.path.isfile(RATINGS), 'File not exists')
     def test_rating_gist(self):
-        result = ratings_gist_handler(RATINGS)
-        expected = ratings_gist_handler('tests/files/ratings.txt')
+        result = gist_handler(RATINGS, r'\d\.\d')
+        expected = gist_handler('tests/files/ratings.txt', r'\d\.\d')
         self.assertCountEqual(result, expected, msg='Wrong data')
 
     @unittest.skipIf(not os.path.isfile(YEARS), 'File not exists')
     def test_years_gist(self):
-        result = years_gist_handler(YEARS)
-        expected = years_gist_handler('tests/files/years.txt')
+        result = gist_handler(YEARS, r'\d{4}')
+        expected = gist_handler('tests/files/years.txt', r'\d{4}')
         self.assertCountEqual(result, expected, msg='Wrong data')
 
     @ddt.data('1', {1: 1}, 1, [1])

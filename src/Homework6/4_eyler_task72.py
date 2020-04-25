@@ -15,10 +15,10 @@
 для d ≤ 1 000 000?
 
 """
-from functools import reduce
-import math
-from operator import mul
-import unittest
+from functools import reduce  # noqa: H306
+import math  # noqa: H306
+from operator import mul  # noqa: H306
+import unittest  # noqa: H306
 
 import ddt
 

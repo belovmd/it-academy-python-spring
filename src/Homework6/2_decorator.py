@@ -26,21 +26,16 @@ class TooManyErrors(Exception):
 
 
 def decor_runner(n: int):
-    counter = 0
-
     def decorator(func):
         @wraps(func)
         def wrapper(x, y):
-            nonlocal counter
-            while True:
-                if counter >= n:
-                    logger.warning(f'Limit trying count. Counts = {counter}')
-                    counter = 0  # reset counter for unittests
-                    raise TooManyErrors(func.__name__)
+            for time in range(n):
                 func(x, y)
                 y -= 1
-                logger.info(f'{func.__name__} was running {counter} times')
-                counter += 1
+                logger.info(f'{func.__name__} was running {time} times')
+            else:
+                logger.warning(f'Limit trying count. Counts = {time}')
+                raise TooManyErrors(func.__name__)
             return func(*args, **kwargs)
         return wrapper
     return decorator

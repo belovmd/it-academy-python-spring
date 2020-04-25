@@ -16,8 +16,8 @@
 
 """
 import math
-import unittest
 from functools import reduce
+import unittest
 from operator import mul
 
 import ddt

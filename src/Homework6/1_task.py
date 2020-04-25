@@ -8,7 +8,8 @@
 методы, взаимодействие объектов и т.д.
 
 """
-from _datetime import datetime, timedelta
+from datetime import datetime
+from datetime import timedelta
 
 
 class Person(object):

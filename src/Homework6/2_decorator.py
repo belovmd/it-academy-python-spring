@@ -5,9 +5,10 @@
 TooManyErrors
 
 """
-import unittest
 import logging
+import unittest
 from functools import wraps
+
 log_format = "%(asctime)s | %(levelname)s | " \
              "%(filename)s:%(lineno)d %(message)s"
 

@@ -12,6 +12,7 @@ Variant 13: homework 3 task 5
 
 """
 import unittest
+
 import ddt
 
 

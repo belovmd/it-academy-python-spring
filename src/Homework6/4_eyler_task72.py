@@ -16,9 +16,10 @@
 
 """
 import math
-from operator import mul
-from functools import reduce
 import unittest
+from functools import reduce
+from operator import mul
+
 import ddt
 
 

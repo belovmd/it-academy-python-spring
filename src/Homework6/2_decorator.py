@@ -6,8 +6,8 @@ TooManyErrors
 
 """
 import logging  # noqa: H306
-from functools import wraps  # noqa: H306
 import unittest  # noqa: H306
+from functools import wraps  # noqa: H306
 
 log_format = "%(asctime)s | %(levelname)s | " \
              "%(filename)s:%(lineno)d %(message)s"

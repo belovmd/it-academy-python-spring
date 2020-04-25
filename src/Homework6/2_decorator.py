@@ -8,11 +8,10 @@ TooManyErrors
 import unittest
 import logging
 from functools import wraps
+log_format = "%(asctime)s | %(levelname)s | " \
+             "%(filename)s:%(lineno)d %(message)s"
 
-logging.basicConfig(
-     level=logging.INFO,
-     format="%(asctime)s | %(levelname)s | %(filename)s:%(lineno)d %(message)s"
- )
+logging.basicConfig(level=logging.INFO, format=log_format)
 logger = logging.getLogger(__name__)
 
 
@@ -36,7 +35,7 @@ def decor_runner(n: int):
             else:
                 logger.warning(f'Limit trying count. Counts = {time}')
                 raise TooManyErrors(func.__name__)
-            return func(*args, **kwargs)
+            return func(x, y)
         return wrapper
     return decorator
 

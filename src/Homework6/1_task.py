@@ -65,11 +65,11 @@ class TicketOffice(object):
     def sell_ticket(self, seller, ticket, _from, _to, customer):
         if all(
                 (
-                        ticket in self.tickets_in_stock,
-                        self.check_rout(ticket, _from, _to),
-                        seller in self.sellers,
-                        seller.works_today,
-                        customer.money >= ticket.cost,
+                    ticket in self.tickets_in_stock,
+                    self.check_rout(ticket, _from, _to),
+                    seller in self.sellers,
+                    seller.works_today,
+                    customer.money >= ticket.cost,
                 )
         ):
             ticket.in_stock = False

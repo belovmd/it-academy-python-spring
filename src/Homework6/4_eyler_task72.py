@@ -18,9 +18,11 @@
 import math
 from operator import mul
 from functools import reduce
+import unittest
+import ddt
 
 
-def fraction_counter_slowly(number: int) -> list:
+def fraction_counter_slowly_algorithm(number: int) -> list:
     """Return count of reduced fractions"""
     fractions = []
     for n in range(1, number):
@@ -36,31 +38,57 @@ def fraction_counter_slowly(number: int) -> list:
 def prime_factors(n):
     res = set()
     # iterate over all even numbers first.
-    while n % 2 == 0:
+    if n % 2 == 0:
         res.add(2)
-        n //= 2
+        while n % 2 == 0:
+            n //= 2
     # try odd numbers up to sqrt(n)
-    limit = math.sqrt(n+1)
+    limit = math.sqrt(n + 1)
     i = 3
     while i <= limit:
         if n % i == 0:
             res.add(i)
             n //= i
-            limit = math.sqrt(n+i)
+            limit = math.sqrt(n + i)
         else:
             i += 2
     if n != 1:
         res.add(n)
     return res
 
-def totient(n):
-    if n == 1: return 1
+
+def prepare_result(n):
+    if n == 1:
+        return 1
     return int(round(n * reduce(mul, [1 - 1.0 / p for p in prime_factors(n)])))
 
-def farey_length(n):
-    return sum(totient(m) for m in range(1, n+1)) - 1
 
-def main():
-    print(farey_length(1000000))
+def fraction_counter_fast_algorithm(n):
+    return sum(prepare_result(m) for m in range(1, n + 1)) - 1
 
-if __name__ == "__main__": main()
+
+@ddt.ddt
+class TestFractionCounter(unittest.TestCase):
+    @ddt.data(
+        (8, 21),
+        (10, 31),
+        (100, 3043),
+    )
+    @ddt.unpack
+    def test_fraction_counter(self, n, expected):
+        self.assertEqual(fraction_counter_slowly_algorithm(n), expected)
+        self.assertEqual(fraction_counter_fast_algorithm(n), expected)
+
+    def test_fraction_counter_fast_algorithm_big_value(self):
+        self.assertEqual(
+            fraction_counter_fast_algorithm(100000),
+            3039650753
+        )
+
+    def test_with_not_valid_data(self):
+        with self.assertRaises(TypeError):
+            fraction_counter_slowly_algorithm('3')
+
+
+if __name__ == '__main__':
+    unittest.main()

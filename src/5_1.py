@@ -9,24 +9,11 @@ runner(‘func’, ‘func1’...) - вызывает все
 переданные функции """
 
 
-class HomeWorks:
-    def hello_world(self):
-        print('Hello, world!')
-
-    def hi_name(self):
-        name = input('Insert your name:\n')
-        print('Hi, %s.' % name)
-
-    def friends_list(self):
-        friends = ['john', 'pat', 'gary', 'michael']
-        for i, name in enumerate(friends):
-            print("iteration {iteration} is "
-                  "{name}".format(iteration=i, name=name))
-
+import HomeWorks
 
 def runner(*func):
     for element in func:
-        getattr(HomeWorks(), element, "Task is not chosen")()
+        getattr(dir(HomeWorks), element, "Task is not chosen")()
 
     if not func:
         for element in HomeWorks.__dict__:

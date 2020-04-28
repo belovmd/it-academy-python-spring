@@ -5,7 +5,7 @@
 
 
 from os import path
-import time
+from datetime import datetime
 
 if path.exists('defs_results.txt'):
     pass
@@ -15,17 +15,20 @@ else:
 
 
 def dec(func):
-    def wrapper():
+    def wrapper(*args, **kwargs):
+        call_result = func(*args, **kwargs)
         with open('defs_results.txt', 'a') as ff:
-            ff.write(func() + '\n')
-        return func()
+            ff.write('Name: %s; Date: %s; Result: %s. \n' % (func.__name__, datetime.now(tz=None), call_result))
+
+        return call_result
+
     return wrapper
 
 
 @dec
-def my_function():
-    a = time.ctime()
-    return a
+def my_function_param(b, c):
+    d = str(b + c)
+    return d
 
 
-print(my_function())
+my_function_param(1, 2)

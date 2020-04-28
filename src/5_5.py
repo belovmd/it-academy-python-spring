@@ -12,8 +12,7 @@ while number > right_point:
     right_point <<= 1
 left_point = right_point >> 1
 
-if abs(right_point - number) \
-        <= abs(number - left_point):
+if abs(right_point - number) <= abs(number - left_point):
     print(right_point)
 else:
     print(left_point)

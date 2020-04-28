@@ -11,6 +11,7 @@ ratings.txt – гистограмма рейтингов,
 years.txt – гистограмма годов.
 """
 
+
 from os import path
 
 if path.exists('./data5/ratings.list'):
@@ -53,17 +54,40 @@ with open('top250_movies.txt', 'w') as file:
 
 list_ratings.sort()
 list_years.sort()
+dct_ratings = {}
+dct_years = {}
 
-dct_ratings = {element: list_ratings.count(element)
-               for element in list_ratings}
 
-dct_years = {element: list_years.count(element)
-             for element in list_years}
+def count(lst, dct):
+    for el in lst:
+        if el not in dct:
+            dct.update({el: 1})
+        else:
+            dct.update({el: dct[el] + 1})
+
+
+count(list_ratings, dct_ratings)
+count(list_years, dct_years)
+
+rating_value_list = [dct_ratings[element] for element in dct_ratings]
+rating_value_list.sort()
+denominator = (rating_value_list[-1]//70 + 1)
+
+dct_ratings_full = {str(float(rate/10)): 0
+                    for rate in range(int(float(list_ratings[0]) * 10), int(float(list_ratings[-1]) * 10 + 1), 1)}
+dct_years_full = {str(year): 0 for year in range(int(list_years[0]), int(list_years[-1]) + 1, 1)}
 
 with open('ratings.txt', 'w') as file:
-    for element in dct_ratings:
-        file.write(element + ' : ' + str(dct_ratings[element]) + '\n')
+    for element in dct_ratings_full:
+        if element in dct_ratings:
+            file.write('%4s : %3s : %s \n'
+                       % (element, str(dct_ratings[element]), str(dct_ratings[element] * '#' / denominator)))
+        else:
+            file.write('%4s : %3s : \n' % (element, str(dct_ratings_full[element])))
 
 with open('years.txt', 'w') as file:
-    for element in dct_years:
-        file.write(element + ' : ' + str(dct_years[element]) + '\n')
+    for element in dct_years_full:
+        if element in dct_years:
+            file.write('%s : %3s : %s \n' % (element, str(dct_years[element]), str(dct_years[element] * '#')))
+        else:
+            file.write('%s : %3s :  \n' % (element, str(dct_years_full[element])))

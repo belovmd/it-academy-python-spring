@@ -4,8 +4,8 @@
 """
 
 
-from os import path
 from datetime import datetime
+from os import path
 
 if path.exists('defs_results.txt'):
     pass
@@ -18,7 +18,8 @@ def dec(func):
     def wrapper(*args, **kwargs):
         call_result = func(*args, **kwargs)
         with open('defs_results.txt', 'a') as ff:
-            ff.write('Name: %s; Date: %s; Result: %s. \n' % (func.__name__, datetime.now(tz=None), call_result))
+            ff.write('Name: %s; Date: %s; Result: %s. \n'
+                     % (func.__name__, datetime.now(tz=None), call_result))
 
         return call_result
 

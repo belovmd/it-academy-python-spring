@@ -71,23 +71,31 @@ count(list_years, dct_years)
 
 rating_value_list = [dct_ratings[element] for element in dct_ratings]
 rating_value_list.sort()
-denominator = (rating_value_list[-1]//70 + 1)
+denominator = (rating_value_list[-1] // 70 + 1)
 
-dct_ratings_full = {str(float(rate/10)): 0
-                    for rate in range(int(float(list_ratings[0]) * 10), int(float(list_ratings[-1]) * 10 + 1), 1)}
-dct_years_full = {str(year): 0 for year in range(int(list_years[0]), int(list_years[-1]) + 1, 1)}
+dct_ratings_full = {str(float(rate / 10)): 0
+                    for rate in range(
+        int(float(list_ratings[0]) * 10),
+        int(float(list_ratings[-1]) * 10 + 1),
+        1)
+                    }
+dct_years_full = {str(year): 0
+                  for year in range(int(list_years[0]), int(list_years[-1]) + 1, 1)}
 
 with open('ratings.txt', 'w') as file:
     for element in dct_ratings_full:
         if element in dct_ratings:
             file.write('%4s : %3s : %s \n'
-                       % (element, str(dct_ratings[element]), str(dct_ratings[element] * '#' / denominator)))
+                       % (element, str(dct_ratings[element]),
+                          str(dct_ratings[element] * '#' / denominator)))
         else:
             file.write('%4s : %3s : \n' % (element, str(dct_ratings_full[element])))
 
 with open('years.txt', 'w') as file:
     for element in dct_years_full:
         if element in dct_years:
-            file.write('%s : %3s : %s \n' % (element, str(dct_years[element]), str(dct_years[element] * '#')))
+            file.write('%s : %3s : %s \n'
+                       % (element, str(dct_years[element]), str(dct_years[element] * '#')))
         else:
-            file.write('%s : %3s :  \n' % (element, str(dct_years_full[element])))
+            file.write('%s : %3s :  \n'
+                       % (element, str(dct_years_full[element])))

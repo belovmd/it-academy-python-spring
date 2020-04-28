@@ -8,19 +8,32 @@ runner(‘func_name’) – вызывается только
 runner(‘func’, ‘func1’...) - вызывает все
 переданные функции """
 
+from src import homeworks
 
-import HomeWorks
+parameters = {"hi_name": ["Ivan", "Ivanov"]}
+
 
 def runner(*func):
-    for element in func:
-        getattr(dir(HomeWorks), element, "Task is not chosen")()
+    db = []
+    [db.append(element) for element in dir(homeworks) if element[:2] != "__"]
 
-    if not func:
-        for element in HomeWorks.__dict__:
-            attr = ['__module__', '__dict__',
-                    '__weakref__', '__doc__']
-            if str(element) not in attr:
-                getattr(HomeWorks(), element, "Task is not chosen")()
+    try:
+        for element in func:
+            callable(getattr(homeworks, element)(parameters.get(element)))
 
+        if not func:
+            for element in db:
+                callable(getattr(homeworks, element)(parameters.get(element)))
+
+    except AttributeError:
+        print("Attribute Error")
+    except TypeError:
+        print("Type Error")
+
+
+no_function = None
 
 runner()
+runner('hello_world', 'iterable_friends')
+runner('no_function')
+runner(no_function)

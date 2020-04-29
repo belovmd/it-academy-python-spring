@@ -52,14 +52,14 @@ class Battle:
     def fight(army1, army2):
         while army1.units and army2.units:
             if army1.units[-1].attack > army2.units[0].defense:
-                army2.units[0].health -= (
-                            army1.units[-1].attack - army2.units[0].defense)
+                army2.units[0].health -= (army1.units[-1].attack -
+                                          army2.units[0].defense)
             if army2.units[0].health <= 0:
                 army2.units.pop(0)
                 continue
             if army2.units[0].attack > army1.units[-1].defense:
-                army1.units[-1].health -= (
-                            army2.units[0].attack - army1.units[-1].defense)
+                army1.units[-1].health -= (army2.units[0].attack -
+                                           army1.units[-1].defense)
             if army1.units[-1].health <= 0:
                 army1.units.pop(-1)
         return True if army1.units else False

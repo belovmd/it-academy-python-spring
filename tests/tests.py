@@ -1,5 +1,5 @@
-import unittest
 import ddt
+import unittest
 from task3 import pow_two
 
 

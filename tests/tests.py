@@ -3,7 +3,6 @@ from task3 import pow_two
 import unittest
 
 
-
 @ddt.ddt
 class TestSimple(unittest.TestCase):
     def test_string(self):

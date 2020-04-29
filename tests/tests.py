@@ -1,6 +1,7 @@
 import ddt
-import unittest
 from task3 import pow_two
+import unittest
+
 
 
 @ddt.ddt

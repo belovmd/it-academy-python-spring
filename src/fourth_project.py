@@ -4,8 +4,8 @@
 
 """
 
-from ddt import ddt
 from ddt import data
+from ddt import ddt
 from ddt import unpack
 import unittest
 

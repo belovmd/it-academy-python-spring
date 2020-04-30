@@ -82,11 +82,11 @@ class Party(Person):
 
     def your_condition(self):
         print('После вечеринки вы пошли домой в состоянии: '
-              'здоровье={}, опьянение={}, сытость={}, настроение={}'.format(
-                self.health,
-                self.intoxication,
-                self.satiety,
-                self.mood,)
+              'здоровье={}, опьянение={}, '
+              'сытость={}, настроение={}'.format(self.health,
+                                                 self.intoxication,
+                                                 self.satiety,
+                                                 self.mood,)
               )
 
 

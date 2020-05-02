@@ -61,6 +61,7 @@ class Train:
         self.point_from = poin_from
         self.point_to = point_to
         self.departure = departure
+
     def add_wagon(self, type_wagon):
         self.wagons.append(Wagon(type_wagon))
 

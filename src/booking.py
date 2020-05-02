@@ -87,9 +87,9 @@ class Train:
 
     def __str__(self):
         return 'train № {}, {} - {}, departure: {}'.format(self.number_train,
-                                             self.point_from,
-                                             self.point_to,
-                                             self.departure)
+                                                           self.point_from,
+                                                           self.point_to,
+                                                           self.departure)
 
 
 my_train = Train(723, 'Minsk', 'Brest', '7:00')

@@ -19,7 +19,6 @@
 # Также, ∑f(N) = 83 для 1 ≤ N ≤ 20 и ∑f(N) = 13343 для 1 ≤ N ≤ 500.
 
 
-
 def euler(N):
     """find  sum(f(N)) for 1 <= n <= N"""
     sum = 0
@@ -73,11 +72,10 @@ def euler(N):
 N = 20
 print('Total: {} -> {}'.format(N, euler(N)))
 
-
 assert euler(N) == 83
 
 assert euler(-1) == 0
-assert euler(0)  == 0
-assert euler(1)  == 1
-assert euler(2)  == 3
-assert euler(3)  == 5
+assert euler(0) == 0
+assert euler(1) == 1
+assert euler(2) == 3
+assert euler(3) == 5

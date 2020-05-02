@@ -48,12 +48,12 @@ def doc_parser():
         return
 
     ratings_data = [
-        '{}: {}'.format(rank, value) for rank, value in ratings_gist.items()
-    ]
+        '{}: {}'.format(rank, value * '*')
+        for rank, value in ratings_gist.items()]
 
     years_gist_items = sorted(years_gist.items())
     years_data = [
-        '{}: {}'.format(year, value) for year, value in years_gist_items
+        '{}: {}'.format(year, value * '*') for year, value in years_gist_items
     ]
 
     file_handler('top250_movies.txt', films_names)

@@ -61,7 +61,6 @@ dict_func_param = {
 }
 
 
-
 def test(func):
     def wrapper(*args, **kwargs):
         try:

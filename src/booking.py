@@ -11,8 +11,7 @@
 #  1. general  - общий
 #  2. reserved seat - плацкартный
 #  3. compartment - купейный
-
-#
+# I'm forming a train from wagons and buy tickets for passenger.
 
 class Passenger:
     def __init__(self, first_name, last_name, id_number):

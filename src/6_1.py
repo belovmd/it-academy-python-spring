@@ -10,11 +10,19 @@
 
 Часть TBS - битва космических флотов."""
 
+
 import random
 
 
 class StarFleet:
-    def __init__(self, empire, coalition, name, corvette, destroyer, cruiser, battleship):
+    def __init__(self,
+                 empire,
+                 coalition,
+                 name,
+                 corvette,
+                 destroyer,
+                 cruiser,
+                 battleship):
         self.empire = empire
         self.coalition = coalition
         self.name = name
@@ -62,7 +70,8 @@ class SpaceBattle:
 
         elif len(coalitions) == 1:
             print("No enemies in the system.")
-            print("Forces of %s coalition occupied the system!" % list(coalitions)[0])
+            print("Forces of %s coalition occupied the system!"
+                  % list(coalitions)[0])
             quit()
 
     def attack(self):
@@ -70,7 +79,8 @@ class SpaceBattle:
         first = random.choice(self.fleets)
         print("Attack of %s fleet!" % first.name)
         """List of fleets not in first's coalition"""
-        enemies = [element for element in self.fleets if first.coalition != element.coalition]
+        enemies = [element for element in self.fleets
+                   if first.coalition != element.coalition]
         """Choose target for first fleet"""
         second = random.choice(enemies)
         print("%s fleet under attack!" % second.name)
@@ -82,7 +92,7 @@ class SpaceBattle:
         if (second_strength < 0.5 * first_strength) and random.random() < 0.8:
             spacebattle.retreat(second)
             print("Fleet %s are retreat!" % second.name)
-        elif (first_strength < 0.5 * second_strength) and random.random() < 0.8:
+        elif (first_strength < second_strength / 2) and random.random() < 0.8:
             spacebattle.retreat(first)
             print("Fleet %s are retreat!" % first.name)
         else:

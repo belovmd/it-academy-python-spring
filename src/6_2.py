@@ -18,12 +18,13 @@ def run_func_n_times(n):
                 i += 1
                 print("This is run number %s" % i)
                 pre_res = random.uniform(0.8, 1.5)
-                result = func(pre_res)
+                func(pre_res)
                 if pre_res <= 1:
                     print("Correct pre_res")
                     break
                 if i == n:
                     raise Exception("TooManyErrors")
+
 
         return wrapper
 

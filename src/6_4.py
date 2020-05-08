@@ -37,11 +37,12 @@ https://euler.jakumo.org/problems/pg/1.html.
 Решаем задачу простым перебором, в лоб, для Nmax = 10 ** 6
 """
 
+
 from ddt import data
 from ddt import ddt
 from ddt import unpack
-import unittest
 from time import time
+import unittest
 
 
 def timed(func):

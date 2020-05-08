@@ -1,8 +1,8 @@
 from .t6_3 import get_ranges
-import unittest
 from ddt import data
 from ddt import ddt
 from ddt import unpack
+import unittest
 
 
 @ddt

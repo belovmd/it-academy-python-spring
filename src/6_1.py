@@ -10,7 +10,6 @@
 
 Часть TBS - битва космических флотов."""
 
-
 import random
 
 
@@ -44,6 +43,14 @@ class SpaceBattle:
         a.cruiser -= random.uniform(0.3, 2 * (bb / ca))
         a.battleship -= random.uniform(0.15, 1 * (bb / ca))
 
+    @staticmethod
+    def fl_strenght(n_f):
+        fl_c = n_f.corvette
+        fl_d = n_f.destroyer * 2
+        fl_cr = n_f.cruiser * 4
+        fl_b = n_f.battleship * 8
+        return fl_c + fl_d + fl_cr + fl_b
+
     def friend_or_foe(self):
         coalitions = {element.coalition for element in self.fleets}
         if len(self.fleets) > 0 and len(coalitions) > 1:
@@ -68,8 +75,8 @@ class SpaceBattle:
         second = random.choice(enemies)
         print("%s fleet under attack!" % second.name)
 
-        first_strength = first.corvette + first.destroyer * 2 + first.cruiser * 4 + first.battleship * 8
-        second_strength = second.corvette + second.destroyer * 2 + second.cruiser * 4 + second.battleship * 8
+        first_strength = self.fl_strenght(first)
+        second_strength = self.fl_strenght(second)
 
         """Check balance of strength and morality = random.random()"""
         if (second_strength < 0.5 * first_strength) and random.random() < 0.8:
@@ -79,7 +86,8 @@ class SpaceBattle:
             spacebattle.retreat(first)
             print("Fleet %s are retreat!" % first.name)
         else:
-            """Calculate damage. Float type means that some ships can be damaged, but they can still fight"""
+            """Calculate damage. Float type means
+            that some ships can be damaged, but they can still fight"""
 
             self.calc_damage(second, first_strength, second_strength)
 
@@ -95,10 +103,9 @@ class SpaceBattle:
                             self.fleets[number].__dict__[el] = 0
 
             """Check relative strength of fleets after strikes"""
-            first_strength = first.corvette + first.destroyer * 2 + first.cruiser * 4 + first.battleship * 8
-            print(first.name, round(first_strength, 2))
-            second_strength = second.corvette + second.destroyer * 2 + second.cruiser * 4 + second.battleship * 8
-            print(second.name, round(second_strength, 2))
+
+            print(first.name, round(self.fl_strenght(first), 2))
+            print(second.name, round(self.fl_strenght(second), 2))
 
         """Check result of strikes"""
         if first_strength <= 0 and second_strength <= 0:
@@ -120,7 +127,11 @@ class SpaceBattle:
 
         print("Fleets in the system:")
         for el in self.fleets:
-            print(el.name, round(el.corvette, 2), round(el.destroyer, 2), round(el.cruiser, 2), round(el.battleship, 2))
+            print(el.name,
+                  round(el.corvette, 2),
+                  round(el.destroyer, 2),
+                  round(el.cruiser, 2),
+                  round(el.battleship, 2))
 
 
 if __name__ == '__main__':

@@ -37,7 +37,6 @@ https://euler.jakumo.org/problems/pg/1.html.
 Решаем задачу простым перебором, в лоб, для Nmax = 10 ** 6
 """
 
-
 from ddt import data
 from ddt import ddt
 from ddt import unpack
@@ -49,7 +48,8 @@ def timed(func):
     def wrapper(*args):
         start = time()
         result = func(*args)
-        print("Executing %s took %d ms" % (func.__name__, (time() - start) * 1000))
+        print("Executing %s took %d ms"
+              % (func.__name__, (time() - start) * 1000))
         return result
 
     return wrapper
@@ -66,7 +66,6 @@ def euler268(nn):
             for elem in range(2 * el, n + 1, el):
                 a[elem - 2] = 0
     prime_numb_list = list(filter(lambda x: x != 0, a))
-
 
     # Перебор вариантов
     counter = 0
@@ -97,7 +96,7 @@ class Euler268TestCase(unittest.TestCase):
     def test_main(self, inpt, outpt):
         self.assertEqual(inpt, outpt)
 
-    @data('1000', [1000, ], (1000, ), {1000, }, None)
+    @data('1000', [1000, ], (1000,), {1000, }, None)
     def test_wrong_inp(self, nn):
         with self.assertRaises(TypeError):
             euler268(nn)

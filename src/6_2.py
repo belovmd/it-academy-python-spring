@@ -25,7 +25,6 @@ def run_func_n_times(n):
                 if i == n:
                     raise Exception("TooManyErrors")
 
-
         return wrapper
 
     return decorator_of_func
